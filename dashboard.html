@@ -1,0 +1,5202 @@
+<title>Exposição e Mobilidade</title>
+<meta name="description" content="Cinco atos sobre exposição ocupacional à IA e transições de trabalho na PNAD Contínua, 2019–2025.">
+<style>
+  :root{
+    color-scheme:light;
+    --surface:#fcfcfb; --plane:#f9f9f7; --raised:#ffffff;
+    --ink:#0b0b0b; --ink-soft:#52514e; --ink-muted:#898781;
+    --line:#e1e0d9; --line-strong:#c3c2b7;
+    --q1:#86b6ef; --q2:#3987e5; --q3:#1c5cab; --q4:#0d366b;
+    --c-outro:#2a78d6; --c-fora:#eb6834; --c-mesmo:#4a3aa7; --c-desoc:#e34948;
+    --good:#006300; --warn:#fab219; --serious:#ec835a; --critical:#d03b3b;
+    --div-pos:#2a78d6; --div-neg:#e34948; --div-mid:#f0efec;
+    --serif:"Fraunces","Iowan Old Style",Georgia,serif;
+    --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      color-scheme:dark;
+      --surface:#1a1a19; --plane:#0d0d0d; --raised:#212120;
+      --ink:#ffffff; --ink-soft:#c3c2b7; --ink-muted:#898781;
+      --line:#2c2c2a; --line-strong:#383835;
+      --q1:#cde2fb; --q2:#86b6ef; --q3:#3987e5; --q4:#1c5cab;
+      --c-outro:#3987e5; --c-fora:#d95926; --c-mesmo:#9085e9; --c-desoc:#e66767;
+      --good:#0ca30c; --warn:#fab219; --serious:#ec835a; --critical:#d03b3b;
+      --div-pos:#3987e5; --div-neg:#e66767; --div-mid:#383835;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --surface:#1a1a19; --plane:#0d0d0d; --raised:#212120;
+    --ink:#ffffff; --ink-soft:#c3c2b7; --ink-muted:#898781;
+    --line:#2c2c2a; --line-strong:#383835;
+    --q1:#cde2fb; --q2:#86b6ef; --q3:#3987e5; --q4:#1c5cab;
+    --c-outro:#3987e5; --c-fora:#d95926; --c-mesmo:#9085e9; --c-desoc:#e66767;
+    --good:#0ca30c; --warn:#fab219; --serious:#ec835a; --critical:#d03b3b;
+    --div-pos:#3987e5; --div-neg:#e66767; --div-mid:#383835;
+  }
+
+  *{box-sizing:border-box}
+  body{background:var(--plane);color:var(--ink);font-family:var(--sans);line-height:1.5;
+       -webkit-font-smoothing:antialiased;padding-inline:0}
+  a{color:inherit}
+  ::selection{background:var(--q2);color:#fff}
+
+  .wrap{max-width:1180px;margin-inline:auto;padding-inline:20px}
+  .tabular{font-variant-numeric:tabular-nums}
+
+  /* ---------- header ---------- */
+  header.hero{background:var(--surface);border-bottom:1px solid var(--line);padding-block:44px 30px}
+  .eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted);
+           font-weight:600;margin:0 0 14px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,4.4vw,3.1rem);line-height:1.05;
+     margin:0 0 16px;max-width:16ch;text-wrap:balance}
+  .dek{font-size:1.05rem;color:var(--ink-soft);max-width:62ch;margin:0 0 26px}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px 26px;font-size:.82rem;color:var(--ink-muted)}
+  .meta-row b{color:var(--ink);font-weight:600}
+  .meta-row .tabular{color:var(--ink)}
+
+  .alert-band{background:var(--plane);border-top:1px solid var(--line)}
+  .alert-row{display:flex;gap:14px;align-items:flex-start;padding-block:14px;flex-wrap:wrap}
+  .chip{display:inline-flex;align-items:center;gap:7px;background:var(--raised);
+        border:1px solid var(--line);border-radius:999px;padding:6px 13px 6px 10px;
+        font-size:.78rem;color:var(--ink-soft);flex:1 1 320px;min-width:260px}
+  .chip .dot{width:8px;height:8px;border-radius:50%;flex:none}
+  .chip b{color:var(--ink)}
+
+  /* ---------- nav ---------- */
+  nav.acts{position:sticky;top:0;z-index:30;background:var(--surface);border-bottom:1px solid var(--line);
+            overflow-x:auto;scrollbar-width:none}
+  nav.acts::-webkit-scrollbar{display:none}
+  nav.acts .wrap{display:flex;gap:2px;padding-block:0}
+  nav.acts a{display:flex;flex-direction:column;gap:1px;padding:10px 16px;font-size:.74rem;
+             text-decoration:none;color:var(--ink-muted);white-space:nowrap;border-bottom:2px solid transparent}
+  nav.acts a small{font-family:var(--serif);font-size:.72rem;letter-spacing:.06em;color:var(--ink-muted)}
+  nav.acts a span{font-weight:600;color:var(--ink-soft)}
+  nav.acts a:hover{border-bottom-color:var(--line-strong)}
+
+  /* ---------- acts ---------- */
+  section.act{padding-block:52px;scroll-margin-top:44px}
+  section.act:nth-of-type(even){background:var(--surface);border-block:1px solid var(--line)}
+  .act-head{display:flex;gap:18px;align-items:baseline;margin-bottom:8px}
+  .act-num{font-family:var(--serif);font-size:1rem;color:var(--q3);font-weight:600;flex:none}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,2.6vw,2rem);margin:0 0 18px;
+     text-wrap:balance;max-width:26ch}
+  .lede{font-size:1.02rem;color:var(--ink-soft);max-width:68ch;margin:0 0 28px}
+  .prose{max-width:64ch;color:var(--ink-soft);font-size:.95rem}
+  .prose p{margin:0 0 14px}
+  .prose strong{color:var(--ink)}
+  .callout{border-left:3px solid var(--q3);padding:4px 0 4px 18px;margin:22px 0;max-width:60ch}
+  .callout p{margin:0;font-size:.95rem;color:var(--ink-soft)}
+  .callout b{color:var(--ink)}
+
+  .card{background:var(--raised);border:1px solid var(--line);border-radius:10px;padding:22px 24px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:760px){.grid-2,.grid-3{grid-template-columns:1fr}}
+
+  .fig-title{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-muted);
+             font-weight:600;margin:0 0 3px}
+  .fig-sub{font-size:.82rem;color:var(--ink-soft);margin:0 0 16px}
+  figure{margin:0}
+  figcaption{font-size:.76rem;color:var(--ink-muted);margin-top:10px;max-width:60ch}
+
+  .legend{display:flex;flex-wrap:wrap;gap:12px 18px;font-size:.78rem;color:var(--ink-soft);margin:10px 0 4px}
+  .legend .sw{display:inline-flex;align-items:center;gap:6px}
+  .legend .sw i{width:11px;height:11px;border-radius:3px;display:inline-block}
+  .legend .sw i.line{height:2px;width:16px;border-radius:0}
+
+  /* ---------- act 3 diagram ---------- */
+  .timeline{display:flex;align-items:stretch;gap:0;margin:26px 0 10px;max-width:700px}
+  .tl-step{flex:1;position:relative;padding:18px 16px 16px;background:var(--raised);border:1px solid var(--line)}
+  .tl-step:first-child{border-radius:10px 0 0 10px}
+  .tl-step:last-child{border-radius:0 10px 10px 0;border-left:none}
+  .tl-step + .tl-step{border-left:none}
+  .tl-step .k{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-muted);
+              font-weight:600;margin-bottom:6px}
+  .tl-step .t{font-family:var(--serif);font-size:1.05rem;margin-bottom:6px}
+  .tl-step .d{font-size:.8rem;color:var(--ink-soft)}
+  .tl-step.observed{box-shadow:inset 0 0 0 1.5px var(--q3)}
+  .tl-step.dim{opacity:.62}
+  .tl-arrow{align-self:center;color:var(--ink-muted);font-size:1.1rem;padding:0 6px;flex:none}
+
+  /* ---------- act 2: quartile map ---------- */
+  #qmap-wrap{margin-top:6px}
+  .qm-band-label{font-size:.66rem;font-weight:700;letter-spacing:.05em;fill:var(--ink-muted)}
+  .qm-grouplabel{font-size:.72rem;fill:var(--ink-soft)}
+  .qm-grouplabel.hi{fill:var(--ink);font-weight:600}
+  .qm-tick{stroke:var(--line-strong)}
+  .comp-row{display:grid;grid-template-columns:190px 1fr 54px;align-items:center;gap:10px;padding:5px 0}
+  .comp-row .lab{font-size:.8rem;color:var(--ink-soft)}
+  .comp-row .lab b{color:var(--ink);font-weight:600}
+  .comp-bar{display:flex;height:14px;border-radius:3px;overflow:hidden;background:var(--line)}
+  .comp-bar span{height:100%}
+  .comp-row .pct{font-size:.76rem;color:var(--ink-muted);text-align:right}
+
+  /* ---------- act 4 tab controls ---------- */
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+  .tabs button{font:inherit;font-size:.8rem;font-weight:600;color:var(--ink-soft);background:var(--plane);
+               border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer}
+  .tabs button.on{background:var(--q3);border-color:var(--q3);color:#fff}
+  .tabs button:hover:not(.on){border-color:var(--line-strong)}
+
+  .a-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:10px}
+  @media (max-width:900px){.a-grid{grid-template-columns:repeat(2,1fr)}}
+  .a-cell{border:1px solid var(--line);border-radius:8px;padding:14px 14px 8px;background:var(--plane)}
+  .a-cell h4{font-family:var(--serif);font-size:.92rem;margin:0 0 2px;display:flex;align-items:center;gap:7px}
+  .a-cell h4 i{width:9px;height:9px;border-radius:50%}
+  .a-cell .n{font-size:.7rem;color:var(--ink-muted);margin-bottom:8px}
+  .a-row{display:grid;grid-template-columns:15px 68px 1fr 40px;align-items:center;gap:7px;padding:3px 0;font-size:.74rem}
+  .a-row .sw{width:9px;height:9px;border-radius:2px}
+  .a-row .lbl{color:var(--ink-soft)}
+  .a-row .bars{position:relative;height:14px;background:var(--line);border-radius:3px;overflow:visible}
+  .a-row .bars b{position:absolute;top:0;height:100%;border-radius:3px}
+  .a-row .bars b.pre{opacity:.42}
+  .a-row .dp{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+  .a-row .dp.up{color:var(--div-pos)}
+  .a-row .dp.down{color:var(--div-neg)}
+
+  .b-chart{margin-top:8px}
+  .b-row{display:grid;grid-template-columns:220px 1fr 60px;align-items:center;gap:10px;padding:5px 0;
+         border-bottom:1px solid var(--line)}
+  .b-row:last-child{border-bottom:none}
+  .b-row .lbl{font-size:.8rem;color:var(--ink-soft)}
+  .b-row .lbl b{color:var(--ink);font-weight:600}
+  .b-track{position:relative;height:16px}
+  .b-mid{position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line-strong)}
+  .b-bar{position:absolute;top:2px;height:12px;border-radius:2px}
+  .b-row .val{font-size:.76rem;text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+  .b-row .val.up{color:var(--div-pos)} .b-row .val.down{color:var(--div-neg)}
+
+  .d-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:14px}
+  @media (max-width:760px){.d-grid{grid-template-columns:repeat(2,1fr)}}
+  .d-cell{text-align:center}
+  .d-cell h4{font-family:var(--serif);font-size:.92rem;margin:0 0 10px}
+  .stackbar{display:flex;height:26px;border-radius:4px;overflow:hidden;margin-bottom:4px}
+  .stackbar span{height:100%}
+  .stackbar-lbl{font-size:.66rem;color:var(--ink-muted);margin-bottom:10px}
+  .d-delta{font-size:.78rem;color:var(--ink-soft);margin-top:6px}
+  .d-delta b{font-variant-numeric:tabular-nums;color:var(--ink)}
+
+  #sankey-holder{width:100%;height:560px}
+  .sankey-controls{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
+  .switch-lbl{font-size:.8rem;color:var(--ink-soft);display:flex;align-items:center;gap:7px}
+
+  /* ---------- act 5 series ---------- */
+  #series-holder{width:100%}
+  .tooltip{position:absolute;pointer-events:none;background:var(--ink);color:var(--surface);
+           font-size:.74rem;padding:7px 10px;border-radius:6px;line-height:1.4;transform:translate(-50%,-116%);
+           white-space:nowrap;opacity:0;transition:opacity .1s;z-index:40}
+  .tooltip b{font-variant-numeric:tabular-nums}
+
+  .findings{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:22px 0}
+  @media (max-width:760px){.findings{grid-template-columns:1fr}}
+  .finding{border:1px solid var(--line);border-radius:8px;padding:14px 16px;background:var(--raised)}
+  .finding .k{font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-muted);
+              font-weight:700;margin-bottom:6px}
+  .finding p{margin:0;font-size:.85rem;color:var(--ink-soft)}
+
+  footer{padding-block:34px;border-top:1px solid var(--line)}
+  footer .prose{font-size:.78rem}
+
+  table.data{width:100%;border-collapse:collapse;font-size:.82rem}
+  table.data caption{caption-side:top;text-align:left;font-size:.72rem;color:var(--ink-muted);
+                      text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+  table.data th,table.data td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:right}
+  table.data th:first-child,table.data td:first-child{text-align:left}
+  table.data thead th{color:var(--ink-muted);font-weight:600;font-size:.72rem}
+  details.table-toggle{margin-top:14px}
+  details.table-toggle summary{cursor:pointer;font-size:.78rem;color:var(--ink-muted);font-weight:600}
+  details.table-toggle .table-wrap{overflow-x:auto;margin-top:10px}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script>
+
+<script type="application/json" id="dashboard-data">{
+ "meta": {
+  "gerado_em": "2026-09-22T23:48:52+00:00",
+  "fonte": "../data/processed/pnadc_transicoes.parquet",
+  "formato": "pares",
+  "trimestre_parcial_excluido": "2022T4",
+  "pre": "destino até 2022T3",
+  "pos": "origem a partir de 2023T1",
+  "trimestres_origem": [
+   "2019T1",
+   "2019T2",
+   "2019T3",
+   "2019T4",
+   "2020T1",
+   "2020T2",
+   "2020T3",
+   "2020T4",
+   "2021T1",
+   "2021T2",
+   "2021T3",
+   "2021T4",
+   "2022T1",
+   "2022T2",
+   "2022T3",
+   "2022T4",
+   "2023T1",
+   "2023T2",
+   "2023T3",
+   "2023T4",
+   "2024T1",
+   "2024T2",
+   "2024T3",
+   "2024T4",
+   "2025T1",
+   "2025T2",
+   "2025T3"
+  ],
+  "pares": {
+   "pre": 917015,
+   "pos": 1436618,
+   "atipico": 620787,
+   "excluido": 247587
+  },
+  "janela_atipica_origem": [
+   "2020T1",
+   "2021T3"
+  ],
+  "janela_atipica_excluida_do_pre": true,
+  "cortes_quartis_aioe_pre": [
+   -0.99011088,
+   -0.3852989,
+   0.71078045
+  ],
+  "nivel_ocupacional": "grande grupo COD (1 dígito)",
+  "grandes_grupos": {
+   "0": "Forças armadas, policiais e bombeiros militares",
+   "1": "Diretores e gerentes",
+   "2": "Profissionais das ciências e intelectuais",
+   "3": "Técnicos e profissionais de nível médio",
+   "4": "Apoio administrativo",
+   "5": "Serviços, vendedores do comércio e mercados",
+   "6": "Qualificados da agropecuária, florestais, caça e pesca",
+   "7": "Operários, artesãos da construção e ofícios mecânicos",
+   "8": "Operadores de instalações e máquinas e montadores",
+   "9": "Ocupações elementares"
+  },
+  "rotulos_destino": {
+   "mesmo_grupo": "Mesmo grande grupo",
+   "outro_grupo": "Outro grande grupo",
+   "desocupado": "Desocupado",
+   "fora_da_forca": "Fora da força de trabalho"
+  }
+ },
+ "auditoria": {
+  "alertas": [
+   "Quebra na série de mudança de grande grupo (mediana 20.3%) nas origens 2020T1, 2020T2, 2020T3, 2020T4, 2021T1, 2021T2, 2021T3. Janela atípica configurada: 2020T1 a 2021T3.",
+   "19 COD sem AIOE (1.08% do peso). Ficam fora dos quartis."
+  ],
+  "painel": {
+   "formato": "pares",
+   "celulas": 4014438,
+   "origens_ocupadas": 4017289,
+   "pares_encontrados": 3222007,
+   "duplicatas_id_trimestre": {
+    "linhas": 0,
+    "ids": null
+   },
+   "sexo_inconsistente": null,
+   "idade_inconsistente": null,
+   "saltos": null,
+   "retencao_visitas": null,
+   "taxa_pareamento": [
+    {
+     "trimestre": "2019T1",
+     "taxa": 0.8097
+    },
+    {
+     "trimestre": "2019T2",
+     "taxa": 0.8107
+    },
+    {
+     "trimestre": "2019T3",
+     "taxa": 0.8265
+    },
+    {
+     "trimestre": "2019T4",
+     "taxa": 0.7974
+    },
+    {
+     "trimestre": "2020T1",
+     "taxa": 0.7655
+    },
+    {
+     "trimestre": "2020T2",
+     "taxa": 0.8311
+    },
+    {
+     "trimestre": "2020T3",
+     "taxa": 0.8095
+    },
+    {
+     "trimestre": "2020T4",
+     "taxa": 0.7931
+    },
+    {
+     "trimestre": "2021T1",
+     "taxa": 0.7867
+    },
+    {
+     "trimestre": "2021T2",
+     "taxa": 0.78
+    },
+    {
+     "trimestre": "2021T3",
+     "taxa": 0.7362
+    },
+    {
+     "trimestre": "2021T4",
+     "taxa": 0.7356
+    },
+    {
+     "trimestre": "2022T1",
+     "taxa": 0.749
+    },
+    {
+     "trimestre": "2022T2",
+     "taxa": 0.769
+    },
+    {
+     "trimestre": "2022T3",
+     "taxa": 0.7628
+    },
+    {
+     "trimestre": "2022T4",
+     "taxa": 0.7761
+    },
+    {
+     "trimestre": "2023T1",
+     "taxa": 0.7827
+    },
+    {
+     "trimestre": "2023T2",
+     "taxa": 0.8003
+    },
+    {
+     "trimestre": "2023T3",
+     "taxa": 0.7931
+    },
+    {
+     "trimestre": "2023T4",
+     "taxa": 0.8195
+    },
+    {
+     "trimestre": "2024T1",
+     "taxa": 0.8223
+    },
+    {
+     "trimestre": "2024T2",
+     "taxa": 0.8309
+    },
+    {
+     "trimestre": "2024T3",
+     "taxa": 0.8142
+    },
+    {
+     "trimestre": "2024T4",
+     "taxa": 0.8247
+    },
+    {
+     "trimestre": "2025T1",
+     "taxa": 0.8274
+    },
+    {
+     "trimestre": "2025T2",
+     "taxa": 0.8314
+    },
+    {
+     "trimestre": "2025T3",
+     "taxa": 0.821
+    }
+   ],
+   "nota": "No formato de pares, sexo, nascimento, visita seguinte e trimestre seguinte já foram exigidos no pareamento (BigQuery). Chave duplicada não pareia. Aqui entram a taxa de pareamento e as duplicatas registradas."
+  },
+  "quebra_coleta": {
+   "mediana_pct_muda_grupo": 20.271535740728886,
+   "trimestres_com_quebra": [
+    "2020T1",
+    "2020T2",
+    "2020T3",
+    "2020T4",
+    "2021T1",
+    "2021T2",
+    "2021T3"
+   ],
+   "janela_configurada": [
+    "2020T1",
+    "2021T3"
+   ],
+   "excluida_do_pre": true,
+   "alertas": [
+    "Quebra na série de mudança de grande grupo (mediana 20.3%) nas origens 2020T1, 2020T2, 2020T3, 2020T4, 2021T1, 2021T2, 2021T3. Janela atípica configurada: 2020T1 a 2021T3."
+   ]
+  },
+  "serie_muda_grupo_todos": [
+   {
+    "trimestre_origem": "2019T1",
+    "pct_muda_grupo": 19.9489,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2019T2",
+    "pct_muda_grupo": 19.6131,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2019T3",
+    "pct_muda_grupo": 19.7138,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2019T4",
+    "pct_muda_grupo": 19.5394,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2020T1",
+    "pct_muda_grupo": 9.9316,
+    "quebra": true
+   },
+   {
+    "trimestre_origem": "2020T2",
+    "pct_muda_grupo": 9.4594,
+    "quebra": true
+   },
+   {
+    "trimestre_origem": "2020T3",
+    "pct_muda_grupo": 9.6277,
+    "quebra": true
+   },
+   {
+    "trimestre_origem": "2020T4",
+    "pct_muda_grupo": 9.8842,
+    "quebra": true
+   },
+   {
+    "trimestre_origem": "2021T1",
+    "pct_muda_grupo": 9.7143,
+    "quebra": true
+   },
+   {
+    "trimestre_origem": "2021T2",
+    "pct_muda_grupo": 10.4479,
+    "quebra": true
+   },
+   {
+    "trimestre_origem": "2021T3",
+    "pct_muda_grupo": 10.9677,
+    "quebra": true
+   },
+   {
+    "trimestre_origem": "2021T4",
+    "pct_muda_grupo": 22.2265,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2022T1",
+    "pct_muda_grupo": 22.5106,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2022T2",
+    "pct_muda_grupo": 21.4752,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2022T3",
+    "pct_muda_grupo": 20.6343,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2022T4",
+    "pct_muda_grupo": 20.1244,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2023T1",
+    "pct_muda_grupo": 20.2715,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2023T2",
+    "pct_muda_grupo": 19.9364,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2023T3",
+    "pct_muda_grupo": 20.9194,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2023T4",
+    "pct_muda_grupo": 21.5046,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2024T1",
+    "pct_muda_grupo": 22.0058,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2024T2",
+    "pct_muda_grupo": 21.2744,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2024T3",
+    "pct_muda_grupo": 21.6979,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2024T4",
+    "pct_muda_grupo": 21.8925,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2025T1",
+    "pct_muda_grupo": 22.0776,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2025T2",
+    "pct_muda_grupo": 22.009,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2025T3",
+    "pct_muda_grupo": 21.7727,
+    "quebra": false
+   }
+  ],
+  "exposicao": {
+   "frac_peso_sem_aioe": 0.010813396922072371,
+   "n_sem_aioe": 33758,
+   "cods_fora_do_crosswalk": [
+    {
+     "cod": "0412",
+     "n": 12247,
+     "pct_peso": 0.397
+    },
+    {
+     "cod": "0210",
+     "n": 9351,
+     "pct_peso": 0.303
+    },
+    {
+     "cod": "0512",
+     "n": 2335,
+     "pct_peso": 0.076
+    },
+    {
+     "cod": "0110",
+     "n": 2236,
+     "pct_peso": 0.074
+    },
+    {
+     "cod": "9510",
+     "n": 1542,
+     "pct_peso": 0.052
+    },
+    {
+     "cod": "1111",
+     "n": 1972,
+     "pct_peso": 0.047
+    },
+    {
+     "cod": "0411",
+     "n": 1450,
+     "pct_peso": 0.045
+    },
+    {
+     "cod": "0511",
+     "n": 518,
+     "pct_peso": 0.019
+    },
+    {
+     "cod": "9332",
+     "n": 646,
+     "pct_peso": 0.016
+    },
+    {
+     "cod": "0000",
+     "n": 398,
+     "pct_peso": 0.014
+    },
+    {
+     "cod": "5161",
+     "n": 225,
+     "pct_peso": 0.009
+    },
+    {
+     "cod": "8159",
+     "n": 155,
+     "pct_peso": 0.007
+    },
+    {
+     "cod": "3413",
+     "n": 192,
+     "pct_peso": 0.006
+    },
+    {
+     "cod": "9613",
+     "n": 130,
+     "pct_peso": 0.004
+    },
+    {
+     "cod": "5168",
+     "n": 118,
+     "pct_peso": 0.004
+    },
+    {
+     "cod": "8155",
+     "n": 88,
+     "pct_peso": 0.004
+    },
+    {
+     "cod": "7133",
+     "n": 67,
+     "pct_peso": 0.003
+    },
+    {
+     "cod": "2659",
+     "n": 81,
+     "pct_peso": 0.002
+    },
+    {
+     "cod": "4213",
+     "n": 7,
+     "pct_peso": 0.0
+    }
+   ],
+   "alertas": [
+    "19 COD sem AIOE (1.08% do peso). Ficam fora dos quartis."
+   ]
+  },
+  "composicao_pre_pos": [
+   {
+    "dimensao": "quartil",
+    "categoria": "Q1",
+    "pre": 30.2021,
+    "pos": 28.3692,
+    "n_pre": 907173,
+    "n_pos": 1422302,
+    "dif_pp": -1.8329
+   },
+   {
+    "dimensao": "quartil",
+    "categoria": "Q2",
+    "pre": 19.8631,
+    "pos": 20.7228,
+    "n_pre": 907173,
+    "n_pos": 1422302,
+    "dif_pp": 0.8597
+   },
+   {
+    "dimensao": "quartil",
+    "categoria": "Q3",
+    "pre": 25.0123,
+    "pos": 25.7165,
+    "n_pre": 907173,
+    "n_pos": 1422302,
+    "dif_pp": 0.7042
+   },
+   {
+    "dimensao": "quartil",
+    "categoria": "Q4",
+    "pre": 24.9225,
+    "pos": 25.1915,
+    "n_pre": 907173,
+    "n_pos": 1422302,
+    "dif_pp": 0.269
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "0",
+    "pre": 0.953,
+    "pos": 0.8608,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": -0.0922
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "1",
+    "pre": 4.1827,
+    "pos": 3.5665,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": -0.6162
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "2",
+    "pre": 12.0415,
+    "pos": 13.4657,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": 1.4242
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "3",
+    "pre": 8.2586,
+    "pos": 9.1019,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": 0.8433
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "4",
+    "pre": 8.2982,
+    "pos": 8.4275,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": 0.1292
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "5",
+    "pre": 22.3346,
+    "pos": 21.861,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": -0.4736
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "6",
+    "pre": 5.8202,
+    "pos": 4.9724,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": -0.8478
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "7",
+    "pre": 13.3494,
+    "pos": 12.943,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": -0.4065
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "8",
+    "pre": 8.59,
+    "pos": 9.3172,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": 0.7272
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "9",
+    "pre": 16.1717,
+    "pos": 15.4841,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": -0.6876
+   }
+  ]
+ },
+ "quem_esta_exposto": {
+  "cortes_aioe": [
+   -0.99011088,
+   -0.3852989,
+   0.71078045
+  ],
+  "quartil_por_grupo": [
+   {
+    "quartil": "Q1",
+    "grupo": "2",
+    "nome_grupo": "Profissionais das ciências e intelectuais",
+    "pct": 0.008
+   },
+   {
+    "quartil": "Q1",
+    "grupo": "3",
+    "nome_grupo": "Técnicos e profissionais de nível médio",
+    "pct": 0.13
+   },
+   {
+    "quartil": "Q1",
+    "grupo": "5",
+    "nome_grupo": "Serviços, vendedores do comércio e mercados",
+    "pct": 2.862
+   },
+   {
+    "quartil": "Q1",
+    "grupo": "6",
+    "nome_grupo": "Qualificados da agropecuária, florestais, caça e pesca",
+    "pct": 19.489
+   },
+   {
+    "quartil": "Q1",
+    "grupo": "7",
+    "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos",
+    "pct": 26.164
+   },
+   {
+    "quartil": "Q1",
+    "grupo": "8",
+    "nome_grupo": "Operadores de instalações e máquinas e montadores",
+    "pct": 5.181
+   },
+   {
+    "quartil": "Q1",
+    "grupo": "9",
+    "nome_grupo": "Ocupações elementares",
+    "pct": 46.165
+   },
+   {
+    "quartil": "Q2",
+    "grupo": "2",
+    "nome_grupo": "Profissionais das ciências e intelectuais",
+    "pct": 0.168
+   },
+   {
+    "quartil": "Q2",
+    "grupo": "3",
+    "nome_grupo": "Técnicos e profissionais de nível médio",
+    "pct": 6.849
+   },
+   {
+    "quartil": "Q2",
+    "grupo": "4",
+    "nome_grupo": "Apoio administrativo",
+    "pct": 4.796
+   },
+   {
+    "quartil": "Q2",
+    "grupo": "5",
+    "nome_grupo": "Serviços, vendedores do comércio e mercados",
+    "pct": 18.474
+   },
+   {
+    "quartil": "Q2",
+    "grupo": "7",
+    "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos",
+    "pct": 26.264
+   },
+   {
+    "quartil": "Q2",
+    "grupo": "8",
+    "nome_grupo": "Operadores de instalações e máquinas e montadores",
+    "pct": 33.386
+   },
+   {
+    "quartil": "Q2",
+    "grupo": "9",
+    "nome_grupo": "Ocupações elementares",
+    "pct": 10.063
+   },
+   {
+    "quartil": "Q3",
+    "grupo": "1",
+    "nome_grupo": "Diretores e gerentes",
+    "pct": 5.203
+   },
+   {
+    "quartil": "Q3",
+    "grupo": "2",
+    "nome_grupo": "Profissionais das ciências e intelectuais",
+    "pct": 11.858
+   },
+   {
+    "quartil": "Q3",
+    "grupo": "3",
+    "nome_grupo": "Técnicos e profissionais de nível médio",
+    "pct": 16.218
+   },
+   {
+    "quartil": "Q3",
+    "grupo": "4",
+    "nome_grupo": "Apoio administrativo",
+    "pct": 1.33
+   },
+   {
+    "quartil": "Q3",
+    "grupo": "5",
+    "nome_grupo": "Serviços, vendedores do comércio e mercados",
+    "pct": 62.246
+   },
+   {
+    "quartil": "Q3",
+    "grupo": "7",
+    "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos",
+    "pct": 1.24
+   },
+   {
+    "quartil": "Q3",
+    "grupo": "8",
+    "nome_grupo": "Operadores de instalações e máquinas e montadores",
+    "pct": 1.905
+   },
+   {
+    "quartil": "Q4",
+    "grupo": "1",
+    "nome_grupo": "Diretores e gerentes",
+    "pct": 11.565
+   },
+   {
+    "quartil": "Q4",
+    "grupo": "2",
+    "nome_grupo": "Profissionais das ciências e intelectuais",
+    "pct": 36.806
+   },
+   {
+    "quartil": "Q4",
+    "grupo": "3",
+    "nome_grupo": "Técnicos e profissionais de nível médio",
+    "pct": 11.581
+   },
+   {
+    "quartil": "Q4",
+    "grupo": "4",
+    "nome_grupo": "Apoio administrativo",
+    "pct": 28.516
+   },
+   {
+    "quartil": "Q4",
+    "grupo": "5",
+    "nome_grupo": "Serviços, vendedores do comércio e mercados",
+    "pct": 9.931
+   },
+   {
+    "quartil": "Q4",
+    "grupo": "7",
+    "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos",
+    "pct": 0.272
+   },
+   {
+    "quartil": "Q4",
+    "grupo": "9",
+    "nome_grupo": "Ocupações elementares",
+    "pct": 1.329
+   }
+  ],
+  "grupos": [
+   {
+    "grupo": "9",
+    "nome_grupo": "Ocupações elementares",
+    "aioe_medio": -1.3634,
+    "pct_ocupados": 16.273,
+    "pct_por_quartil": {
+     "Q1": 85.68,
+     "Q2": 12.28,
+     "Q3": 0.0,
+     "Q4": 2.04
+    }
+   },
+   {
+    "grupo": "7",
+    "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos",
+    "aioe_medio": -1.0455,
+    "pct_ocupados": 13.497,
+    "pct_por_quartil": {
+     "Q1": 58.55,
+     "Q2": 38.65,
+     "Q3": 2.3,
+     "Q4": 0.5
+    }
+   },
+   {
+    "grupo": "6",
+    "nome_grupo": "Qualificados da agropecuária, florestais, caça e pesca",
+    "aioe_medio": -0.9974,
+    "pct_ocupados": 5.886,
+    "pct_por_quartil": {
+     "Q1": 100.0,
+     "Q2": 0.0,
+     "Q3": 0.0,
+     "Q4": 0.0
+    }
+   },
+   {
+    "grupo": "8",
+    "nome_grupo": "Operadores de instalações e máquinas e montadores",
+    "aioe_medio": -0.6981,
+    "pct_ocupados": 8.673,
+    "pct_por_quartil": {
+     "Q1": 18.04,
+     "Q2": 76.46,
+     "Q3": 5.49,
+     "Q4": 0.0
+    }
+   },
+   {
+    "grupo": "5",
+    "nome_grupo": "Serviços, vendedores do comércio e mercados",
+    "aioe_medio": 0.0031,
+    "pct_ocupados": 22.578,
+    "pct_por_quartil": {
+     "Q1": 3.83,
+     "Q2": 16.25,
+     "Q3": 68.96,
+     "Q4": 10.96
+    }
+   },
+   {
+    "grupo": "3",
+    "nome_grupo": "Técnicos e profissionais de nível médio",
+    "aioe_medio": 0.3129,
+    "pct_ocupados": 8.343,
+    "pct_por_quartil": {
+     "Q1": 0.47,
+     "Q2": 16.31,
+     "Q3": 48.63,
+     "Q4": 34.6
+    }
+   },
+   {
+    "grupo": "1",
+    "nome_grupo": "Diretores e gerentes",
+    "aioe_medio": 0.8739,
+    "pct_ocupados": 4.184,
+    "pct_por_quartil": {
+     "Q1": 0.0,
+     "Q2": 0.0,
+     "Q3": 31.11,
+     "Q4": 68.89
+    }
+   },
+   {
+    "grupo": "4",
+    "nome_grupo": "Apoio administrativo",
+    "aioe_medio": 0.9261,
+    "pct_ocupados": 8.392,
+    "pct_por_quartil": {
+     "Q1": 0.0,
+     "Q2": 11.35,
+     "Q3": 3.96,
+     "Q4": 84.68
+    }
+   },
+   {
+    "grupo": "2",
+    "nome_grupo": "Profissionais das ciências e intelectuais",
+    "aioe_medio": 0.9682,
+    "pct_ocupados": 12.175,
+    "pct_por_quartil": {
+     "Q1": 0.02,
+     "Q2": 0.27,
+     "Q3": 24.36,
+     "Q4": 75.34
+    }
+   }
+  ]
+ },
+ "A_destino_por_quartil": [
+  {
+   "quartil": "Q1",
+   "destino": "desocupado",
+   "pre": 4.4089,
+   "pos": 2.9179,
+   "n_pre": 330415,
+   "n_pos": 490520,
+   "dif_pp": -1.491
+  },
+  {
+   "quartil": "Q1",
+   "destino": "fora_da_forca",
+   "pre": 8.2132,
+   "pos": 8.5844,
+   "n_pre": 330415,
+   "n_pos": 490520,
+   "dif_pp": 0.3712
+  },
+  {
+   "quartil": "Q1",
+   "destino": "mesmo_grupo",
+   "pre": 68.5292,
+   "pos": 68.9757,
+   "n_pre": 330415,
+   "n_pos": 490520,
+   "dif_pp": 0.4466
+  },
+  {
+   "quartil": "Q1",
+   "destino": "outro_grupo",
+   "pre": 18.8487,
+   "pos": 19.522,
+   "n_pre": 330415,
+   "n_pos": 490520,
+   "dif_pp": 0.6732
+  },
+  {
+   "quartil": "Q2",
+   "destino": "desocupado",
+   "pre": 3.3983,
+   "pos": 2.3205,
+   "n_pre": 167847,
+   "n_pos": 273413,
+   "dif_pp": -1.0778
+  },
+  {
+   "quartil": "Q2",
+   "destino": "fora_da_forca",
+   "pre": 5.129,
+   "pos": 5.2418,
+   "n_pre": 167847,
+   "n_pos": 273413,
+   "dif_pp": 0.1128
+  },
+  {
+   "quartil": "Q2",
+   "destino": "mesmo_grupo",
+   "pre": 70.1871,
+   "pos": 70.7741,
+   "n_pre": 167847,
+   "n_pos": 273413,
+   "dif_pp": 0.587
+  },
+  {
+   "quartil": "Q2",
+   "destino": "outro_grupo",
+   "pre": 21.2856,
+   "pos": 21.6636,
+   "n_pre": 167847,
+   "n_pos": 273413,
+   "dif_pp": 0.378
+  },
+  {
+   "quartil": "Q3",
+   "destino": "desocupado",
+   "pre": 3.0163,
+   "pos": 2.0099,
+   "n_pre": 209444,
+   "n_pos": 338657,
+   "dif_pp": -1.0063
+  },
+  {
+   "quartil": "Q3",
+   "destino": "fora_da_forca",
+   "pre": 5.1197,
+   "pos": 5.2732,
+   "n_pre": 209444,
+   "n_pos": 338657,
+   "dif_pp": 0.1535
+  },
+  {
+   "quartil": "Q3",
+   "destino": "mesmo_grupo",
+   "pre": 72.6776,
+   "pos": 72.6952,
+   "n_pre": 209444,
+   "n_pos": 338657,
+   "dif_pp": 0.0176
+  },
+  {
+   "quartil": "Q3",
+   "destino": "outro_grupo",
+   "pre": 19.1864,
+   "pos": 20.0216,
+   "n_pre": 209444,
+   "n_pos": 338657,
+   "dif_pp": 0.8352
+  },
+  {
+   "quartil": "Q4",
+   "destino": "desocupado",
+   "pre": 2.4335,
+   "pos": 1.6231,
+   "n_pre": 199467,
+   "n_pos": 319712,
+   "dif_pp": -0.8103
+  },
+  {
+   "quartil": "Q4",
+   "destino": "fora_da_forca",
+   "pre": 3.8484,
+   "pos": 3.7919,
+   "n_pre": 199467,
+   "n_pos": 319712,
+   "dif_pp": -0.0565
+  },
+  {
+   "quartil": "Q4",
+   "destino": "mesmo_grupo",
+   "pre": 69.2241,
+   "pos": 69.2877,
+   "n_pre": 199467,
+   "n_pos": 319712,
+   "dif_pp": 0.0636
+  },
+  {
+   "quartil": "Q4",
+   "destino": "outro_grupo",
+   "pre": 24.494,
+   "pos": 25.2973,
+   "n_pre": 199467,
+   "n_pos": 319712,
+   "dif_pp": 0.8032
+  },
+  {
+   "quartil": "Todos",
+   "destino": "desocupado",
+   "pre": 3.3675,
+   "pos": 2.2344,
+   "n_pre": 907173,
+   "n_pos": 1422302,
+   "dif_pp": -1.1331
+  },
+  {
+   "quartil": "Todos",
+   "destino": "fora_da_forca",
+   "pre": 5.739,
+   "pos": 5.8329,
+   "n_pre": 907173,
+   "n_pos": 1422302,
+   "dif_pp": 0.0939
+  },
+  {
+   "quartil": "Todos",
+   "destino": "mesmo_grupo",
+   "pre": 70.0693,
+   "pos": 70.3835,
+   "n_pre": 907173,
+   "n_pos": 1422302,
+   "dif_pp": 0.3142
+  },
+  {
+   "quartil": "Todos",
+   "destino": "outro_grupo",
+   "pre": 20.8242,
+   "pos": 21.5491,
+   "n_pre": 907173,
+   "n_pos": 1422302,
+   "dif_pp": 0.725
+  }
+ ],
+ "A_sensibilidade_janela_atipica": [
+  {
+   "quartil": "Q1",
+   "destino": "desocupado",
+   "pre": 3.8188,
+   "pos": 2.9179,
+   "n_pre": 548796,
+   "n_pos": 490520,
+   "dif_pp": -0.9009
+  },
+  {
+   "quartil": "Q1",
+   "destino": "fora_da_forca",
+   "pre": 6.8347,
+   "pos": 8.5844,
+   "n_pre": 548796,
+   "n_pos": 490520,
+   "dif_pp": 1.7497
+  },
+  {
+   "quartil": "Q1",
+   "destino": "mesmo_grupo",
+   "pre": 75.4196,
+   "pos": 68.9757,
+   "n_pre": 548796,
+   "n_pos": 490520,
+   "dif_pp": -6.4439
+  },
+  {
+   "quartil": "Q1",
+   "destino": "outro_grupo",
+   "pre": 13.9269,
+   "pos": 19.522,
+   "n_pre": 548796,
+   "n_pos": 490520,
+   "dif_pp": 5.5951
+  },
+  {
+   "quartil": "Q2",
+   "destino": "desocupado",
+   "pre": 3.0477,
+   "pos": 2.3205,
+   "n_pre": 279548,
+   "n_pos": 273413,
+   "dif_pp": -0.7271
+  },
+  {
+   "quartil": "Q2",
+   "destino": "fora_da_forca",
+   "pre": 4.6252,
+   "pos": 5.2418,
+   "n_pre": 279548,
+   "n_pos": 273413,
+   "dif_pp": 0.6166
+  },
+  {
+   "quartil": "Q2",
+   "destino": "mesmo_grupo",
+   "pre": 76.285,
+   "pos": 70.7741,
+   "n_pre": 279548,
+   "n_pos": 273413,
+   "dif_pp": -5.5109
+  },
+  {
+   "quartil": "Q2",
+   "destino": "outro_grupo",
+   "pre": 16.0421,
+   "pos": 21.6636,
+   "n_pre": 279548,
+   "n_pos": 273413,
+   "dif_pp": 5.6215
+  },
+  {
+   "quartil": "Q3",
+   "destino": "desocupado",
+   "pre": 2.6965,
+   "pos": 2.0099,
+   "n_pre": 348600,
+   "n_pos": 338657,
+   "dif_pp": -0.6865
+  },
+  {
+   "quartil": "Q3",
+   "destino": "fora_da_forca",
+   "pre": 4.6745,
+   "pos": 5.2732,
+   "n_pre": 348600,
+   "n_pos": 338657,
+   "dif_pp": 0.5987
+  },
+  {
+   "quartil": "Q3",
+   "destino": "mesmo_grupo",
+   "pre": 77.8105,
+   "pos": 72.6952,
+   "n_pre": 348600,
+   "n_pos": 338657,
+   "dif_pp": -5.1153
+  },
+  {
+   "quartil": "Q3",
+   "destino": "outro_grupo",
+   "pre": 14.8185,
+   "pos": 20.0216,
+   "n_pre": 348600,
+   "n_pos": 338657,
+   "dif_pp": 5.2031
+  },
+  {
+   "quartil": "Q4",
+   "destino": "desocupado",
+   "pre": 2.1449,
+   "pos": 1.6231,
+   "n_pre": 343990,
+   "n_pos": 319712,
+   "dif_pp": -0.5217
+  },
+  {
+   "quartil": "Q4",
+   "destino": "fora_da_forca",
+   "pre": 3.3257,
+   "pos": 3.7919,
+   "n_pre": 343990,
+   "n_pos": 319712,
+   "dif_pp": 0.4662
+  },
+  {
+   "quartil": "Q4",
+   "destino": "mesmo_grupo",
+   "pre": 76.2462,
+   "pos": 69.2877,
+   "n_pre": 343990,
+   "n_pos": 319712,
+   "dif_pp": -6.9585
+  },
+  {
+   "quartil": "Q4",
+   "destino": "outro_grupo",
+   "pre": 18.2832,
+   "pos": 25.2973,
+   "n_pre": 343990,
+   "n_pos": 319712,
+   "dif_pp": 7.014
+  },
+  {
+   "quartil": "Todos",
+   "destino": "desocupado",
+   "pre": 2.9585,
+   "pos": 2.2344,
+   "n_pre": 1520934,
+   "n_pos": 1422302,
+   "dif_pp": -0.7241
+  },
+  {
+   "quartil": "Todos",
+   "destino": "fora_da_forca",
+   "pre": 4.9623,
+   "pos": 5.8329,
+   "n_pre": 1520934,
+   "n_pos": 1422302,
+   "dif_pp": 0.8706
+  },
+  {
+   "quartil": "Todos",
+   "destino": "mesmo_grupo",
+   "pre": 76.3939,
+   "pos": 70.3835,
+   "n_pre": 1520934,
+   "n_pos": 1422302,
+   "dif_pp": -6.0104
+  },
+  {
+   "quartil": "Todos",
+   "destino": "outro_grupo",
+   "pre": 15.6852,
+   "pos": 21.5491,
+   "n_pre": 1520934,
+   "n_pos": 1422302,
+   "dif_pp": 5.8639
+  }
+ ],
+ "B_grupo_destino_dos_que_mudam": [
+  {
+   "quartil": "Q1",
+   "grupo_destino": "0",
+   "pre": 0.1097,
+   "pos": 0.1396,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": 0.03,
+   "nome_grupo": "Forças armadas, policiais e bombeiros militares"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "1",
+   "pre": 2.6198,
+   "pos": 2.199,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": -0.4208,
+   "nome_grupo": "Diretores e gerentes"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "2",
+   "pre": 2.0967,
+   "pos": 2.3066,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": 0.2099,
+   "nome_grupo": "Profissionais das ciências e intelectuais"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "3",
+   "pre": 6.1256,
+   "pos": 7.1084,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": 0.9829,
+   "nome_grupo": "Técnicos e profissionais de nível médio"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "4",
+   "pre": 5.0274,
+   "pos": 5.2409,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": 0.2135,
+   "nome_grupo": "Apoio administrativo"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "5",
+   "pre": 20.8486,
+   "pos": 20.0497,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": -0.7988,
+   "nome_grupo": "Serviços, vendedores do comércio e mercados"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "6",
+   "pre": 11.4544,
+   "pos": 10.3831,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": -1.0713,
+   "nome_grupo": "Qualificados da agropecuária, florestais, caça e pesca"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "7",
+   "pre": 15.9624,
+   "pos": 16.6952,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": 0.7329,
+   "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "8",
+   "pre": 13.6357,
+   "pos": 14.131,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": 0.4953,
+   "nome_grupo": "Operadores de instalações e máquinas e montadores"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "9",
+   "pre": 22.12,
+   "pos": 21.7465,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": -0.3735,
+   "nome_grupo": "Ocupações elementares"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "0",
+   "pre": 0.4168,
+   "pos": 0.395,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": -0.0218,
+   "nome_grupo": "Forças armadas, policiais e bombeiros militares"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "1",
+   "pre": 4.4681,
+   "pos": 3.4037,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": -1.0644,
+   "nome_grupo": "Diretores e gerentes"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "2",
+   "pre": 4.174,
+   "pos": 4.9018,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": 0.7278,
+   "nome_grupo": "Profissionais das ciências e intelectuais"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "3",
+   "pre": 11.7007,
+   "pos": 12.3242,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": 0.6236,
+   "nome_grupo": "Técnicos e profissionais de nível médio"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "4",
+   "pre": 8.6589,
+   "pos": 9.1332,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": 0.4743,
+   "nome_grupo": "Apoio administrativo"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "5",
+   "pre": 19.4174,
+   "pos": 19.5995,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": 0.182,
+   "nome_grupo": "Serviços, vendedores do comércio e mercados"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "6",
+   "pre": 2.9517,
+   "pos": 2.331,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": -0.6207,
+   "nome_grupo": "Qualificados da agropecuária, florestais, caça e pesca"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "7",
+   "pre": 14.8455,
+   "pos": 15.0034,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": 0.1579,
+   "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "8",
+   "pre": 12.0532,
+   "pos": 11.4947,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": -0.5585,
+   "nome_grupo": "Operadores de instalações e máquinas e montadores"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "9",
+   "pre": 21.3137,
+   "pos": 21.4137,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": 0.1,
+   "nome_grupo": "Ocupações elementares"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "0",
+   "pre": 0.2993,
+   "pos": 0.2941,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": -0.0052,
+   "nome_grupo": "Forças armadas, policiais e bombeiros militares"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "1",
+   "pre": 12.0988,
+   "pos": 10.0109,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": -2.088,
+   "nome_grupo": "Diretores e gerentes"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "2",
+   "pre": 11.6017,
+   "pos": 13.214,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": 1.6124,
+   "nome_grupo": "Profissionais das ciências e intelectuais"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "3",
+   "pre": 10.1972,
+   "pos": 11.4823,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": 1.2851,
+   "nome_grupo": "Técnicos e profissionais de nível médio"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "4",
+   "pre": 12.6302,
+   "pos": 13.3302,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": 0.7,
+   "nome_grupo": "Apoio administrativo"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "5",
+   "pre": 12.941,
+   "pos": 12.3653,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": -0.5756,
+   "nome_grupo": "Serviços, vendedores do comércio e mercados"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "6",
+   "pre": 2.1915,
+   "pos": 1.8088,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": -0.3828,
+   "nome_grupo": "Qualificados da agropecuária, florestais, caça e pesca"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "7",
+   "pre": 17.4583,
+   "pos": 16.4344,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": -1.0239,
+   "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "8",
+   "pre": 6.6441,
+   "pos": 7.5391,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": 0.8951,
+   "nome_grupo": "Operadores de instalações e máquinas e montadores"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "9",
+   "pre": 13.9378,
+   "pos": 13.5208,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": -0.417,
+   "nome_grupo": "Ocupações elementares"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "0",
+   "pre": 0.3065,
+   "pos": 0.2459,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": -0.0606,
+   "nome_grupo": "Forças armadas, policiais e bombeiros militares"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "1",
+   "pre": 12.6303,
+   "pos": 11.2735,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": -1.3568,
+   "nome_grupo": "Diretores e gerentes"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "2",
+   "pre": 14.8472,
+   "pos": 16.3469,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": 1.4998,
+   "nome_grupo": "Profissionais das ciências e intelectuais"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "3",
+   "pre": 18.924,
+   "pos": 21.1329,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": 2.2089,
+   "nome_grupo": "Técnicos e profissionais de nível médio"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "4",
+   "pre": 14.4509,
+   "pos": 14.7421,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": 0.2911,
+   "nome_grupo": "Apoio administrativo"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "5",
+   "pre": 19.8645,
+   "pos": 19.2776,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": -0.5869,
+   "nome_grupo": "Serviços, vendedores do comércio e mercados"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "6",
+   "pre": 1.0316,
+   "pos": 0.8082,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": -0.2234,
+   "nome_grupo": "Qualificados da agropecuária, florestais, caça e pesca"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "7",
+   "pre": 7.5683,
+   "pos": 6.9621,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": -0.6062,
+   "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "8",
+   "pre": 3.6568,
+   "pos": 3.5697,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": -0.0871,
+   "nome_grupo": "Operadores de instalações e máquinas e montadores"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "9",
+   "pre": 6.7199,
+   "pos": 5.641,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": -1.0789,
+   "nome_grupo": "Ocupações elementares"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "0",
+   "pre": 0.2734,
+   "pos": 0.2612,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": -0.0123,
+   "nome_grupo": "Forças armadas, policiais e bombeiros militares"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "1",
+   "pre": 8.114,
+   "pos": 7.0001,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": -1.1139,
+   "nome_grupo": "Diretores e gerentes"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "2",
+   "pre": 8.4467,
+   "pos": 9.6056,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": 1.1589,
+   "nome_grupo": "Profissionais das ciências e intelectuais"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "3",
+   "pre": 11.9476,
+   "pos": 13.3876,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": 1.44,
+   "nome_grupo": "Técnicos e profissionais de nível médio"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "4",
+   "pre": 10.2792,
+   "pos": 10.7944,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": 0.5151,
+   "nome_grupo": "Apoio administrativo"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "5",
+   "pre": 18.4472,
+   "pos": 17.8915,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": -0.5557,
+   "nome_grupo": "Serviços, vendedores do comércio e mercados"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "6",
+   "pre": 4.538,
+   "pos": 3.8253,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": -0.7127,
+   "nome_grupo": "Qualificados da agropecuária, florestais, caça e pesca"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "7",
+   "pre": 13.6197,
+   "pos": 13.4021,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": -0.2176,
+   "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "8",
+   "pre": 8.7779,
+   "pos": 8.8834,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": 0.1055,
+   "nome_grupo": "Operadores de instalações e máquinas e montadores"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "9",
+   "pre": 15.5562,
+   "pos": 14.9489,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": -0.6074,
+   "nome_grupo": "Ocupações elementares"
+  }
+ ],
+ "D_direcao_exposicao": [
+  {
+   "quartil": "Q1",
+   "direcao": "mais_exposta",
+   "pre": 50.9668,
+   "pos": 51.5777,
+   "n_pre": 60894,
+   "n_pos": 90629,
+   "dif_pp": 0.6109,
+   "delta_aioe_medio_pre": 0.6708,
+   "delta_aioe_medio_pos": 0.6611
+  },
+  {
+   "quartil": "Q1",
+   "direcao": "menos_exposta",
+   "pre": 0.0,
+   "pos": 0.0,
+   "n_pre": 60894,
+   "n_pos": 90629,
+   "dif_pp": 0.0,
+   "delta_aioe_medio_pre": 0.6708,
+   "delta_aioe_medio_pos": 0.6611
+  },
+  {
+   "quartil": "Q1",
+   "direcao": "mesmo_quartil",
+   "pre": 49.0332,
+   "pos": 48.4223,
+   "n_pre": 60894,
+   "n_pos": 90629,
+   "dif_pp": -0.6109,
+   "delta_aioe_medio_pre": 0.6708,
+   "delta_aioe_medio_pos": 0.6611
+  },
+  {
+   "quartil": "Q2",
+   "direcao": "mais_exposta",
+   "pre": 41.1733,
+   "pos": 41.7169,
+   "n_pre": 35800,
+   "n_pos": 58118,
+   "dif_pp": 0.5436,
+   "delta_aioe_medio_pre": 0.2982,
+   "delta_aioe_medio_pos": 0.3018
+  },
+  {
+   "quartil": "Q2",
+   "direcao": "menos_exposta",
+   "pre": 28.59,
+   "pos": 27.8098,
+   "n_pre": 35800,
+   "n_pos": 58118,
+   "dif_pp": -0.7802,
+   "delta_aioe_medio_pre": 0.2982,
+   "delta_aioe_medio_pos": 0.3018
+  },
+  {
+   "quartil": "Q2",
+   "direcao": "mesmo_quartil",
+   "pre": 30.2367,
+   "pos": 30.4733,
+   "n_pre": 35800,
+   "n_pos": 58118,
+   "dif_pp": 0.2366,
+   "delta_aioe_medio_pre": 0.2982,
+   "delta_aioe_medio_pos": 0.3018
+  },
+  {
+   "quartil": "Q3",
+   "direcao": "mais_exposta",
+   "pre": 30.8119,
+   "pos": 31.3154,
+   "n_pre": 39891,
+   "n_pos": 65845,
+   "dif_pp": 0.5035,
+   "delta_aioe_medio_pre": -0.1906,
+   "delta_aioe_medio_pos": -0.1702
+  },
+  {
+   "quartil": "Q3",
+   "direcao": "menos_exposta",
+   "pre": 43.7121,
+   "pos": 42.922,
+   "n_pre": 39891,
+   "n_pos": 65845,
+   "dif_pp": -0.7902,
+   "delta_aioe_medio_pre": -0.1906,
+   "delta_aioe_medio_pos": -0.1702
+  },
+  {
+   "quartil": "Q3",
+   "direcao": "mesmo_quartil",
+   "pre": 25.4759,
+   "pos": 25.7626,
+   "n_pre": 39891,
+   "n_pos": 65845,
+   "dif_pp": 0.2867,
+   "delta_aioe_medio_pre": -0.1906,
+   "delta_aioe_medio_pos": -0.1702
+  },
+  {
+   "quartil": "Q4",
+   "direcao": "mais_exposta",
+   "pre": 0.0,
+   "pos": 0.0,
+   "n_pre": 48226,
+   "n_pos": 78559,
+   "dif_pp": 0.0,
+   "delta_aioe_medio_pre": -0.6741,
+   "delta_aioe_medio_pos": -0.6436
+  },
+  {
+   "quartil": "Q4",
+   "direcao": "menos_exposta",
+   "pre": 45.6129,
+   "pos": 44.0528,
+   "n_pre": 48226,
+   "n_pos": 78559,
+   "dif_pp": -1.5601,
+   "delta_aioe_medio_pre": -0.6741,
+   "delta_aioe_medio_pos": -0.6436
+  },
+  {
+   "quartil": "Q4",
+   "direcao": "mesmo_quartil",
+   "pre": 54.3871,
+   "pos": 55.9472,
+   "n_pre": 48226,
+   "n_pos": 78559,
+   "dif_pp": 1.5601,
+   "delta_aioe_medio_pre": -0.6741,
+   "delta_aioe_medio_pos": -0.6436
+  },
+  {
+   "quartil": "Todos",
+   "direcao": "mais_exposta",
+   "pre": 29.4018,
+   "pos": 29.4333,
+   "n_pre": 184811,
+   "n_pos": 293151,
+   "dif_pp": 0.0315,
+   "delta_aioe_medio_pre": 0.0027,
+   "delta_aioe_medio_pos": 0.002
+  },
+  {
+   "quartil": "Todos",
+   "direcao": "menos_exposta",
+   "pre": 29.2352,
+   "pos": 29.0633,
+   "n_pre": 184811,
+   "n_pos": 293151,
+   "dif_pp": -0.1719,
+   "delta_aioe_medio_pre": 0.0027,
+   "delta_aioe_medio_pos": 0.002
+  },
+  {
+   "quartil": "Todos",
+   "direcao": "mesmo_quartil",
+   "pre": 41.363,
+   "pos": 41.5034,
+   "n_pre": 184811,
+   "n_pos": 293151,
+   "dif_pp": 0.1404,
+   "delta_aioe_medio_pre": 0.0027,
+   "delta_aioe_medio_pos": 0.002
+  }
+ ],
+ "E_serie_Q4_vs_Q1": [
+  {
+   "trimestre_origem": "2019T1",
+   "muda_grupo_Q1": 18.3191,
+   "muda_grupo_Q4": 23.8596,
+   "sai_emprego_Q1": 11.7909,
+   "sai_emprego_Q4": 6.1695,
+   "n_Q1": 50775,
+   "n_Q4": 30822,
+   "dif_muda_grupo_Q4_Q1": 5.5406,
+   "dif_sai_emprego_Q4_Q1": -5.6214,
+   "periodo": "pre"
+  },
+  {
+   "trimestre_origem": "2019T2",
+   "muda_grupo_Q1": 17.8396,
+   "muda_grupo_Q4": 23.4739,
+   "sai_emprego_Q1": 12.3668,
+   "sai_emprego_Q4": 5.7786,
+   "n_Q1": 51589,
+   "n_Q4": 31199,
+   "dif_muda_grupo_Q4_Q1": 5.6344,
+   "dif_sai_emprego_Q4_Q1": -6.5882,
+   "periodo": "pre"
+  },
+  {
+   "trimestre_origem": "2019T3",
+   "muda_grupo_Q1": 18.2125,
+   "muda_grupo_Q4": 23.425,
+   "sai_emprego_Q1": 11.9211,
+   "sai_emprego_Q4": 5.871,
+   "n_Q1": 52236,
+   "n_Q4": 32016,
+   "dif_muda_grupo_Q4_Q1": 5.2126,
+   "dif_sai_emprego_Q4_Q1": -6.05,
+   "periodo": "pre"
+  },
+  {
+   "trimestre_origem": "2019T4",
+   "muda_grupo_Q1": 17.7011,
+   "muda_grupo_Q4": 23.3461,
+   "sai_emprego_Q1": 13.1187,
+   "sai_emprego_Q4": 7.1197,
+   "n_Q1": 49568,
+   "n_Q4": 30790,
+   "dif_muda_grupo_Q4_Q1": 5.645,
+   "dif_sai_emprego_Q4_Q1": -5.999,
+   "periodo": "pre"
+  },
+  {
+   "trimestre_origem": "2020T1",
+   "muda_grupo_Q1": 8.1712,
+   "muda_grupo_Q4": 12.4257,
+   "sai_emprego_Q1": 15.6425,
+   "sai_emprego_Q4": 8.0316,
+   "n_Q1": 38695,
+   "n_Q4": 26684,
+   "dif_muda_grupo_Q4_Q1": 4.2545,
+   "dif_sai_emprego_Q4_Q1": -7.6109,
+   "periodo": "atipico"
+  },
+  {
+   "trimestre_origem": "2020T2",
+   "muda_grupo_Q1": 8.244,
+   "muda_grupo_Q4": 11.0725,
+   "sai_emprego_Q1": 10.2211,
+   "sai_emprego_Q4": 6.4731,
+   "n_Q1": 29476,
+   "n_Q4": 21191,
+   "dif_muda_grupo_Q4_Q1": 2.8286,
+   "dif_sai_emprego_Q4_Q1": -3.748,
+   "periodo": "atipico"
+  },
+  {
+   "trimestre_origem": "2020T3",
+   "muda_grupo_Q1": 8.1513,
+   "muda_grupo_Q4": 11.0675,
+   "sai_emprego_Q1": 6.764,
+   "sai_emprego_Q4": 3.5786,
+   "n_Q1": 29373,
+   "n_Q4": 19954,
+   "dif_muda_grupo_Q4_Q1": 2.9162,
+   "dif_sai_emprego_Q4_Q1": -3.1854,
+   "periodo": "atipico"
+  },
+  {
+   "trimestre_origem": "2020T4",
+   "muda_grupo_Q1": 8.529,
+   "muda_grupo_Q4": 11.1037,
+   "sai_emprego_Q1": 7.4473,
+   "sai_emprego_Q4": 4.6822,
+   "n_Q1": 26671,
+   "n_Q4": 18088,
+   "dif_muda_grupo_Q4_Q1": 2.5746,
+   "dif_sai_emprego_Q4_Q1": -2.7652,
+   "periodo": "atipico"
+  },
+  {
+   "trimestre_origem": "2021T1",
+   "muda_grupo_Q1": 8.1019,
+   "muda_grupo_Q4": 11.8939,
+   "sai_emprego_Q1": 6.9323,
+   "sai_emprego_Q4": 3.6699,
+   "n_Q1": 25407,
+   "n_Q4": 16970,
+   "dif_muda_grupo_Q4_Q1": 3.792,
+   "dif_sai_emprego_Q4_Q1": -3.2624,
+   "periodo": "atipico"
+  },
+  {
+   "trimestre_origem": "2021T2",
+   "muda_grupo_Q1": 8.8285,
+   "muda_grupo_Q4": 12.7231,
+   "sai_emprego_Q1": 5.722,
+   "sai_emprego_Q4": 2.9813,
+   "n_Q1": 31164,
+   "n_Q4": 19478,
+   "dif_muda_grupo_Q4_Q1": 3.8946,
+   "dif_sai_emprego_Q4_Q1": -2.7407,
+   "periodo": "atipico"
+  },
+  {
+   "trimestre_origem": "2021T3",
+   "muda_grupo_Q1": 8.8749,
+   "muda_grupo_Q4": 13.3933,
+   "sai_emprego_Q1": 6.5866,
+   "sai_emprego_Q4": 2.9979,
+   "n_Q1": 37595,
+   "n_Q4": 22158,
+   "dif_muda_grupo_Q4_Q1": 4.5184,
+   "dif_sai_emprego_Q4_Q1": -3.5886,
+   "periodo": "atipico"
+  },
+  {
+   "trimestre_origem": "2021T4",
+   "muda_grupo_Q1": 19.9862,
+   "muda_grupo_Q4": 26.0239,
+   "sai_emprego_Q1": 14.6548,
+   "sai_emprego_Q4": 7.7089,
+   "n_Q1": 40505,
+   "n_Q4": 23548,
+   "dif_muda_grupo_Q4_Q1": 6.0377,
+   "dif_sai_emprego_Q4_Q1": -6.9459,
+   "periodo": "pre"
+  },
+  {
+   "trimestre_origem": "2022T1",
+   "muda_grupo_Q1": 20.4565,
+   "muda_grupo_Q4": 26.2024,
+   "sai_emprego_Q1": 12.201,
+   "sai_emprego_Q4": 5.8589,
+   "n_Q1": 41448,
+   "n_Q4": 24367,
+   "dif_muda_grupo_Q4_Q1": 5.746,
+   "dif_sai_emprego_Q4_Q1": -6.3421,
+   "periodo": "pre"
+  },
+  {
+   "trimestre_origem": "2022T2",
+   "muda_grupo_Q1": 19.6244,
+   "muda_grupo_Q4": 25.3746,
+   "sai_emprego_Q1": 12.4075,
+   "sai_emprego_Q4": 5.524,
+   "n_Q1": 44294,
+   "n_Q4": 26725,
+   "dif_muda_grupo_Q4_Q1": 5.7502,
+   "dif_sai_emprego_Q4_Q1": -6.8835,
+   "periodo": "pre"
+  },
+  {
+   "trimestre_origem": "2022T3",
+   "muda_grupo_Q1": 19.1944,
+   "muda_grupo_Q4": 24.1997,
+   "sai_emprego_Q1": 11.8618,
+   "sai_emprego_Q4": 5.3527,
+   "n_Q1": 44000,
+   "n_Q4": 27231,
+   "dif_muda_grupo_Q4_Q1": 5.0053,
+   "dif_sai_emprego_Q4_Q1": -6.5091,
+   "periodo": "excluido"
+  },
+  {
+   "trimestre_origem": "2022T4",
+   "muda_grupo_Q1": 18.5402,
+   "muda_grupo_Q4": 23.7647,
+   "sai_emprego_Q1": 12.3108,
+   "sai_emprego_Q4": 6.6206,
+   "n_Q1": 42668,
+   "n_Q4": 26712,
+   "dif_muda_grupo_Q4_Q1": 5.2245,
+   "dif_sai_emprego_Q4_Q1": -5.6902,
+   "periodo": "excluido"
+  },
+  {
+   "trimestre_origem": "2023T1",
+   "muda_grupo_Q1": 18.3409,
+   "muda_grupo_Q4": 23.5302,
+   "sai_emprego_Q1": 11.6429,
+   "sai_emprego_Q4": 5.4526,
+   "n_Q1": 41601,
+   "n_Q4": 26021,
+   "dif_muda_grupo_Q4_Q1": 5.1894,
+   "dif_sai_emprego_Q4_Q1": -6.1903,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2023T2",
+   "muda_grupo_Q1": 18.4662,
+   "muda_grupo_Q4": 23.3656,
+   "sai_emprego_Q1": 11.6023,
+   "sai_emprego_Q4": 5.3655,
+   "n_Q1": 42228,
+   "n_Q4": 27278,
+   "dif_muda_grupo_Q4_Q1": 4.8994,
+   "dif_sai_emprego_Q4_Q1": -6.2368,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2023T3",
+   "muda_grupo_Q1": 18.8522,
+   "muda_grupo_Q4": 24.2656,
+   "sai_emprego_Q1": 12.1283,
+   "sai_emprego_Q4": 5.4093,
+   "n_Q1": 43656,
+   "n_Q4": 28042,
+   "dif_muda_grupo_Q4_Q1": 5.4134,
+   "dif_sai_emprego_Q4_Q1": -6.719,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2023T4",
+   "muda_grupo_Q1": 19.3454,
+   "muda_grupo_Q4": 25.4454,
+   "sai_emprego_Q1": 12.8951,
+   "sai_emprego_Q4": 6.4783,
+   "n_Q1": 44442,
+   "n_Q4": 28962,
+   "dif_muda_grupo_Q4_Q1": 6.1,
+   "dif_sai_emprego_Q4_Q1": -6.4169,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2024T1",
+   "muda_grupo_Q1": 19.6675,
+   "muda_grupo_Q4": 26.3525,
+   "sai_emprego_Q1": 11.4179,
+   "sai_emprego_Q4": 5.0055,
+   "n_Q1": 44689,
+   "n_Q4": 29023,
+   "dif_muda_grupo_Q4_Q1": 6.685,
+   "dif_sai_emprego_Q4_Q1": -6.4124,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2024T2",
+   "muda_grupo_Q1": 19.7336,
+   "muda_grupo_Q4": 25.1131,
+   "sai_emprego_Q1": 10.8178,
+   "sai_emprego_Q4": 4.9064,
+   "n_Q1": 45595,
+   "n_Q4": 29957,
+   "dif_muda_grupo_Q4_Q1": 5.3795,
+   "dif_sai_emprego_Q4_Q1": -5.9114,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2024T3",
+   "muda_grupo_Q1": 20.1941,
+   "muda_grupo_Q4": 24.9873,
+   "sai_emprego_Q1": 10.9854,
+   "sai_emprego_Q4": 5.2241,
+   "n_Q1": 45387,
+   "n_Q4": 29237,
+   "dif_muda_grupo_Q4_Q1": 4.7932,
+   "dif_sai_emprego_Q4_Q1": -5.7613,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2024T4",
+   "muda_grupo_Q1": 19.9973,
+   "muda_grupo_Q4": 26.1879,
+   "sai_emprego_Q1": 12.2682,
+   "sai_emprego_Q4": 6.4926,
+   "n_Q1": 45286,
+   "n_Q4": 29382,
+   "dif_muda_grupo_Q4_Q1": 6.1906,
+   "dif_sai_emprego_Q4_Q1": -5.7755,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2025T1",
+   "muda_grupo_Q1": 20.4214,
+   "muda_grupo_Q4": 26.3353,
+   "sai_emprego_Q1": 10.6672,
+   "sai_emprego_Q4": 5.0076,
+   "n_Q1": 44673,
+   "n_Q4": 29536,
+   "dif_muda_grupo_Q4_Q1": 5.9139,
+   "dif_sai_emprego_Q4_Q1": -5.6597,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2025T2",
+   "muda_grupo_Q1": 19.7738,
+   "muda_grupo_Q4": 26.5641,
+   "sai_emprego_Q1": 10.9498,
+   "sai_emprego_Q4": 5.2099,
+   "n_Q1": 45848,
+   "n_Q4": 30515,
+   "dif_muda_grupo_Q4_Q1": 6.7903,
+   "dif_sai_emprego_Q4_Q1": -5.7399,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2025T3",
+   "muda_grupo_Q1": 19.8385,
+   "muda_grupo_Q4": 25.6897,
+   "sai_emprego_Q1": 11.1482,
+   "sai_emprego_Q4": 5.0401,
+   "n_Q1": 47115,
+   "n_Q4": 31759,
+   "dif_muda_grupo_Q4_Q1": 5.8513,
+   "dif_sai_emprego_Q4_Q1": -6.1081,
+   "periodo": "pos"
+  }
+ ],
+ "sankey": [
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "Desocupado",
+   "peso": 42774.793,
+   "n": 84,
+   "pct_da_origem": 0.7106,
+   "pct_do_total": 0.0061
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "Fora da força",
+   "peso": 139969.6496,
+   "n": 310,
+   "pct_da_origem": 2.3252,
+   "pct_do_total": 0.02
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G0",
+   "peso": 5478130.4401,
+   "n": 10967,
+   "pct_da_origem": 91.0052,
+   "pct_do_total": 0.7834
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G1",
+   "peso": 13277.0687,
+   "n": 29,
+   "pct_da_origem": 0.2206,
+   "pct_do_total": 0.0019
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G2",
+   "peso": 64011.9511,
+   "n": 103,
+   "pct_da_origem": 1.0634,
+   "pct_do_total": 0.0092
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G3",
+   "peso": 48109.4249,
+   "n": 100,
+   "pct_da_origem": 0.7992,
+   "pct_do_total": 0.0069
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G4",
+   "peso": 32314.2818,
+   "n": 75,
+   "pct_da_origem": 0.5368,
+   "pct_do_total": 0.0046
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G5",
+   "peso": 127510.6062,
+   "n": 243,
+   "pct_da_origem": 2.1183,
+   "pct_do_total": 0.0182
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G6",
+   "peso": 2809.8958,
+   "n": 12,
+   "pct_da_origem": 0.0467,
+   "pct_do_total": 0.0004
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G7",
+   "peso": 22847.3734,
+   "n": 41,
+   "pct_da_origem": 0.3796,
+   "pct_do_total": 0.0033
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G8",
+   "peso": 28519.5073,
+   "n": 57,
+   "pct_da_origem": 0.4738,
+   "pct_do_total": 0.0041
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G9",
+   "peso": 19306.2323,
+   "n": 37,
+   "pct_da_origem": 0.3207,
+   "pct_do_total": 0.0028
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "Desocupado",
+   "peso": 199398.9746,
+   "n": 331,
+   "pct_da_origem": 0.7995,
+   "pct_do_total": 0.0285
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "Fora da força",
+   "peso": 479318.9334,
+   "n": 970,
+   "pct_da_origem": 1.9219,
+   "pct_do_total": 0.0685
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G0",
+   "peso": 9900.0909,
+   "n": 28,
+   "pct_da_origem": 0.0397,
+   "pct_do_total": 0.0014
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G1",
+   "peso": 13882055.6356,
+   "n": 24252,
+   "pct_da_origem": 55.6624,
+   "pct_do_total": 1.9852
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G2",
+   "peso": 2647123.7308,
+   "n": 4352,
+   "pct_da_origem": 10.6141,
+   "pct_do_total": 0.3786
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G3",
+   "peso": 1883160.1562,
+   "n": 3267,
+   "pct_da_origem": 7.5508,
+   "pct_do_total": 0.2693
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G4",
+   "peso": 1415975.5133,
+   "n": 2688,
+   "pct_da_origem": 5.6776,
+   "pct_do_total": 0.2025
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G5",
+   "peso": 2846519.2097,
+   "n": 5431,
+   "pct_da_origem": 11.4136,
+   "pct_do_total": 0.4071
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G6",
+   "peso": 176761.3878,
+   "n": 617,
+   "pct_da_origem": 0.7088,
+   "pct_do_total": 0.0253
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G7",
+   "peso": 734951.8858,
+   "n": 1329,
+   "pct_da_origem": 2.9469,
+   "pct_do_total": 0.1051
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G8",
+   "peso": 344515.4212,
+   "n": 645,
+   "pct_da_origem": 1.3814,
+   "pct_do_total": 0.0493
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G9",
+   "peso": 320063.4662,
+   "n": 633,
+   "pct_da_origem": 1.2833,
+   "pct_do_total": 0.0458
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "Desocupado",
+   "peso": 1097246.6101,
+   "n": 2017,
+   "pct_da_origem": 1.1653,
+   "pct_do_total": 0.1569
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "Fora da força",
+   "peso": 2482628.8636,
+   "n": 5149,
+   "pct_da_origem": 2.6365,
+   "pct_do_total": 0.355
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G0",
+   "peso": 73907.926,
+   "n": 130,
+   "pct_da_origem": 0.0785,
+   "pct_do_total": 0.0106
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G1",
+   "peso": 2698433.0986,
+   "n": 4530,
+   "pct_da_origem": 2.8657,
+   "pct_do_total": 0.3859
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G2",
+   "peso": 76396474.9502,
+   "n": 141059,
+   "pct_da_origem": 81.1327,
+   "pct_do_total": 10.9251
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G3",
+   "peso": 4455378.0384,
+   "n": 7543,
+   "pct_da_origem": 4.7316,
+   "pct_do_total": 0.6371
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G4",
+   "peso": 2473615.6979,
+   "n": 4610,
+   "pct_da_origem": 2.627,
+   "pct_do_total": 0.3537
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G5",
+   "peso": 2712335.2623,
+   "n": 5038,
+   "pct_da_origem": 2.8805,
+   "pct_do_total": 0.3879
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G6",
+   "peso": 96353.7204,
+   "n": 262,
+   "pct_da_origem": 0.1023,
+   "pct_do_total": 0.0138
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G7",
+   "peso": 936822.5916,
+   "n": 1533,
+   "pct_da_origem": 0.9949,
+   "pct_do_total": 0.134
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G8",
+   "peso": 352632.6384,
+   "n": 587,
+   "pct_da_origem": 0.3745,
+   "pct_do_total": 0.0504
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G9",
+   "peso": 386565.2105,
+   "n": 759,
+   "pct_da_origem": 0.4105,
+   "pct_do_total": 0.0553
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "Desocupado",
+   "peso": 999548.2729,
+   "n": 1730,
+   "pct_da_origem": 1.5704,
+   "pct_do_total": 0.1429
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "Fora da força",
+   "peso": 2106194.8416,
+   "n": 4222,
+   "pct_da_origem": 3.3092,
+   "pct_do_total": 0.3012
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G0",
+   "peso": 64468.8242,
+   "n": 122,
+   "pct_da_origem": 0.1013,
+   "pct_do_total": 0.0092
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G1",
+   "peso": 1912060.1987,
+   "n": 3266,
+   "pct_da_origem": 3.0041,
+   "pct_do_total": 0.2734
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G2",
+   "peso": 4536868.1465,
+   "n": 7713,
+   "pct_da_origem": 7.1281,
+   "pct_do_total": 0.6488
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G3",
+   "peso": 40577063.1685,
+   "n": 74033,
+   "pct_da_origem": 63.7528,
+   "pct_do_total": 5.8027
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G4",
+   "peso": 4282640.9712,
+   "n": 7633,
+   "pct_da_origem": 6.7287,
+   "pct_do_total": 0.6124
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G5",
+   "peso": 3740702.7284,
+   "n": 6699,
+   "pct_da_origem": 5.8772,
+   "pct_do_total": 0.5349
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G6",
+   "peso": 151922.4491,
+   "n": 375,
+   "pct_da_origem": 0.2387,
+   "pct_do_total": 0.0217
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G7",
+   "peso": 3102210.7627,
+   "n": 5285,
+   "pct_da_origem": 4.8741,
+   "pct_do_total": 0.4436
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G8",
+   "peso": 1166308.7611,
+   "n": 1991,
+   "pct_da_origem": 1.8325,
+   "pct_do_total": 0.1668
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G9",
+   "peso": 1007502.1954,
+   "n": 1867,
+   "pct_da_origem": 1.5829,
+   "pct_do_total": 0.1441
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "Desocupado",
+   "peso": 1308324.4243,
+   "n": 2330,
+   "pct_da_origem": 2.2201,
+   "pct_do_total": 0.1871
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "Fora da força",
+   "peso": 2350164.4874,
+   "n": 4660,
+   "pct_da_origem": 3.988,
+   "pct_do_total": 0.3361
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G0",
+   "peso": 34884.055,
+   "n": 74,
+   "pct_da_origem": 0.0592,
+   "pct_do_total": 0.005
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G1",
+   "peso": 1442332.9989,
+   "n": 2727,
+   "pct_da_origem": 2.4475,
+   "pct_do_total": 0.2063
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G2",
+   "peso": 2579647.7195,
+   "n": 4717,
+   "pct_da_origem": 4.3774,
+   "pct_do_total": 0.3689
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G3",
+   "peso": 4221711.8091,
+   "n": 7682,
+   "pct_da_origem": 7.1638,
+   "pct_do_total": 0.6037
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G4",
+   "peso": 39138065.1142,
+   "n": 71886,
+   "pct_da_origem": 66.4128,
+   "pct_do_total": 5.5969
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G5",
+   "peso": 3797987.7746,
+   "n": 6997,
+   "pct_da_origem": 6.4448,
+   "pct_do_total": 0.5431
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G6",
+   "peso": 70858.6381,
+   "n": 191,
+   "pct_da_origem": 0.1202,
+   "pct_do_total": 0.0101
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G7",
+   "peso": 1049359.5887,
+   "n": 1802,
+   "pct_da_origem": 1.7806,
+   "pct_do_total": 0.1501
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G8",
+   "peso": 961654.3956,
+   "n": 1601,
+   "pct_da_origem": 1.6318,
+   "pct_do_total": 0.1375
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G9",
+   "peso": 1976486.2348,
+   "n": 3511,
+   "pct_da_origem": 3.3539,
+   "pct_do_total": 0.2826
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "Desocupado",
+   "peso": 3860331.4298,
+   "n": 7248,
+   "pct_da_origem": 2.5253,
+   "pct_do_total": 0.552
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "Fora da força",
+   "peso": 10755988.1486,
+   "n": 24264,
+   "pct_da_origem": 7.0361,
+   "pct_do_total": 1.5382
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G0",
+   "peso": 123703.0254,
+   "n": 231,
+   "pct_da_origem": 0.0809,
+   "pct_do_total": 0.0177
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G1",
+   "peso": 2825398.6763,
+   "n": 5357,
+   "pct_da_origem": 1.8482,
+   "pct_do_total": 0.404
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G2",
+   "peso": 2822855.5267,
+   "n": 5185,
+   "pct_da_origem": 1.8466,
+   "pct_do_total": 0.4037
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G3",
+   "peso": 3868967.9439,
+   "n": 6796,
+   "pct_da_origem": 2.5309,
+   "pct_do_total": 0.5533
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G4",
+   "peso": 3903748.2797,
+   "n": 7151,
+   "pct_da_origem": 2.5537,
+   "pct_do_total": 0.5583
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G5",
+   "peso": 110729929.3074,
+   "n": 214626,
+   "pct_da_origem": 72.4345,
+   "pct_do_total": 15.8349
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G6",
+   "peso": 615042.8136,
+   "n": 1944,
+   "pct_da_origem": 0.4023,
+   "pct_do_total": 0.088
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G7",
+   "peso": 4270164.5851,
+   "n": 8135,
+   "pct_da_origem": 2.7933,
+   "pct_do_total": 0.6107
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G8",
+   "peso": 2120006.5091,
+   "n": 3837,
+   "pct_da_origem": 1.3868,
+   "pct_do_total": 0.3032
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G9",
+   "peso": 6972840.5233,
+   "n": 14491,
+   "pct_da_origem": 4.5613,
+   "pct_do_total": 0.9971
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "Desocupado",
+   "peso": 475095.1753,
+   "n": 1457,
+   "pct_da_origem": 1.3663,
+   "pct_do_total": 0.0679
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "Fora da força",
+   "peso": 3919168.7811,
+   "n": 16691,
+   "pct_da_origem": 11.2713,
+   "pct_do_total": 0.5605
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G0",
+   "peso": 3212.3808,
+   "n": 17,
+   "pct_da_origem": 0.0092,
+   "pct_do_total": 0.0005
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G1",
+   "peso": 187108.0519,
+   "n": 607,
+   "pct_da_origem": 0.5381,
+   "pct_do_total": 0.0268
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G2",
+   "peso": 98961.3506,
+   "n": 280,
+   "pct_da_origem": 0.2846,
+   "pct_do_total": 0.0142
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G3",
+   "peso": 153155.1428,
+   "n": 374,
+   "pct_da_origem": 0.4405,
+   "pct_do_total": 0.0219
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G4",
+   "peso": 76622.4916,
+   "n": 219,
+   "pct_da_origem": 0.2204,
+   "pct_do_total": 0.011
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G5",
+   "peso": 661891.4204,
+   "n": 2101,
+   "pct_da_origem": 1.9036,
+   "pct_do_total": 0.0947
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G6",
+   "peso": 24500864.6737,
+   "n": 100361,
+   "pct_da_origem": 70.4631,
+   "pct_do_total": 3.5037
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G7",
+   "peso": 651227.0054,
+   "n": 2281,
+   "pct_da_origem": 1.8729,
+   "pct_do_total": 0.0931
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G8",
+   "peso": 605061.6282,
+   "n": 1970,
+   "pct_da_origem": 1.7401,
+   "pct_do_total": 0.0865
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G9",
+   "peso": 3438849.9886,
+   "n": 12042,
+   "pct_da_origem": 9.8899,
+   "pct_do_total": 0.4918
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "Desocupado",
+   "peso": 2203861.6944,
+   "n": 4290,
+   "pct_da_origem": 2.435,
+   "pct_do_total": 0.3152
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "Fora da força",
+   "peso": 5306416.8889,
+   "n": 12391,
+   "pct_da_origem": 5.863,
+   "pct_do_total": 0.7588
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G0",
+   "peso": 21861.5909,
+   "n": 41,
+   "pct_da_origem": 0.0242,
+   "pct_do_total": 0.0031
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G1",
+   "peso": 691014.9481,
+   "n": 1265,
+   "pct_da_origem": 0.7635,
+   "pct_do_total": 0.0988
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G2",
+   "peso": 912154.7796,
+   "n": 1502,
+   "pct_da_origem": 1.0078,
+   "pct_do_total": 0.1304
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G3",
+   "peso": 3171614.8874,
+   "n": 5307,
+   "pct_da_origem": 3.5043,
+   "pct_do_total": 0.4536
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G4",
+   "peso": 1008418.7649,
+   "n": 1693,
+   "pct_da_origem": 1.1142,
+   "pct_do_total": 0.1442
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G5",
+   "peso": 4218117.8945,
+   "n": 8086,
+   "pct_da_origem": 4.6605,
+   "pct_do_total": 0.6032
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G6",
+   "peso": 655580.7256,
+   "n": 2239,
+   "pct_da_origem": 0.7243,
+   "pct_do_total": 0.0938
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G7",
+   "peso": 63224732.8582,
+   "n": 119979,
+   "pct_da_origem": 69.8559,
+   "pct_do_total": 9.0414
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G8",
+   "peso": 4226120.4133,
+   "n": 7524,
+   "pct_da_origem": 4.6694,
+   "pct_do_total": 0.6044
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G9",
+   "peso": 4867449.374,
+   "n": 10214,
+   "pct_da_origem": 5.378,
+   "pct_do_total": 0.6961
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "Desocupado",
+   "peso": 1259744.6506,
+   "n": 2404,
+   "pct_da_origem": 1.9335,
+   "pct_do_total": 0.1801
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "Fora da força",
+   "peso": 2600844.2536,
+   "n": 5920,
+   "pct_da_origem": 3.9919,
+   "pct_do_total": 0.3719
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G0",
+   "peso": 28245.5398,
+   "n": 57,
+   "pct_da_origem": 0.0434,
+   "pct_do_total": 0.004
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G1",
+   "peso": 355157.5974,
+   "n": 630,
+   "pct_da_origem": 0.5451,
+   "pct_do_total": 0.0508
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G2",
+   "peso": 356113.9926,
+   "n": 610,
+   "pct_da_origem": 0.5466,
+   "pct_do_total": 0.0509
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G3",
+   "peso": 1131881.09,
+   "n": 1952,
+   "pct_da_origem": 1.7373,
+   "pct_do_total": 0.1619
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G4",
+   "peso": 946502.2438,
+   "n": 1597,
+   "pct_da_origem": 1.4527,
+   "pct_do_total": 0.1354
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G5",
+   "peso": 1944513.8134,
+   "n": 3628,
+   "pct_da_origem": 2.9845,
+   "pct_do_total": 0.2781
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G6",
+   "peso": 526041.8511,
+   "n": 1781,
+   "pct_da_origem": 0.8074,
+   "pct_do_total": 0.0752
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G7",
+   "peso": 4175364.0005,
+   "n": 7409,
+   "pct_da_origem": 6.4086,
+   "pct_do_total": 0.5971
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G8",
+   "peso": 48486675.5204,
+   "n": 91614,
+   "pct_da_origem": 74.4199,
+   "pct_do_total": 6.9338
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G9",
+   "peso": 3341783.9633,
+   "n": 6757,
+   "pct_da_origem": 5.1291,
+   "pct_do_total": 0.4779
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "Desocupado",
+   "peso": 4113980.1936,
+   "n": 8728,
+   "pct_da_origem": 3.7995,
+   "pct_do_total": 0.5883
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "Fora da força",
+   "peso": 10479543.1612,
+   "n": 28209,
+   "pct_da_origem": 9.6785,
+   "pct_do_total": 1.4986
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G0",
+   "peso": 29386.4524,
+   "n": 51,
+   "pct_da_origem": 0.0271,
+   "pct_do_total": 0.0042
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G1",
+   "peso": 334269.2098,
+   "n": 661,
+   "pct_da_origem": 0.3087,
+   "pct_do_total": 0.0478
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G2",
+   "peso": 400291.7403,
+   "n": 775,
+   "pct_da_origem": 0.3697,
+   "pct_do_total": 0.0572
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G3",
+   "peso": 1105085.2793,
+   "n": 1966,
+   "pct_da_origem": 1.0206,
+   "pct_do_total": 0.158
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G4",
+   "peso": 2016455.471,
+   "n": 3677,
+   "pct_da_origem": 1.8623,
+   "pct_do_total": 0.2884
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G5",
+   "peso": 6824150.4974,
+   "n": 14320,
+   "pct_da_origem": 6.3025,
+   "pct_do_total": 0.9759
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G6",
+   "peso": 3426442.6715,
+   "n": 12128,
+   "pct_da_origem": 3.1645,
+   "pct_do_total": 0.49
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G7",
+   "peso": 5114755.1996,
+   "n": 10686,
+   "pct_da_origem": 4.7238,
+   "pct_do_total": 0.7314
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G8",
+   "peso": 3498363.4094,
+   "n": 7072,
+   "pct_da_origem": 3.2309,
+   "pct_do_total": 0.5003
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G9",
+   "peso": 70934175.4949,
+   "n": 158858,
+   "pct_da_origem": 65.5118,
+   "pct_do_total": 10.1439
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "Desocupado",
+   "peso": 40537.4309,
+   "n": 83,
+   "pct_da_origem": 1.048,
+   "pct_do_total": 0.01
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "Fora da força",
+   "peso": 95192.8694,
+   "n": 246,
+   "pct_da_origem": 2.4609,
+   "pct_do_total": 0.0235
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G0",
+   "peso": 3502883.7277,
+   "n": 7484,
+   "pct_da_origem": 90.5562,
+   "pct_do_total": 0.863
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G1",
+   "peso": 9166.3731,
+   "n": 23,
+   "pct_da_origem": 0.237,
+   "pct_do_total": 0.0023
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G2",
+   "peso": 37194.7946,
+   "n": 83,
+   "pct_da_origem": 0.9616,
+   "pct_do_total": 0.0092
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G3",
+   "peso": 38190.1698,
+   "n": 78,
+   "pct_da_origem": 0.9873,
+   "pct_do_total": 0.0094
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G4",
+   "peso": 22869.4689,
+   "n": 52,
+   "pct_da_origem": 0.5912,
+   "pct_do_total": 0.0056
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G5",
+   "peso": 63589.1335,
+   "n": 141,
+   "pct_da_origem": 1.6439,
+   "pct_do_total": 0.0157
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G6",
+   "peso": 2361.0493,
+   "n": 15,
+   "pct_da_origem": 0.061,
+   "pct_do_total": 0.0006
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G7",
+   "peso": 14379.4368,
+   "n": 33,
+   "pct_da_origem": 0.3717,
+   "pct_do_total": 0.0035
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G8",
+   "peso": 21355.7952,
+   "n": 49,
+   "pct_da_origem": 0.5521,
+   "pct_do_total": 0.0053
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G9",
+   "peso": 20468.0,
+   "n": 54,
+   "pct_da_origem": 0.5291,
+   "pct_do_total": 0.005
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "Desocupado",
+   "peso": 189798.2703,
+   "n": 326,
+   "pct_da_origem": 1.118,
+   "pct_do_total": 0.0468
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "Fora da força",
+   "peso": 319206.0405,
+   "n": 730,
+   "pct_da_origem": 1.8802,
+   "pct_do_total": 0.0786
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G0",
+   "peso": 7517.6407,
+   "n": 19,
+   "pct_da_origem": 0.0443,
+   "pct_do_total": 0.0019
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G1",
+   "peso": 9579666.9512,
+   "n": 17590,
+   "pct_da_origem": 56.4263,
+   "pct_do_total": 2.3602
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G2",
+   "peso": 1582743.3186,
+   "n": 2829,
+   "pct_da_origem": 9.3227,
+   "pct_do_total": 0.3899
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G3",
+   "peso": 1094763.0081,
+   "n": 2002,
+   "pct_da_origem": 6.4484,
+   "pct_do_total": 0.2697
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G4",
+   "peso": 1023828.5209,
+   "n": 2103,
+   "pct_da_origem": 6.0306,
+   "pct_do_total": 0.2522
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G5",
+   "peso": 2010739.7243,
+   "n": 4147,
+   "pct_da_origem": 11.8437,
+   "pct_do_total": 0.4954
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G6",
+   "peso": 125746.2644,
+   "n": 447,
+   "pct_da_origem": 0.7407,
+   "pct_do_total": 0.031
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G7",
+   "peso": 549981.3553,
+   "n": 1070,
+   "pct_da_origem": 3.2395,
+   "pct_do_total": 0.1355
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G8",
+   "peso": 227007.7233,
+   "n": 488,
+   "pct_da_origem": 1.3371,
+   "pct_do_total": 0.0559
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G9",
+   "peso": 266305.2291,
+   "n": 584,
+   "pct_da_origem": 1.5686,
+   "pct_do_total": 0.0656
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "Desocupado",
+   "peso": 773359.2022,
+   "n": 1590,
+   "pct_da_origem": 1.5823,
+   "pct_do_total": 0.1905
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "Fora da força",
+   "peso": 1241933.9962,
+   "n": 3036,
+   "pct_da_origem": 2.541,
+   "pct_do_total": 0.306
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G0",
+   "peso": 33313.5058,
+   "n": 68,
+   "pct_da_origem": 0.0682,
+   "pct_do_total": 0.0082
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G1",
+   "peso": 1670014.484,
+   "n": 2908,
+   "pct_da_origem": 3.4169,
+   "pct_do_total": 0.4114
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G2",
+   "peso": 39720002.7812,
+   "n": 78522,
+   "pct_da_origem": 81.2682,
+   "pct_do_total": 9.7859
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G3",
+   "peso": 1955037.7402,
+   "n": 3629,
+   "pct_da_origem": 4.0001,
+   "pct_do_total": 0.4817
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G4",
+   "peso": 1239914.3605,
+   "n": 2474,
+   "pct_da_origem": 2.5369,
+   "pct_do_total": 0.3055
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G5",
+   "peso": 1342746.9394,
+   "n": 2717,
+   "pct_da_origem": 2.7473,
+   "pct_do_total": 0.3308
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G6",
+   "peso": 56980.3974,
+   "n": 162,
+   "pct_da_origem": 0.1166,
+   "pct_do_total": 0.014
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G7",
+   "peso": 443809.2852,
+   "n": 844,
+   "pct_da_origem": 0.908,
+   "pct_do_total": 0.1093
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G8",
+   "peso": 200930.1052,
+   "n": 339,
+   "pct_da_origem": 0.4111,
+   "pct_do_total": 0.0495
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G9",
+   "peso": 197156.8456,
+   "n": 413,
+   "pct_da_origem": 0.4034,
+   "pct_do_total": 0.0486
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "Desocupado",
+   "peso": 794258.3367,
+   "n": 1520,
+   "pct_da_origem": 2.3694,
+   "pct_do_total": 0.1957
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "Fora da força",
+   "peso": 1098520.4996,
+   "n": 2499,
+   "pct_da_origem": 3.2771,
+   "pct_do_total": 0.2706
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G0",
+   "peso": 32993.1728,
+   "n": 83,
+   "pct_da_origem": 0.0984,
+   "pct_do_total": 0.0081
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G1",
+   "peso": 1107494.3599,
+   "n": 1938,
+   "pct_da_origem": 3.3039,
+   "pct_do_total": 0.2729
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G2",
+   "peso": 1975455.1154,
+   "n": 3669,
+   "pct_da_origem": 5.8932,
+   "pct_do_total": 0.4867
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G3",
+   "peso": 21626618.9703,
+   "n": 42778,
+   "pct_da_origem": 64.5166,
+   "pct_do_total": 5.3282
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G4",
+   "peso": 2060437.4879,
+   "n": 4300,
+   "pct_da_origem": 6.1467,
+   "pct_do_total": 0.5076
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G5",
+   "peso": 1907175.8076,
+   "n": 3860,
+   "pct_da_origem": 5.6895,
+   "pct_do_total": 0.4699
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G6",
+   "peso": 76483.6709,
+   "n": 224,
+   "pct_da_origem": 0.2282,
+   "pct_do_total": 0.0188
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G7",
+   "peso": 1739122.4883,
+   "n": 3213,
+   "pct_da_origem": 5.1882,
+   "pct_do_total": 0.4285
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G8",
+   "peso": 566516.2312,
+   "n": 1113,
+   "pct_da_origem": 1.69,
+   "pct_do_total": 0.1396
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G9",
+   "peso": 535919.8412,
+   "n": 1107,
+   "pct_da_origem": 1.5988,
+   "pct_do_total": 0.132
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "Desocupado",
+   "peso": 1062910.4692,
+   "n": 1893,
+   "pct_da_origem": 3.1557,
+   "pct_do_total": 0.2619
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "Fora da força",
+   "peso": 1144830.3595,
+   "n": 2685,
+   "pct_da_origem": 3.399,
+   "pct_do_total": 0.2821
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G0",
+   "peso": 31340.5602,
+   "n": 68,
+   "pct_da_origem": 0.093,
+   "pct_do_total": 0.0077
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G1",
+   "peso": 986304.5381,
+   "n": 1986,
+   "pct_da_origem": 2.9283,
+   "pct_do_total": 0.243
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G2",
+   "peso": 1261450.116,
+   "n": 2517,
+   "pct_da_origem": 3.7452,
+   "pct_do_total": 0.3108
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G3",
+   "peso": 2144570.8162,
+   "n": 4319,
+   "pct_da_origem": 6.3672,
+   "pct_do_total": 0.5284
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G4",
+   "peso": 22926352.2055,
+   "n": 45214,
+   "pct_da_origem": 68.0675,
+   "pct_do_total": 5.6484
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G5",
+   "peso": 2020036.3695,
+   "n": 4237,
+   "pct_da_origem": 5.9974,
+   "pct_do_total": 0.4977
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G6",
+   "peso": 47082.3112,
+   "n": 117,
+   "pct_da_origem": 0.1398,
+   "pct_do_total": 0.0116
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G7",
+   "peso": 575737.6026,
+   "n": 1041,
+   "pct_da_origem": 1.7093,
+   "pct_do_total": 0.1418
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G8",
+   "peso": 443877.1927,
+   "n": 908,
+   "pct_da_origem": 1.3179,
+   "pct_do_total": 0.1094
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G9",
+   "peso": 1037293.8805,
+   "n": 2144,
+   "pct_da_origem": 3.0797,
+   "pct_do_total": 0.2556
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "Desocupado",
+   "peso": 3471221.4675,
+   "n": 7095,
+   "pct_da_origem": 3.8291,
+   "pct_do_total": 0.8552
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "Fora da força",
+   "peso": 6323525.6772,
+   "n": 15944,
+   "pct_da_origem": 6.9754,
+   "pct_do_total": 1.5579
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G0",
+   "peso": 70258.3203,
+   "n": 154,
+   "pct_da_origem": 0.0775,
+   "pct_do_total": 0.0173
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G1",
+   "peso": 1892390.4057,
+   "n": 3980,
+   "pct_da_origem": 2.0875,
+   "pct_do_total": 0.4662
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G2",
+   "peso": 1337958.5609,
+   "n": 2711,
+   "pct_da_origem": 1.4759,
+   "pct_do_total": 0.3296
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G3",
+   "peso": 1916688.1378,
+   "n": 3885,
+   "pct_da_origem": 2.1143,
+   "pct_do_total": 0.4722
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G4",
+   "peso": 2095364.2045,
+   "n": 4275,
+   "pct_da_origem": 2.3114,
+   "pct_do_total": 0.5162
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G5",
+   "peso": 65487282.8974,
+   "n": 138523,
+   "pct_da_origem": 72.2387,
+   "pct_do_total": 16.1342
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G6",
+   "peso": 435073.8169,
+   "n": 1503,
+   "pct_da_origem": 0.4799,
+   "pct_do_total": 0.1072
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G7",
+   "peso": 2527081.553,
+   "n": 5441,
+   "pct_da_origem": 2.7876,
+   "pct_do_total": 0.6226
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G8",
+   "peso": 1059484.5389,
+   "n": 2232,
+   "pct_da_origem": 1.1687,
+   "pct_do_total": 0.261
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G9",
+   "peso": 4037739.2661,
+   "n": 9424,
+   "pct_da_origem": 4.454,
+   "pct_do_total": 0.9948
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "Desocupado",
+   "peso": 475766.5301,
+   "n": 1606,
+   "pct_da_origem": 2.0139,
+   "pct_do_total": 0.1172
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "Fora da força",
+   "peso": 2704317.1799,
+   "n": 12448,
+   "pct_da_origem": 11.4475,
+   "pct_do_total": 0.6663
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G0",
+   "peso": 3026.0773,
+   "n": 19,
+   "pct_da_origem": 0.0128,
+   "pct_do_total": 0.0007
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G1",
+   "peso": 140624.5871,
+   "n": 459,
+   "pct_da_origem": 0.5953,
+   "pct_do_total": 0.0346
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G2",
+   "peso": 59486.8441,
+   "n": 175,
+   "pct_da_origem": 0.2518,
+   "pct_do_total": 0.0147
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G3",
+   "peso": 68439.3124,
+   "n": 220,
+   "pct_da_origem": 0.2897,
+   "pct_do_total": 0.0169
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G4",
+   "peso": 53245.6666,
+   "n": 161,
+   "pct_da_origem": 0.2254,
+   "pct_do_total": 0.0131
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G5",
+   "peso": 443026.3437,
+   "n": 1578,
+   "pct_da_origem": 1.8754,
+   "pct_do_total": 0.1091
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G6",
+   "peso": 16598016.2125,
+   "n": 71124,
+   "pct_da_origem": 70.2602,
+   "pct_do_total": 4.0893
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G7",
+   "peso": 422717.1024,
+   "n": 1547,
+   "pct_da_origem": 1.7894,
+   "pct_do_total": 0.1041
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G8",
+   "peso": 387559.7101,
+   "n": 1409,
+   "pct_da_origem": 1.6406,
+   "pct_do_total": 0.0955
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G9",
+   "peso": 2267412.5141,
+   "n": 8711,
+   "pct_da_origem": 9.5981,
+   "pct_do_total": 0.5586
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "Desocupado",
+   "peso": 2196570.667,
+   "n": 4648,
+   "pct_da_origem": 4.0539,
+   "pct_do_total": 0.5412
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "Fora da força",
+   "peso": 3176381.914,
+   "n": 8189,
+   "pct_da_origem": 5.8622,
+   "pct_do_total": 0.7826
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G0",
+   "peso": 14151.6963,
+   "n": 30,
+   "pct_da_origem": 0.0261,
+   "pct_do_total": 0.0035
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G1",
+   "peso": 511343.6209,
+   "n": 1022,
+   "pct_da_origem": 0.9437,
+   "pct_do_total": 0.126
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G2",
+   "peso": 477625.7821,
+   "n": 883,
+   "pct_da_origem": 0.8815,
+   "pct_do_total": 0.1177
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G3",
+   "peso": 1712165.9966,
+   "n": 3243,
+   "pct_da_origem": 3.1599,
+   "pct_do_total": 0.4218
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G4",
+   "peso": 578881.5045,
+   "n": 1064,
+   "pct_da_origem": 1.0684,
+   "pct_do_total": 0.1426
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G5",
+   "peso": 2541309.9886,
+   "n": 5660,
+   "pct_da_origem": 4.6901,
+   "pct_do_total": 0.6261
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G6",
+   "peso": 415444.3868,
+   "n": 1493,
+   "pct_da_origem": 0.7667,
+   "pct_do_total": 0.1024
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G7",
+   "peso": 37299539.0081,
+   "n": 77257,
+   "pct_da_origem": 68.8385,
+   "pct_do_total": 9.1896
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G8",
+   "peso": 2438837.9973,
+   "n": 4949,
+   "pct_da_origem": 4.501,
+   "pct_do_total": 0.6009
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G9",
+   "peso": 2821893.3571,
+   "n": 6569,
+   "pct_da_origem": 5.208,
+   "pct_do_total": 0.6952
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "Desocupado",
+   "peso": 987310.5589,
+   "n": 2048,
+   "pct_da_origem": 2.8317,
+   "pct_do_total": 0.2432
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "Fora da força",
+   "peso": 1301696.4649,
+   "n": 3497,
+   "pct_da_origem": 3.7334,
+   "pct_do_total": 0.3207
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G0",
+   "peso": 15473.982,
+   "n": 33,
+   "pct_da_origem": 0.0444,
+   "pct_do_total": 0.0038
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G1",
+   "peso": 230582.515,
+   "n": 480,
+   "pct_da_origem": 0.6613,
+   "pct_do_total": 0.0568
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G2",
+   "peso": 174313.0348,
+   "n": 335,
+   "pct_da_origem": 0.5,
+   "pct_do_total": 0.0429
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G3",
+   "peso": 557015.4396,
+   "n": 1046,
+   "pct_da_origem": 1.5976,
+   "pct_do_total": 0.1372
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G4",
+   "peso": 484214.0728,
+   "n": 910,
+   "pct_da_origem": 1.3888,
+   "pct_do_total": 0.1193
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G5",
+   "peso": 1011772.1946,
+   "n": 2113,
+   "pct_da_origem": 2.9019,
+   "pct_do_total": 0.2493
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G6",
+   "peso": 388239.3701,
+   "n": 1361,
+   "pct_da_origem": 1.1135,
+   "pct_do_total": 0.0957
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G7",
+   "peso": 2286368.5281,
+   "n": 4729,
+   "pct_da_origem": 6.5576,
+   "pct_do_total": 0.5633
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G8",
+   "peso": 25572047.6434,
+   "n": 53246,
+   "pct_da_origem": 73.3441,
+   "pct_do_total": 6.3002
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G9",
+   "peso": 1856810.4953,
+   "n": 4209,
+   "pct_da_origem": 5.3256,
+   "pct_do_total": 0.4575
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "Desocupado",
+   "peso": 3597906.631,
+   "n": 8450,
+   "pct_da_origem": 5.4813,
+   "pct_do_total": 0.8864
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "Fora da força",
+   "peso": 5761531.1085,
+   "n": 17178,
+   "pct_da_origem": 8.7775,
+   "pct_do_total": 1.4195
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G0",
+   "peso": 20670.4046,
+   "n": 56,
+   "pct_da_origem": 0.0315,
+   "pct_do_total": 0.0051
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G1",
+   "peso": 244959.2017,
+   "n": 516,
+   "pct_da_origem": 0.3732,
+   "pct_do_total": 0.0604
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G2",
+   "peso": 212531.7999,
+   "n": 436,
+   "pct_da_origem": 0.3238,
+   "pct_do_total": 0.0524
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G3",
+   "peso": 557671.8391,
+   "n": 1173,
+   "pct_da_origem": 0.8496,
+   "pct_do_total": 0.1374
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G4",
+   "peso": 1065367.8829,
+   "n": 2228,
+   "pct_da_origem": 1.6231,
+   "pct_do_total": 0.2625
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G5",
+   "peso": 4171623.4501,
+   "n": 9792,
+   "pct_da_origem": 6.3553,
+   "pct_do_total": 1.0278
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G6",
+   "peso": 2253643.3467,
+   "n": 8681,
+   "pct_da_origem": 3.4334,
+   "pct_do_total": 0.5552
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G7",
+   "peso": 2861857.3661,
+   "n": 6560,
+   "pct_da_origem": 4.36,
+   "pct_do_total": 0.7051
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G8",
+   "peso": 2026573.1486,
+   "n": 4467,
+   "pct_da_origem": 3.0874,
+   "pct_do_total": 0.4993
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G9",
+   "peso": 42865270.2248,
+   "n": 103029,
+   "pct_da_origem": 65.304,
+   "pct_do_total": 10.5608
+  }
+ ]
+}</script>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">PNAD Contínua · exposição ocupacional à IA</p>
+    <h1>Exposição não é adoção</h1>
+    <p class="dek">O que o painel PNADC mostra — e ainda não mostra — sobre para onde vão os
+      trabalhadores em ocupações mais expostas à IA generativa, antes e depois do lançamento
+      público do ChatGPT.</p>
+    <div class="meta-row" id="meta-row"></div>
+  </div>
+  <div class="alert-band"><div class="wrap"><div class="alert-row" id="alert-row"></div></div></div>
+</header>
+
+<nav class="acts">
+  <div class="wrap">
+    <a href="#act1"><small>Ato I</small><span>A pergunta</span></a>
+    <a href="#act2"><small>Ato II</small><span>Quem está exposto</span></a>
+    <a href="#act3"><small>Ato III</small><span>O que se espera</span></a>
+    <a href="#act4"><small>Ato IV</small><span>O que os dados mostram</span></a>
+    <a href="#act5"><small>Ato V</small><span>Por que ainda não é causal</span></a>
+  </div>
+</nav>
+
+<main>
+
+<section class="act" id="act1">
+  <div class="wrap">
+    <div class="act-head"><span class="act-num">Ato I</span></div>
+    <h2>Exposição não é adoção</h2>
+    <p class="lede">Depois do lançamento público do ChatGPT, em novembro de 2022, trabalhadores em
+      ocupações mais expostas à inteligência artificial passaram a apresentar transições de
+      trabalho diferentes? Antes de qualquer número, vale separar duas coisas que o desenho deste
+      estudo trata como distintas de propósito.</p>
+    <div class="timeline" style="max-width:760px">
+      <div class="tl-step observed">
+        <div class="k">O que é medido</div>
+        <div class="t">Exposição ocupacional</div>
+        <div class="d">O AIOE (Felten, Raj e Seamans) descreve o quanto as <em>tarefas</em> de uma
+          ocupação se sobrepõem ao que a IA generativa faz bem. É um índice construído nos EUA,
+          aplicado à estrutura ocupacional brasileira — contínuo, não uma categoria de "afetado /
+          não afetado".</div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-step dim">
+        <div class="k">O que não é observado</div>
+        <div class="t">Adoção de IA</div>
+        <div class="d">Nenhuma empresa ou trabalhador da amostra é observado adotando uma
+          ferramenta de IA. O choque é o calendário — um lançamento único e nacional — não um
+          evento de adoção registrado pessoa a pessoa.</div>
+      </div>
+    </div>
+    <div class="prose" style="margin-top:24px">
+      <p>O desenho deste painel testa se a <strong>mobilidade de trabalho</strong> — mudar de
+        ocupação, sair do emprego, migrar no gradiente de exposição — se move de forma diferente
+        entre quem está mais e menos exposto, comparando o mesmo intervalo antes e depois do
+        choque. Três decisões de amostra sustentam essa comparação:</p>
+    </div>
+    <div class="grid-3" style="margin-top:8px">
+      <div class="card">
+        <p class="fig-title">Decisão 1</p>
+        <p style="font-size:.88rem;color:var(--ink-soft);margin:0">
+          <strong style="color:var(--ink)">2022T4 fica fora.</strong> O ChatGPT saiu em 30/11/2022:
+          esse trimestre é parcialmente tratado e não entra nem no pré nem no pós.</p>
+      </div>
+      <div class="card">
+        <p class="fig-title">Decisão 2</p>
+        <p style="font-size:.88rem;color:var(--ink-soft);margin:0">
+          <strong style="color:var(--ink)">Quartis fixados no pré.</strong> Os cortes de exposição
+          vêm só da distribuição pré-choque, ponderada pelos ocupados — o pós não contamina os
+          cortes.</p>
+      </div>
+      <div class="card">
+        <p class="fig-title">Decisão 3</p>
+        <p style="font-size:.88rem;color:var(--ink-soft);margin:0">
+          <strong style="color:var(--ink)">Só pares consecutivos.</strong> Um salto de dois
+          trimestres não conta como transição — e a mobilidade é lida no grande grupo COD (1
+          dígito), para não confundir erro de codificação com mudança real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="act" id="act2">
+  <div class="wrap">
+    <div class="act-head"><span class="act-num">Ato II</span></div>
+    <h2>Quem está exposto</h2>
+    <p class="lede">Os quartis de AIOE não seguem hierarquia salarial nem prestígio — seguem a
+      sobreposição de tarefas com o que a IA generativa faz. O resultado reordena o mapa
+      ocupacional de um jeito que vale olhar antes de qualquer tabela de transição.</p>
+
+    <div class="card">
+      <p class="fig-title">Mapa dos quartis</p>
+      <p class="fig-sub">AIOE médio de cada grande grupo COD, no pré-choque. Tamanho do ponto = peso
+        no total de ocupados.</p>
+      <div id="qmap-wrap"></div>
+      <div class="legend" id="qmap-legend"></div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <p class="fig-title">Composição por quartil</p>
+      <p class="fig-sub">Para cada grande grupo, a fração dos seus ocupados que cai em cada quartil de exposição.</p>
+      <div id="comp-list"></div>
+    </div>
+  </div>
+</section>
+
+<section class="act" id="act3">
+  <div class="wrap">
+    <div class="act-head"><span class="act-num">Ato III</span></div>
+    <h2>O que Humlum &amp; Vestergaard esperam</h2>
+    <p class="lede">A literatura sobre difusão de IA no mercado de trabalho dinamarquês sugere uma
+      sequência: o ajuste aparece primeiro em <strong>quem faz o quê</strong>, não em
+      <strong>quanto ganha</strong>.</p>
+    <div class="timeline" style="max-width:640px">
+      <div class="tl-step observed">
+        <div class="k">Horizonte curto · medido aqui</div>
+        <div class="t">Mobilidade</div>
+        <div class="d">Mudança de ocupação, saída do emprego, migração no gradiente de exposição —
+          um trimestre de distância. É o que este painel consegue enxergar.</div>
+      </div>
+      <div class="tl-arrow">→</div>
+      <div class="tl-step dim">
+        <div class="k">Horizonte longo · fora do escopo</div>
+        <div class="t">Salário</div>
+        <div class="d">Se o ajuste de fato existe, o efeito sobre rendimento tende a aparecer
+          depois, e por um caminho composicional — quem muda de ocupação carrega o salário da nova
+          ocupação, não um ajuste direto no cargo antigo.</div>
+      </div>
+    </div>
+    <p class="prose" style="margin-top:20px">Por isso o Ato IV mede fluxo, não renda — e por isso a
+      ausência de um sinal forte de mobilidade neste horizonte já é uma resposta, não um resultado
+      nulo sem interesse.</p>
+  </div>
+</section>
+
+<section class="act" id="act4">
+  <div class="wrap">
+    <div class="act-head"><span class="act-num">Ato IV</span></div>
+    <h2>O que os dados mostram</h2>
+    <p class="lede">Sempre a partir de quem estava ocupado na origem. Quatro cortes do mesmo
+      painel de transições.</p>
+
+    <h3 class="fig-title" style="font-size:.78rem;margin-top:6px">A — Destino no trimestre seguinte, por quartil</h3>
+    <p class="fig-sub">Barra clara = pré-choque · barra sólida = pós-choque. O número é a diferença em p.p.</p>
+    <div id="table-a" class="a-grid"></div>
+
+    <h3 class="fig-title" style="font-size:.78rem;margin-top:34px">B — Para qual grande grupo vão os que mudam</h3>
+    <p class="fig-sub">Entre quem muda de grande grupo: variação em p.p. do pré para o pós, por grupo de destino.</p>
+    <div class="tabs" id="b-tabs"></div>
+    <div class="card"><div class="b-chart" id="table-b"></div></div>
+
+    <h3 class="fig-title" style="font-size:.78rem;margin-top:34px">D — A migração é para ocupações mais ou menos expostas?</h3>
+    <p class="fig-sub">Entre quem muda de grande grupo: quartil de destino relativo ao de origem.</p>
+    <div class="d-grid" id="table-d"></div>
+
+    <h3 class="fig-title" style="font-size:.78rem;margin-top:34px">Fluxos entre grandes grupos</h3>
+    <p class="fig-sub">Origem à esquerda, destino à direita. Largura = peso amostral.</p>
+    <div class="card">
+      <div class="sankey-controls">
+        <div class="tabs" id="sankey-period-tabs"></div>
+        <label class="switch-lbl"><input type="checkbox" id="sankey-same"> incluir quem fica no mesmo grupo</label>
+      </div>
+      <div id="sankey-holder"></div>
+    </div>
+  </div>
+</section>
+
+<section class="act" id="act5">
+  <div class="wrap">
+    <div class="act-head"><span class="act-num">Ato V</span></div>
+    <h2>Por que ainda não é causal</h2>
+    <p class="lede">A série trimestral de Q4 contra Q1 é o primeiro teste visual de tendências
+      paralelas: se os dois grupos já divergiam antes do choque, a diferença pós-choque não pode
+      ser lida como efeito.</p>
+
+    <div class="card">
+      <p class="fig-title">E — Mudança de grande grupo, Q4 vs. Q1, por trimestre de origem</p>
+      <p class="fig-sub">Faixa cinza = coleta telefônica da pandemia (excluída do pré) · faixa
+        pontilhada = trimestre parcialmente tratado (2022T4, excluído).</p>
+      <div id="series-holder"></div>
+      <div class="legend" id="series-legend"></div>
+    </div>
+
+    <div class="findings" id="findings"></div>
+
+    <div class="callout">
+      <p><b>O risco de identificação não é o clássico do TWFE.</b> O viés de adoção escalonada não
+        se aplica aqui: todo mundo é "tratado" na mesma data, o lançamento do ChatGPT. O risco é
+        outro — o tratamento é <b>contínuo</b> (a intensidade do AIOE), o que exige uma versão mais
+        forte de tendências paralelas, discutida por Callaway, Goodman-Bacon &amp; Sant'Anna
+        (2024). Ponto para levar à reunião com o Danny, junto com o event study.</p>
+    </div>
+
+    <div class="prose" style="margin-top:22px">
+      <p><strong>O que este painel não identifica, ainda:</strong> adoção de IA não observada;
+        choque único e nacional, de modo que qualquer fator que tenha atingido ocupações de alto
+        AIOE de forma diferencial no período — retomada pós-pandemia, teletrabalho, ciclo setorial
+        — entra misturado no sinal; seleção longitudinal residual apesar do teste de atrito;
+        assimetria mecânica (quem parte do topo só pode descer no gradiente); e horizonte de um
+        trimestre, que não captura realocação lenta.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap prose">
+    <p>Fonte: PNAD Contínua trimestral (IBGE), painel pessoa-trimestre, origens de
+      <span id="foot-range"></span>. Exposição: AIOE (Felten, Raj e Seamans). Gerado a partir de
+      <code id="foot-src"></code> em <span id="foot-gen"></span>.</p>
+  </div>
+</footer>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+(function(){
+"use strict";
+const D = JSON.parse(document.getElementById('dashboard-data').textContent);
+const css = getComputedStyle(document.documentElement);
+const cv = n => css.getPropertyValue(n).trim();
+const COL = {
+  outro: 'var(--c-outro)', fora: 'var(--c-fora)', mesmo: 'var(--c-mesmo)', desoc: 'var(--c-desoc)',
+  q1:'var(--q1)', q2:'var(--q2)', q3:'var(--q3)', q4:'var(--q4)',
+  pos:'var(--div-pos)', neg:'var(--div-neg)'
+};
+const DEST_COLOR = { mesmo_grupo: COL.mesmo, outro_grupo: COL.outro, desocupado: COL.desoc, fora_da_forca: COL.fora };
+const QCOL = { Q1: COL.q1, Q2: COL.q2, Q3: COL.q3, Q4: COL.q4 };
+const fmt1 = x => (x===null||x===undefined||isNaN(x)) ? "—" : (Math.round(x*10)/10).toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1});
+const fmtpp = x => (x>0?'+':'') + fmt1(x) + ' p.p.';
+const fmtInt = x => Math.round(x).toLocaleString('pt-BR');
+const esc = s => (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const tip = document.getElementById('tooltip');
+function showTip(x,y,html){ tip.innerHTML=html; tip.style.left=x+'px'; tip.style.top=y+'px'; tip.style.opacity=1; }
+function hideTip(){ tip.style.opacity=0; }
+
+/* ---------------- header meta + alerts ---------------- */
+(function meta(){
+  const m = D.meta;
+  const row = document.getElementById('meta-row');
+  const pares = m.pares.pre + m.pares.pos;
+  row.innerHTML = `
+    <span><b class="tabular">${m.trimestres_origem[0]}</b> – <b class="tabular">${m.trimestres_origem[m.trimestres_origem.length-1]}</b> · trimestre de origem</span>
+    <span><b class="tabular">${fmtInt(m.pares.pre)}</b> pares no pré · <b class="tabular">${fmtInt(m.pares.pos)}</b> no pós</span>
+    <span><b>${m.nivel_ocupacional}</b></span>
+    <span>choque: <b class="tabular">${m.trimestre_parcial_excluido}</b> excluído</span>`;
+  document.getElementById('foot-range').textContent = m.trimestres_origem[0] + '–' + m.trimestres_origem[m.trimestres_origem.length-1];
+  document.getElementById('foot-src').textContent = m.fonte;
+  document.getElementById('foot-gen').textContent = new Date(m.gerado_em).toLocaleString('pt-BR',{dateStyle:'medium',timeStyle:'short'});
+
+  const alerts = D.auditoria.alertas;
+  const box = document.getElementById('alert-row');
+  if(!alerts.length){ box.innerHTML = `<div class="chip"><i class="dot" style="background:var(--good)"></i>Nenhum alerta de auditoria.</div>`; return; }
+  box.innerHTML = alerts.map(a => `<div class="chip"><i class="dot" style="background:var(--warn)"></i>${esc(a)}</div>`).join('');
+})();
+
+/* ---------------- Act II: quartile map ---------------- */
+(function actTwo(){
+  const exp = D.quem_esta_exposto;
+  const cortes = exp.cortes_aioe;
+  const grupos = exp.grupos.slice();
+  const all = grupos.map(g=>g.aioe_medio);
+  const lo = Math.min(...all, cortes[0]) - 0.3, hi = Math.max(...all, cortes[cortes.length-1]) + 0.3;
+  const W = 900, H = 190, padL = 20, padR = 20, padT = 30, padB = 34;
+  const x = v => padL + (v-lo)/(hi-lo) * (W-padL-padR);
+  const bandCol = v => v<cortes[0]?COL.q1 : v<cortes[1]?COL.q2 : v<cortes[2]?COL.q3 : COL.q4;
+  const maxPct = Math.max(...grupos.map(g=>g.pct_ocupados));
+  const rMax = 22, rMin = 6;
+  const rOf = p => rMin + Math.sqrt(p/maxPct) * (rMax-rMin);
+
+  let bands = '';
+  const edges = [lo, ...cortes, hi];
+  const bandNames = ['Q1','Q2','Q3','Q4'];
+  for(let i=0;i<4;i++){
+    const x0=x(edges[i]), x1=x(edges[i+1]);
+    bands += `<rect x="${x0}" y="${padT}" width="${x1-x0}" height="${H-padT-padB}" fill="${QCOL[bandNames[i]]}" opacity="${0.09+i*0.02}"></rect>`;
+    bands += `<text class="qm-band-label" x="${(x0+x1)/2}" y="${padT-10}" text-anchor="middle">${bandNames[i]}</text>`;
+  }
+  // avoid label collisions: sort by aioe, nudge y
+  const sorted = grupos.slice().sort((a,b)=>a.aioe_medio-b.aioe_medio);
+  const rowY = padT + (H-padT-padB)/2;
+  let dots = '', labels = '';
+  sorted.forEach((g,i)=>{
+    const cx = x(g.aioe_medio), r = rOf(g.pct_ocupados);
+    const yOff = (i%2===0? -1: 1) * (16 + (i%4)*7);
+    const ly = rowY + yOff;
+    dots += `<circle class="gdot" data-i="${i}" cx="${cx}" cy="${rowY}" r="${r}" fill="${bandCol(g.aioe_medio)}" fill-opacity="0.85" stroke="var(--surface)" stroke-width="1.5" style="cursor:pointer"></circle>`;
+    labels += `<line x1="${cx}" y1="${rowY - (yOff>0?-r:r)}" x2="${cx}" y2="${ly}" stroke="var(--line-strong)" stroke-width="1"></line>`;
+    labels += `<text class="qm-grouplabel" x="${cx}" y="${ly + (yOff>0?12:-6)}" text-anchor="middle">${g.grupo}</text>`;
+  });
+  // axis
+  let axis = `<line x1="${padL}" y1="${H-padB+8}" x2="${W-padR}" y2="${H-padB+8}" class="qm-tick"></line>`;
+  [lo,...cortes,hi].forEach(v=>{
+    axis += `<line x1="${x(v)}" y1="${H-padB+4}" x2="${x(v)}" y2="${H-padB+12}" class="qm-tick"></line>`;
+    axis += `<text class="qm-grouplabel" x="${x(v)}" y="${H-padB+26}" text-anchor="middle" style="font-size:.62rem">${fmt1(v)}</text>`;
+  });
+  axis += `<text class="qm-grouplabel" x="${W/2}" y="${H-4}" text-anchor="middle" style="font-size:.66rem;fill:var(--ink-muted)">AIOE médio da ocupação (padronizado)</text>`;
+
+  document.getElementById('qmap-wrap').innerHTML =
+    `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;font-family:var(--sans)">${bands}${dots}${labels}${axis}</svg>`;
+
+  const names = {'0':'Forças armadas','1':'Diretores/gerentes','2':'Ciências/intelectuais','3':'Técnicos nível médio',
+    '4':'Apoio administrativo','5':'Serviços/comércio','6':'Agropecuária qualificada','7':'Construção/ofícios',
+    '8':'Instalações/máquinas','9':'Ocupações elementares'};
+  document.querySelectorAll('.gdot').forEach(el=>{
+    const g = sorted[+el.dataset.i];
+    el.addEventListener('mousemove', e=>{
+      showTip(e.pageX, e.pageY, `<b>${g.grupo} · ${esc(names[g.grupo]||g.nome_grupo)}</b><br>AIOE médio: <b>${fmt1(g.aioe_medio)}</b><br>${fmt1(g.pct_ocupados)}% dos ocupados`);
+    });
+    el.addEventListener('mouseleave', hideTip);
+  });
+
+  document.getElementById('qmap-legend').innerHTML =
+    ['Q1','Q2','Q3','Q4'].map(q=>`<span class="sw"><i style="background:${QCOL[q]}"></i>${q} ${q==='Q1'?'(menos exposto)':q==='Q4'?'(mais exposto)':''}</span>`).join('') +
+    `<span class="sw"><i style="border-radius:50%;background:var(--ink-muted)"></i>tamanho do ponto = % dos ocupados</span>`;
+
+  // composition
+  const comp = grupos.slice().sort((a,b)=>a.aioe_medio-b.aioe_medio);
+  document.getElementById('comp-list').innerHTML = comp.map(g=>{
+    const segs = ['Q1','Q2','Q3','Q4'].map(q=>`<span style="width:${g.pct_por_quartil[q]}%;background:${QCOL[q]}"></span>`).join('');
+    return `<div class="comp-row">
+      <div class="lab"><b>${g.grupo}</b> ${esc(names[g.grupo]||'')}</div>
+      <div class="comp-bar">${segs}</div>
+      <div class="pct">${fmt1(g.pct_ocupados)}%</div>
+    </div>`;
+  }).join('');
+})();
+
+/* ---------------- Act IV: Table A ---------------- */
+(function tableA(){
+  const rows = D.A_destino_por_quartil.filter(r=>r.quartil!=='Todos');
+  const order = ['mesmo_grupo','outro_grupo','desocupado','fora_da_forca'];
+  const rot = D.meta.rotulos_destino;
+  const byQ = {};
+  rows.forEach(r=>{ (byQ[r.quartil] = byQ[r.quartil]||[]).push(r); });
+  const maxVal = Math.max(...rows.map(r=>Math.max(r.pre,r.pos)));
+  const html = ['Q1','Q2','Q3','Q4'].map(q=>{
+    const rs = byQ[q].slice().sort((a,b)=>order.indexOf(a.destino)-order.indexOf(b.destino));
+    const body = rs.map(r=>{
+      const col = DEST_COLOR[r.destino];
+      const wPre = (r.pre/maxVal*100).toFixed(1), wPos = (r.pos/maxVal*100).toFixed(1);
+      const dpCls = r.dif_pp>0.05?'up':r.dif_pp<-0.05?'down':'';
+      return `<div class="a-row" title="${esc(rot[r.destino])}: pré ${fmt1(r.pre)}% · pós ${fmt1(r.pos)}%">
+        <span class="sw" style="background:${col}"></span>
+        <span class="lbl">${esc(rot[r.destino])}</span>
+        <span class="bars"><b class="pre" style="width:${wPre}%;background:${col}"></b><b class="pos" style="width:${wPos}%;background:${col}"></b></span>
+        <span class="dp ${dpCls}">${fmtpp(r.dif_pp)}</span>
+      </div>`;
+    }).join('');
+    return `<div class="a-cell">
+      <h4><i style="background:${QCOL[q]}"></i>${q}</h4>
+      <div class="n">n = ${fmtInt(rs[0].n_pre)} → ${fmtInt(rs[0].n_pos)}</div>
+      ${body}
+    </div>`;
+  }).join('');
+  document.getElementById('table-a').innerHTML = html;
+})();
+
+/* ---------------- Act IV: Table B ---------------- */
+(function tableB(){
+  const gg = D.meta.grandes_grupos;
+  const quartis = ['Todos','Q1','Q2','Q3','Q4'];
+  const tabs = document.getElementById('b-tabs');
+  tabs.innerHTML = quartis.map((q,i)=>`<button data-q="${q}" class="${i===0?'on':''}">${q}</button>`).join('');
+  function render(q){
+    const rows = D.B_grupo_destino_dos_que_mudam.filter(r=>r.quartil===q && r.grupo_destino!=='0')
+      .sort((a,b)=>b.dif_pp-a.dif_pp);
+    const maxAbs = Math.max(1, ...rows.map(r=>Math.abs(r.dif_pp)));
+    document.getElementById('table-b').innerHTML = rows.map(r=>{
+      const w = Math.abs(r.dif_pp)/maxAbs*48;
+      const pos = r.dif_pp>=0;
+      const cls = r.dif_pp>0.05?'up':r.dif_pp<-0.05?'down':'';
+      return `<div class="b-row">
+        <div class="lbl"><b>${r.grupo_destino}</b> ${esc(r.nome_grupo)}</div>
+        <div class="b-track"><div class="b-mid"></div>
+          <div class="b-bar" style="${pos?'left':'right'}:50%;width:${w}%;background:${pos?COL.pos:COL.neg}"></div>
+        </div>
+        <div class="val ${cls}">${fmtpp(r.dif_pp)}</div>
+      </div>`;
+    }).join('');
+  }
+  render('Todos');
+  tabs.addEventListener('click', e=>{
+    const b = e.target.closest('button'); if(!b) return;
+    tabs.querySelectorAll('button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on'); render(b.dataset.q);
+  });
+})();
+
+/* ---------------- Act IV: Table D ---------------- */
+(function tableD(){
+  const rows = D.D_direcao_exposicao.filter(r=>r.quartil!=='Todos');
+  const byQ = {}; rows.forEach(r=>(byQ[r.quartil]=byQ[r.quartil]||[]).push(r));
+  const dCol = { mais_exposta: 'var(--q4)', mesmo_quartil: 'var(--ink-muted)', menos_exposta: 'var(--q1)' };
+  const dLbl = { mais_exposta: 'Mais exposta', mesmo_quartil: 'Mesmo quartil', menos_exposta: 'Menos exposta' };
+  const order = ['menos_exposta','mesmo_quartil','mais_exposta'];
+  document.getElementById('table-d').innerHTML = ['Q1','Q2','Q3','Q4'].map(q=>{
+    const rs = byQ[q].slice().sort((a,b)=>order.indexOf(a.direcao)-order.indexOf(b.direcao));
+    const segsPre = rs.map(r=>`<span style="width:${r.pre}%;background:${dCol[r.direcao]}"></span>`).join('');
+    const segsPos = rs.map(r=>`<span style="width:${r.pos}%;background:${dCol[r.direcao]}"></span>`).join('');
+    const delta = rs[0].delta_aioe_medio_pos;
+    return `<div class="d-cell">
+      <h4><i style="width:9px;height:9px;border-radius:50%;background:${QCOL[q]};display:inline-block;margin-right:5px"></i>${q}</h4>
+      <div class="stackbar">${segsPre}</div><div class="stackbar-lbl">pré</div>
+      <div class="stackbar">${segsPos}</div><div class="stackbar-lbl">pós</div>
+      <div class="d-delta">ΔAIOE médio ao mudar: <b>${fmt1(delta)}</b></div>
+    </div>`;
+  }).join('') +
+  `<div style="grid-column:1/-1" class="legend">` +
+  order.map(k=>`<span class="sw"><i style="background:${dCol[k]}"></i>${dLbl[k]}</span>`).join('') +
+  `</div>`;
+})();
+
+/* ---------------- Act IV: Sankey ---------------- */
+(function sankey(){
+  const gg = D.meta.grandes_grupos;
+  const periods = ['pre','pos'];
+  const tabs = document.getElementById('sankey-period-tabs');
+  tabs.innerHTML = `<button data-p="pre">Pré</button><button data-p="pos" class="on">Pós</button>`;
+  const chk = document.getElementById('sankey-same');
+  const holder = document.getElementById('sankey-holder');
+  const isDark = () => {
+    const t = document.documentElement.getAttribute('data-theme');
+    if(t==='dark') return true; if(t==='light') return false;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  };
+  function draw(){
+    if(typeof Plotly === 'undefined'){
+      holder.innerHTML = '<p style="font-size:.82rem;color:var(--ink-muted);padding:24px 0">Não foi possível carregar a biblioteca de gráficos (Plotly, via CDN). As tabelas A, B e D acima cobrem o mesmo conteúdo.</p>';
+      return;
+    }
+    const per = tabs.querySelector('button.on').dataset.p;
+    const same = chk.checked;
+    const L = D.sankey.filter(d => d.periodo===per && (same || d.alvo !== d.fonte));
+    const dark = isDark();
+    const ink = dark ? '#ffffff' : '#0b0b0b';
+    const nodeNames = [];
+    const srcName = f => f + ' · origem';
+    L.forEach(d=>{ if(!nodeNames.includes(srcName(d.fonte))) nodeNames.push(srcName(d.fonte)); });
+    L.forEach(d=>{ if(!nodeNames.includes(d.alvo)) nodeNames.push(d.alvo); });
+    const idx = n => nodeNames.indexOf(n);
+    const nodeLabel = n => {
+      if(n.endsWith(' · origem')){ const g = n.split(' ')[0].slice(1); return (gg[g]||g).split(',')[0] + ' (origem)'; }
+      if(n==='Desocupado' || n==='Fora da força') return n;
+      const g = n.slice(1); return (gg[g]||g).split(',')[0];
+    };
+    const nodeColor = n => {
+      if(n.endsWith(' · origem')) return dark? 'rgba(255,255,255,0.18)':'rgba(11,11,11,0.14)';
+      if(n==='Desocupado') return getComputedStyle(document.documentElement).getPropertyValue('--c-desoc');
+      if(n==='Fora da força') return getComputedStyle(document.documentElement).getPropertyValue('--c-fora');
+      return getComputedStyle(document.documentElement).getPropertyValue('--c-outro');
+    };
+    const linkColor = n => {
+      const c = n==='Desocupado' ? getComputedStyle(document.documentElement).getPropertyValue('--c-desoc')
+              : n==='Fora da força' ? getComputedStyle(document.documentElement).getPropertyValue('--c-fora')
+              : dark ? '#3987e5' : '#2a78d6';
+      return c;
+    };
+    function hexToRgba(hex, a){
+      hex = hex.trim();
+      const m = hex.match(/^#([0-9a-f]{6})$/i);
+      if(!m) return hex;
+      const n = parseInt(m[1],16);
+      return `rgba(${(n>>16)&255},${(n>>8)&255},${n&255},${a})`;
+    }
+    Plotly.react(holder, [{
+      type:'sankey', arrangement:'snap',
+      node:{ label: nodeNames.map(nodeLabel), pad:14, thickness:14,
+             color: nodeNames.map(n=>nodeColor(n)), line:{width:0} },
+      link:{ source:L.map(d=>idx(srcName(d.fonte))), target:L.map(d=>idx(d.alvo)), value:L.map(d=>d.peso),
+             color: L.map(d=>hexToRgba(linkColor(d.alvo), dark?0.45:0.38)),
+             customdata: L.map(d=>`${fmt1(d.pct_da_origem)}% da origem · ${fmtInt(d.n)} obs.`),
+             hovertemplate:'%{customdata}<extra></extra>' }
+    }], {
+      margin:{l:4,r:4,t:4,b:4}, font:{color:ink, size:11, family:'Inter, sans-serif'},
+      paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)'
+    }, {displayModeBar:false, responsive:true});
+  }
+  tabs.addEventListener('click', e=>{
+    const b = e.target.closest('button'); if(!b) return;
+    tabs.querySelectorAll('button').forEach(x=>x.classList.remove('on')); b.classList.add('on'); draw();
+  });
+  chk.addEventListener('change', draw);
+  draw();
+  window.addEventListener('resize', ()=>Plotly.Plots.resize(holder));
+  new MutationObserver(draw).observe(document.documentElement, {attributes:true, attributeFilter:['data-theme']});
+})();
+
+/* ---------------- Act V: series ---------------- */
+(function series(){
+  const rows = D.E_serie_Q4_vs_Q1;
+  const W = 980, H = 300, padL = 40, padR = 16, padT = 14, padB = 34;
+  const innerW = W-padL-padR, innerH = H-padT-padB;
+  const n = rows.length;
+  const x = i => padL + i/(n-1)*innerW;
+  const maxY = Math.max(...rows.map(r=>Math.max(r.muda_grupo_Q1, r.muda_grupo_Q4)));
+  const minY = 0;
+  const y = v => padT + innerH - (v-minY)/(maxY-minY)*innerH;
+
+  let bands = '';
+  rows.forEach((r,i)=>{
+    if(r.periodo==='atipico' || r.periodo==='excluido'){
+      const x0 = x(i) - innerW/(n-1)/2, x1 = x(i) + innerW/(n-1)/2;
+      bands += `<rect x="${Math.max(padL,x0)}" y="${padT}" width="${Math.min(x1,W-padR)-Math.max(padL,x0)}" height="${innerH}"
+                 fill="${r.periodo==='atipico'?'var(--line)':'var(--warn)'}" opacity="${r.periodo==='atipico'?0.5:0.18}"></rect>`;
+    }
+  });
+
+  function pathFor(key){
+    return rows.map((r,i)=>`${i===0?'M':'L'}${x(i).toFixed(1)},${y(r[key]).toFixed(1)}`).join(' ');
+  }
+  const lineQ1 = pathFor('muda_grupo_Q1'), lineQ4 = pathFor('muda_grupo_Q4');
+
+  // y axis ticks
+  const ticks = 4;
+  let axis = '';
+  for(let t=0;t<=ticks;t++){
+    const v = maxY * t/ticks;
+    axis += `<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"></line>`;
+    axis += `<text x="${padL-8}" y="${y(v)+4}" text-anchor="end" style="font-size:.64rem;fill:var(--ink-muted)">${Math.round(v)}%</text>`;
+  }
+  // x ticks: yearly
+  let xaxis = '';
+  rows.forEach((r,i)=>{
+    if(r.trimestre_origem.endsWith('T1')){
+      xaxis += `<text x="${x(i)}" y="${H-padB+16}" text-anchor="middle" style="font-size:.62rem;fill:var(--ink-muted)">${r.trimestre_origem.slice(0,4)}</text>`;
+      xaxis += `<line x1="${x(i)}" y1="${padT}" x2="${x(i)}" y2="${H-padB}" stroke="var(--line)" stroke-width="1" stroke-dasharray="2,3"></line>`;
+    }
+  });
+  const choqueI = rows.findIndex(r=>r.trimestre_origem==='2022T4');
+  const choqueLine = choqueI>=0 ? `<line x1="${x(choqueI)}" y1="${padT}" x2="${x(choqueI)}" y2="${H-padB}" stroke="var(--critical)" stroke-width="1.2" stroke-dasharray="3,2"></line>
+    <text x="${x(choqueI)}" y="${padT-2}" text-anchor="middle" style="font-size:.6rem;fill:var(--critical)">choque</text>` : '';
+
+  let pts = '';
+  rows.forEach((r,i)=>{
+    pts += `<circle class="pt" data-i="${i}" cx="${x(i)}" cy="${y(r.muda_grupo_Q1)}" r="8" fill="transparent" style="cursor:pointer"></circle>`;
+    pts += `<circle cx="${x(i)}" cy="${y(r.muda_grupo_Q1)}" r="2.4" fill="${QCOL.Q1}"></circle>`;
+    pts += `<circle cx="${x(i)}" cy="${y(r.muda_grupo_Q4)}" r="2.4" fill="${QCOL.Q4}"></circle>`;
+  });
+
+  document.getElementById('series-holder').innerHTML = `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;font-family:var(--sans)">
+    ${bands}${axis}${xaxis}${choqueLine}
+    <path d="${lineQ1}" fill="none" stroke="${QCOL.Q1}" stroke-width="2.2"></path>
+    <path d="${lineQ4}" fill="none" stroke="${QCOL.Q4}" stroke-width="2.2"></path>
+    ${pts}
+  </svg>`;
+
+  document.querySelectorAll('#series-holder .pt').forEach(el=>{
+    const r = rows[+el.dataset.i];
+    el.addEventListener('mousemove', e=>{
+      showTip(e.pageX, e.pageY, `<b>${r.trimestre_origem}</b> (${r.periodo})<br>
+        Q1: <b>${fmt1(r.muda_grupo_Q1)}%</b> · Q4: <b>${fmt1(r.muda_grupo_Q4)}%</b><br>
+        diferença: <b>${fmtpp(r.dif_muda_grupo_Q4_Q1)}</b>`);
+    });
+    el.addEventListener('mouseleave', hideTip);
+  });
+
+  document.getElementById('series-legend').innerHTML = `
+    <span class="sw"><i class="line" style="background:${QCOL.Q1}"></i>Q1 — menos exposto</span>
+    <span class="sw"><i class="line" style="background:${QCOL.Q4}"></i>Q4 — mais exposto</span>
+    <span class="sw"><i style="background:var(--line)"></i>coleta telefônica (excluída do pré)</span>
+    <span class="sw"><i style="background:var(--warn);opacity:.5"></i>2022T4 (excluído)</span>`;
+
+  const preRows = rows.filter(r=>r.periodo==='pre');
+  const posRows = rows.filter(r=>r.periodo==='pos');
+  const avg = a => a.reduce((s,v)=>s+v,0)/a.length;
+  const preDif = avg(preRows.map(r=>r.dif_muda_grupo_Q4_Q1));
+  const posDif = avg(posRows.map(r=>r.dif_muda_grupo_Q4_Q1));
+  const preMin = Math.min(...preRows.map(r=>r.dif_muda_grupo_Q4_Q1)), preMax = Math.max(...preRows.map(r=>r.dif_muda_grupo_Q4_Q1));
+
+  document.getElementById('findings').innerHTML = `
+    <div class="finding"><div class="k">Diferença Q4 − Q1, pré-choque</div>
+      <p><b class="tabular">${fmtpp(preDif)}</b> em média (entre ${fmt1(preMin)} e ${fmt1(preMax)} p.p.).
+      A distância entre os grupos já existia antes de 2023 — não nasce com o choque.</p></div>
+    <div class="finding"><div class="k">Diferença Q4 − Q1, pós-choque</div>
+      <p><b class="tabular">${fmtpp(posDif)}</b> em média. Dentro da faixa observada no pré: sem
+      divergência visível atribuível ao lançamento do ChatGPT.</p></div>`;
+})();
+
+/* theme toggle read-only: respects data-theme if host sets it; no UI control added */
+})();
+</script>
