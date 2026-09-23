@@ -1,0 +1,4402 @@
+{
+ "meta": {
+  "gerado_em": "2026-09-22T23:48:52+00:00",
+  "fonte": "../data/processed/pnadc_transicoes.parquet",
+  "formato": "pares",
+  "trimestre_parcial_excluido": "2022T4",
+  "pre": "destino até 2022T3",
+  "pos": "origem a partir de 2023T1",
+  "trimestres_origem": [
+   "2019T1",
+   "2019T2",
+   "2019T3",
+   "2019T4",
+   "2020T1",
+   "2020T2",
+   "2020T3",
+   "2020T4",
+   "2021T1",
+   "2021T2",
+   "2021T3",
+   "2021T4",
+   "2022T1",
+   "2022T2",
+   "2022T3",
+   "2022T4",
+   "2023T1",
+   "2023T2",
+   "2023T3",
+   "2023T4",
+   "2024T1",
+   "2024T2",
+   "2024T3",
+   "2024T4",
+   "2025T1",
+   "2025T2",
+   "2025T3"
+  ],
+  "pares": {
+   "pre": 917015,
+   "pos": 1436618,
+   "atipico": 620787,
+   "excluido": 247587
+  },
+  "janela_atipica_origem": [
+   "2020T1",
+   "2021T3"
+  ],
+  "janela_atipica_excluida_do_pre": true,
+  "cortes_quartis_aioe_pre": [
+   -0.99011088,
+   -0.3852989,
+   0.71078045
+  ],
+  "nivel_ocupacional": "grande grupo COD (1 dígito)",
+  "grandes_grupos": {
+   "0": "Forças armadas, policiais e bombeiros militares",
+   "1": "Diretores e gerentes",
+   "2": "Profissionais das ciências e intelectuais",
+   "3": "Técnicos e profissionais de nível médio",
+   "4": "Apoio administrativo",
+   "5": "Serviços, vendedores do comércio e mercados",
+   "6": "Qualificados da agropecuária, florestais, caça e pesca",
+   "7": "Operários, artesãos da construção e ofícios mecânicos",
+   "8": "Operadores de instalações e máquinas e montadores",
+   "9": "Ocupações elementares"
+  },
+  "rotulos_destino": {
+   "mesmo_grupo": "Mesmo grande grupo",
+   "outro_grupo": "Outro grande grupo",
+   "desocupado": "Desocupado",
+   "fora_da_forca": "Fora da força de trabalho"
+  }
+ },
+ "auditoria": {
+  "alertas": [
+   "Quebra na série de mudança de grande grupo (mediana 20.3%) nas origens 2020T1, 2020T2, 2020T3, 2020T4, 2021T1, 2021T2, 2021T3. Janela atípica configurada: 2020T1 a 2021T3.",
+   "19 COD sem AIOE (1.08% do peso). Ficam fora dos quartis."
+  ],
+  "painel": {
+   "formato": "pares",
+   "celulas": 4014438,
+   "origens_ocupadas": 4017289,
+   "pares_encontrados": 3222007,
+   "duplicatas_id_trimestre": {
+    "linhas": 0,
+    "ids": null
+   },
+   "sexo_inconsistente": null,
+   "idade_inconsistente": null,
+   "saltos": null,
+   "retencao_visitas": null,
+   "taxa_pareamento": [
+    {
+     "trimestre": "2019T1",
+     "taxa": 0.8097
+    },
+    {
+     "trimestre": "2019T2",
+     "taxa": 0.8107
+    },
+    {
+     "trimestre": "2019T3",
+     "taxa": 0.8265
+    },
+    {
+     "trimestre": "2019T4",
+     "taxa": 0.7974
+    },
+    {
+     "trimestre": "2020T1",
+     "taxa": 0.7655
+    },
+    {
+     "trimestre": "2020T2",
+     "taxa": 0.8311
+    },
+    {
+     "trimestre": "2020T3",
+     "taxa": 0.8095
+    },
+    {
+     "trimestre": "2020T4",
+     "taxa": 0.7931
+    },
+    {
+     "trimestre": "2021T1",
+     "taxa": 0.7867
+    },
+    {
+     "trimestre": "2021T2",
+     "taxa": 0.78
+    },
+    {
+     "trimestre": "2021T3",
+     "taxa": 0.7362
+    },
+    {
+     "trimestre": "2021T4",
+     "taxa": 0.7356
+    },
+    {
+     "trimestre": "2022T1",
+     "taxa": 0.749
+    },
+    {
+     "trimestre": "2022T2",
+     "taxa": 0.769
+    },
+    {
+     "trimestre": "2022T3",
+     "taxa": 0.7628
+    },
+    {
+     "trimestre": "2022T4",
+     "taxa": 0.7761
+    },
+    {
+     "trimestre": "2023T1",
+     "taxa": 0.7827
+    },
+    {
+     "trimestre": "2023T2",
+     "taxa": 0.8003
+    },
+    {
+     "trimestre": "2023T3",
+     "taxa": 0.7931
+    },
+    {
+     "trimestre": "2023T4",
+     "taxa": 0.8195
+    },
+    {
+     "trimestre": "2024T1",
+     "taxa": 0.8223
+    },
+    {
+     "trimestre": "2024T2",
+     "taxa": 0.8309
+    },
+    {
+     "trimestre": "2024T3",
+     "taxa": 0.8142
+    },
+    {
+     "trimestre": "2024T4",
+     "taxa": 0.8247
+    },
+    {
+     "trimestre": "2025T1",
+     "taxa": 0.8274
+    },
+    {
+     "trimestre": "2025T2",
+     "taxa": 0.8314
+    },
+    {
+     "trimestre": "2025T3",
+     "taxa": 0.821
+    }
+   ],
+   "nota": "No formato de pares, sexo, nascimento, visita seguinte e trimestre seguinte já foram exigidos no pareamento (BigQuery). Chave duplicada não pareia. Aqui entram a taxa de pareamento e as duplicatas registradas."
+  },
+  "quebra_coleta": {
+   "mediana_pct_muda_grupo": 20.271535740728886,
+   "trimestres_com_quebra": [
+    "2020T1",
+    "2020T2",
+    "2020T3",
+    "2020T4",
+    "2021T1",
+    "2021T2",
+    "2021T3"
+   ],
+   "janela_configurada": [
+    "2020T1",
+    "2021T3"
+   ],
+   "excluida_do_pre": true,
+   "alertas": [
+    "Quebra na série de mudança de grande grupo (mediana 20.3%) nas origens 2020T1, 2020T2, 2020T3, 2020T4, 2021T1, 2021T2, 2021T3. Janela atípica configurada: 2020T1 a 2021T3."
+   ]
+  },
+  "serie_muda_grupo_todos": [
+   {
+    "trimestre_origem": "2019T1",
+    "pct_muda_grupo": 19.9489,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2019T2",
+    "pct_muda_grupo": 19.6131,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2019T3",
+    "pct_muda_grupo": 19.7138,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2019T4",
+    "pct_muda_grupo": 19.5394,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2020T1",
+    "pct_muda_grupo": 9.9316,
+    "quebra": true
+   },
+   {
+    "trimestre_origem": "2020T2",
+    "pct_muda_grupo": 9.4594,
+    "quebra": true
+   },
+   {
+    "trimestre_origem": "2020T3",
+    "pct_muda_grupo": 9.6277,
+    "quebra": true
+   },
+   {
+    "trimestre_origem": "2020T4",
+    "pct_muda_grupo": 9.8842,
+    "quebra": true
+   },
+   {
+    "trimestre_origem": "2021T1",
+    "pct_muda_grupo": 9.7143,
+    "quebra": true
+   },
+   {
+    "trimestre_origem": "2021T2",
+    "pct_muda_grupo": 10.4479,
+    "quebra": true
+   },
+   {
+    "trimestre_origem": "2021T3",
+    "pct_muda_grupo": 10.9677,
+    "quebra": true
+   },
+   {
+    "trimestre_origem": "2021T4",
+    "pct_muda_grupo": 22.2265,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2022T1",
+    "pct_muda_grupo": 22.5106,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2022T2",
+    "pct_muda_grupo": 21.4752,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2022T3",
+    "pct_muda_grupo": 20.6343,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2022T4",
+    "pct_muda_grupo": 20.1244,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2023T1",
+    "pct_muda_grupo": 20.2715,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2023T2",
+    "pct_muda_grupo": 19.9364,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2023T3",
+    "pct_muda_grupo": 20.9194,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2023T4",
+    "pct_muda_grupo": 21.5046,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2024T1",
+    "pct_muda_grupo": 22.0058,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2024T2",
+    "pct_muda_grupo": 21.2744,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2024T3",
+    "pct_muda_grupo": 21.6979,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2024T4",
+    "pct_muda_grupo": 21.8925,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2025T1",
+    "pct_muda_grupo": 22.0776,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2025T2",
+    "pct_muda_grupo": 22.009,
+    "quebra": false
+   },
+   {
+    "trimestre_origem": "2025T3",
+    "pct_muda_grupo": 21.7727,
+    "quebra": false
+   }
+  ],
+  "exposicao": {
+   "frac_peso_sem_aioe": 0.010813396922072371,
+   "n_sem_aioe": 33758,
+   "cods_fora_do_crosswalk": [
+    {
+     "cod": "0412",
+     "n": 12247,
+     "pct_peso": 0.397
+    },
+    {
+     "cod": "0210",
+     "n": 9351,
+     "pct_peso": 0.303
+    },
+    {
+     "cod": "0512",
+     "n": 2335,
+     "pct_peso": 0.076
+    },
+    {
+     "cod": "0110",
+     "n": 2236,
+     "pct_peso": 0.074
+    },
+    {
+     "cod": "9510",
+     "n": 1542,
+     "pct_peso": 0.052
+    },
+    {
+     "cod": "1111",
+     "n": 1972,
+     "pct_peso": 0.047
+    },
+    {
+     "cod": "0411",
+     "n": 1450,
+     "pct_peso": 0.045
+    },
+    {
+     "cod": "0511",
+     "n": 518,
+     "pct_peso": 0.019
+    },
+    {
+     "cod": "9332",
+     "n": 646,
+     "pct_peso": 0.016
+    },
+    {
+     "cod": "0000",
+     "n": 398,
+     "pct_peso": 0.014
+    },
+    {
+     "cod": "5161",
+     "n": 225,
+     "pct_peso": 0.009
+    },
+    {
+     "cod": "8159",
+     "n": 155,
+     "pct_peso": 0.007
+    },
+    {
+     "cod": "3413",
+     "n": 192,
+     "pct_peso": 0.006
+    },
+    {
+     "cod": "9613",
+     "n": 130,
+     "pct_peso": 0.004
+    },
+    {
+     "cod": "5168",
+     "n": 118,
+     "pct_peso": 0.004
+    },
+    {
+     "cod": "8155",
+     "n": 88,
+     "pct_peso": 0.004
+    },
+    {
+     "cod": "7133",
+     "n": 67,
+     "pct_peso": 0.003
+    },
+    {
+     "cod": "2659",
+     "n": 81,
+     "pct_peso": 0.002
+    },
+    {
+     "cod": "4213",
+     "n": 7,
+     "pct_peso": 0.0
+    }
+   ],
+   "alertas": [
+    "19 COD sem AIOE (1.08% do peso). Ficam fora dos quartis."
+   ]
+  },
+  "composicao_pre_pos": [
+   {
+    "dimensao": "quartil",
+    "categoria": "Q1",
+    "pre": 30.2021,
+    "pos": 28.3692,
+    "n_pre": 907173,
+    "n_pos": 1422302,
+    "dif_pp": -1.8329
+   },
+   {
+    "dimensao": "quartil",
+    "categoria": "Q2",
+    "pre": 19.8631,
+    "pos": 20.7228,
+    "n_pre": 907173,
+    "n_pos": 1422302,
+    "dif_pp": 0.8597
+   },
+   {
+    "dimensao": "quartil",
+    "categoria": "Q3",
+    "pre": 25.0123,
+    "pos": 25.7165,
+    "n_pre": 907173,
+    "n_pos": 1422302,
+    "dif_pp": 0.7042
+   },
+   {
+    "dimensao": "quartil",
+    "categoria": "Q4",
+    "pre": 24.9225,
+    "pos": 25.1915,
+    "n_pre": 907173,
+    "n_pos": 1422302,
+    "dif_pp": 0.269
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "0",
+    "pre": 0.953,
+    "pos": 0.8608,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": -0.0922
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "1",
+    "pre": 4.1827,
+    "pos": 3.5665,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": -0.6162
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "2",
+    "pre": 12.0415,
+    "pos": 13.4657,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": 1.4242
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "3",
+    "pre": 8.2586,
+    "pos": 9.1019,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": 0.8433
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "4",
+    "pre": 8.2982,
+    "pos": 8.4275,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": 0.1292
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "5",
+    "pre": 22.3346,
+    "pos": 21.861,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": -0.4736
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "6",
+    "pre": 5.8202,
+    "pos": 4.9724,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": -0.8478
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "7",
+    "pre": 13.3494,
+    "pos": 12.943,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": -0.4065
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "8",
+    "pre": 8.59,
+    "pos": 9.3172,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": 0.7272
+   },
+   {
+    "dimensao": "grupo_origem",
+    "categoria": "9",
+    "pre": 16.1717,
+    "pos": 15.4841,
+    "n_pre": 917015,
+    "n_pos": 1436618,
+    "dif_pp": -0.6876
+   }
+  ]
+ },
+ "quem_esta_exposto": {
+  "cortes_aioe": [
+   -0.99011088,
+   -0.3852989,
+   0.71078045
+  ],
+  "quartil_por_grupo": [
+   {
+    "quartil": "Q1",
+    "grupo": "2",
+    "nome_grupo": "Profissionais das ciências e intelectuais",
+    "pct": 0.008
+   },
+   {
+    "quartil": "Q1",
+    "grupo": "3",
+    "nome_grupo": "Técnicos e profissionais de nível médio",
+    "pct": 0.13
+   },
+   {
+    "quartil": "Q1",
+    "grupo": "5",
+    "nome_grupo": "Serviços, vendedores do comércio e mercados",
+    "pct": 2.862
+   },
+   {
+    "quartil": "Q1",
+    "grupo": "6",
+    "nome_grupo": "Qualificados da agropecuária, florestais, caça e pesca",
+    "pct": 19.489
+   },
+   {
+    "quartil": "Q1",
+    "grupo": "7",
+    "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos",
+    "pct": 26.164
+   },
+   {
+    "quartil": "Q1",
+    "grupo": "8",
+    "nome_grupo": "Operadores de instalações e máquinas e montadores",
+    "pct": 5.181
+   },
+   {
+    "quartil": "Q1",
+    "grupo": "9",
+    "nome_grupo": "Ocupações elementares",
+    "pct": 46.165
+   },
+   {
+    "quartil": "Q2",
+    "grupo": "2",
+    "nome_grupo": "Profissionais das ciências e intelectuais",
+    "pct": 0.168
+   },
+   {
+    "quartil": "Q2",
+    "grupo": "3",
+    "nome_grupo": "Técnicos e profissionais de nível médio",
+    "pct": 6.849
+   },
+   {
+    "quartil": "Q2",
+    "grupo": "4",
+    "nome_grupo": "Apoio administrativo",
+    "pct": 4.796
+   },
+   {
+    "quartil": "Q2",
+    "grupo": "5",
+    "nome_grupo": "Serviços, vendedores do comércio e mercados",
+    "pct": 18.474
+   },
+   {
+    "quartil": "Q2",
+    "grupo": "7",
+    "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos",
+    "pct": 26.264
+   },
+   {
+    "quartil": "Q2",
+    "grupo": "8",
+    "nome_grupo": "Operadores de instalações e máquinas e montadores",
+    "pct": 33.386
+   },
+   {
+    "quartil": "Q2",
+    "grupo": "9",
+    "nome_grupo": "Ocupações elementares",
+    "pct": 10.063
+   },
+   {
+    "quartil": "Q3",
+    "grupo": "1",
+    "nome_grupo": "Diretores e gerentes",
+    "pct": 5.203
+   },
+   {
+    "quartil": "Q3",
+    "grupo": "2",
+    "nome_grupo": "Profissionais das ciências e intelectuais",
+    "pct": 11.858
+   },
+   {
+    "quartil": "Q3",
+    "grupo": "3",
+    "nome_grupo": "Técnicos e profissionais de nível médio",
+    "pct": 16.218
+   },
+   {
+    "quartil": "Q3",
+    "grupo": "4",
+    "nome_grupo": "Apoio administrativo",
+    "pct": 1.33
+   },
+   {
+    "quartil": "Q3",
+    "grupo": "5",
+    "nome_grupo": "Serviços, vendedores do comércio e mercados",
+    "pct": 62.246
+   },
+   {
+    "quartil": "Q3",
+    "grupo": "7",
+    "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos",
+    "pct": 1.24
+   },
+   {
+    "quartil": "Q3",
+    "grupo": "8",
+    "nome_grupo": "Operadores de instalações e máquinas e montadores",
+    "pct": 1.905
+   },
+   {
+    "quartil": "Q4",
+    "grupo": "1",
+    "nome_grupo": "Diretores e gerentes",
+    "pct": 11.565
+   },
+   {
+    "quartil": "Q4",
+    "grupo": "2",
+    "nome_grupo": "Profissionais das ciências e intelectuais",
+    "pct": 36.806
+   },
+   {
+    "quartil": "Q4",
+    "grupo": "3",
+    "nome_grupo": "Técnicos e profissionais de nível médio",
+    "pct": 11.581
+   },
+   {
+    "quartil": "Q4",
+    "grupo": "4",
+    "nome_grupo": "Apoio administrativo",
+    "pct": 28.516
+   },
+   {
+    "quartil": "Q4",
+    "grupo": "5",
+    "nome_grupo": "Serviços, vendedores do comércio e mercados",
+    "pct": 9.931
+   },
+   {
+    "quartil": "Q4",
+    "grupo": "7",
+    "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos",
+    "pct": 0.272
+   },
+   {
+    "quartil": "Q4",
+    "grupo": "9",
+    "nome_grupo": "Ocupações elementares",
+    "pct": 1.329
+   }
+  ],
+  "grupos": [
+   {
+    "grupo": "9",
+    "nome_grupo": "Ocupações elementares",
+    "aioe_medio": -1.3634,
+    "pct_ocupados": 16.273,
+    "pct_por_quartil": {
+     "Q1": 85.68,
+     "Q2": 12.28,
+     "Q3": 0.0,
+     "Q4": 2.04
+    }
+   },
+   {
+    "grupo": "7",
+    "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos",
+    "aioe_medio": -1.0455,
+    "pct_ocupados": 13.497,
+    "pct_por_quartil": {
+     "Q1": 58.55,
+     "Q2": 38.65,
+     "Q3": 2.3,
+     "Q4": 0.5
+    }
+   },
+   {
+    "grupo": "6",
+    "nome_grupo": "Qualificados da agropecuária, florestais, caça e pesca",
+    "aioe_medio": -0.9974,
+    "pct_ocupados": 5.886,
+    "pct_por_quartil": {
+     "Q1": 100.0,
+     "Q2": 0.0,
+     "Q3": 0.0,
+     "Q4": 0.0
+    }
+   },
+   {
+    "grupo": "8",
+    "nome_grupo": "Operadores de instalações e máquinas e montadores",
+    "aioe_medio": -0.6981,
+    "pct_ocupados": 8.673,
+    "pct_por_quartil": {
+     "Q1": 18.04,
+     "Q2": 76.46,
+     "Q3": 5.49,
+     "Q4": 0.0
+    }
+   },
+   {
+    "grupo": "5",
+    "nome_grupo": "Serviços, vendedores do comércio e mercados",
+    "aioe_medio": 0.0031,
+    "pct_ocupados": 22.578,
+    "pct_por_quartil": {
+     "Q1": 3.83,
+     "Q2": 16.25,
+     "Q3": 68.96,
+     "Q4": 10.96
+    }
+   },
+   {
+    "grupo": "3",
+    "nome_grupo": "Técnicos e profissionais de nível médio",
+    "aioe_medio": 0.3129,
+    "pct_ocupados": 8.343,
+    "pct_por_quartil": {
+     "Q1": 0.47,
+     "Q2": 16.31,
+     "Q3": 48.63,
+     "Q4": 34.6
+    }
+   },
+   {
+    "grupo": "1",
+    "nome_grupo": "Diretores e gerentes",
+    "aioe_medio": 0.8739,
+    "pct_ocupados": 4.184,
+    "pct_por_quartil": {
+     "Q1": 0.0,
+     "Q2": 0.0,
+     "Q3": 31.11,
+     "Q4": 68.89
+    }
+   },
+   {
+    "grupo": "4",
+    "nome_grupo": "Apoio administrativo",
+    "aioe_medio": 0.9261,
+    "pct_ocupados": 8.392,
+    "pct_por_quartil": {
+     "Q1": 0.0,
+     "Q2": 11.35,
+     "Q3": 3.96,
+     "Q4": 84.68
+    }
+   },
+   {
+    "grupo": "2",
+    "nome_grupo": "Profissionais das ciências e intelectuais",
+    "aioe_medio": 0.9682,
+    "pct_ocupados": 12.175,
+    "pct_por_quartil": {
+     "Q1": 0.02,
+     "Q2": 0.27,
+     "Q3": 24.36,
+     "Q4": 75.34
+    }
+   }
+  ]
+ },
+ "A_destino_por_quartil": [
+  {
+   "quartil": "Q1",
+   "destino": "desocupado",
+   "pre": 4.4089,
+   "pos": 2.9179,
+   "n_pre": 330415,
+   "n_pos": 490520,
+   "dif_pp": -1.491
+  },
+  {
+   "quartil": "Q1",
+   "destino": "fora_da_forca",
+   "pre": 8.2132,
+   "pos": 8.5844,
+   "n_pre": 330415,
+   "n_pos": 490520,
+   "dif_pp": 0.3712
+  },
+  {
+   "quartil": "Q1",
+   "destino": "mesmo_grupo",
+   "pre": 68.5292,
+   "pos": 68.9757,
+   "n_pre": 330415,
+   "n_pos": 490520,
+   "dif_pp": 0.4466
+  },
+  {
+   "quartil": "Q1",
+   "destino": "outro_grupo",
+   "pre": 18.8487,
+   "pos": 19.522,
+   "n_pre": 330415,
+   "n_pos": 490520,
+   "dif_pp": 0.6732
+  },
+  {
+   "quartil": "Q2",
+   "destino": "desocupado",
+   "pre": 3.3983,
+   "pos": 2.3205,
+   "n_pre": 167847,
+   "n_pos": 273413,
+   "dif_pp": -1.0778
+  },
+  {
+   "quartil": "Q2",
+   "destino": "fora_da_forca",
+   "pre": 5.129,
+   "pos": 5.2418,
+   "n_pre": 167847,
+   "n_pos": 273413,
+   "dif_pp": 0.1128
+  },
+  {
+   "quartil": "Q2",
+   "destino": "mesmo_grupo",
+   "pre": 70.1871,
+   "pos": 70.7741,
+   "n_pre": 167847,
+   "n_pos": 273413,
+   "dif_pp": 0.587
+  },
+  {
+   "quartil": "Q2",
+   "destino": "outro_grupo",
+   "pre": 21.2856,
+   "pos": 21.6636,
+   "n_pre": 167847,
+   "n_pos": 273413,
+   "dif_pp": 0.378
+  },
+  {
+   "quartil": "Q3",
+   "destino": "desocupado",
+   "pre": 3.0163,
+   "pos": 2.0099,
+   "n_pre": 209444,
+   "n_pos": 338657,
+   "dif_pp": -1.0063
+  },
+  {
+   "quartil": "Q3",
+   "destino": "fora_da_forca",
+   "pre": 5.1197,
+   "pos": 5.2732,
+   "n_pre": 209444,
+   "n_pos": 338657,
+   "dif_pp": 0.1535
+  },
+  {
+   "quartil": "Q3",
+   "destino": "mesmo_grupo",
+   "pre": 72.6776,
+   "pos": 72.6952,
+   "n_pre": 209444,
+   "n_pos": 338657,
+   "dif_pp": 0.0176
+  },
+  {
+   "quartil": "Q3",
+   "destino": "outro_grupo",
+   "pre": 19.1864,
+   "pos": 20.0216,
+   "n_pre": 209444,
+   "n_pos": 338657,
+   "dif_pp": 0.8352
+  },
+  {
+   "quartil": "Q4",
+   "destino": "desocupado",
+   "pre": 2.4335,
+   "pos": 1.6231,
+   "n_pre": 199467,
+   "n_pos": 319712,
+   "dif_pp": -0.8103
+  },
+  {
+   "quartil": "Q4",
+   "destino": "fora_da_forca",
+   "pre": 3.8484,
+   "pos": 3.7919,
+   "n_pre": 199467,
+   "n_pos": 319712,
+   "dif_pp": -0.0565
+  },
+  {
+   "quartil": "Q4",
+   "destino": "mesmo_grupo",
+   "pre": 69.2241,
+   "pos": 69.2877,
+   "n_pre": 199467,
+   "n_pos": 319712,
+   "dif_pp": 0.0636
+  },
+  {
+   "quartil": "Q4",
+   "destino": "outro_grupo",
+   "pre": 24.494,
+   "pos": 25.2973,
+   "n_pre": 199467,
+   "n_pos": 319712,
+   "dif_pp": 0.8032
+  },
+  {
+   "quartil": "Todos",
+   "destino": "desocupado",
+   "pre": 3.3675,
+   "pos": 2.2344,
+   "n_pre": 907173,
+   "n_pos": 1422302,
+   "dif_pp": -1.1331
+  },
+  {
+   "quartil": "Todos",
+   "destino": "fora_da_forca",
+   "pre": 5.739,
+   "pos": 5.8329,
+   "n_pre": 907173,
+   "n_pos": 1422302,
+   "dif_pp": 0.0939
+  },
+  {
+   "quartil": "Todos",
+   "destino": "mesmo_grupo",
+   "pre": 70.0693,
+   "pos": 70.3835,
+   "n_pre": 907173,
+   "n_pos": 1422302,
+   "dif_pp": 0.3142
+  },
+  {
+   "quartil": "Todos",
+   "destino": "outro_grupo",
+   "pre": 20.8242,
+   "pos": 21.5491,
+   "n_pre": 907173,
+   "n_pos": 1422302,
+   "dif_pp": 0.725
+  }
+ ],
+ "A_sensibilidade_janela_atipica": [
+  {
+   "quartil": "Q1",
+   "destino": "desocupado",
+   "pre": 3.8188,
+   "pos": 2.9179,
+   "n_pre": 548796,
+   "n_pos": 490520,
+   "dif_pp": -0.9009
+  },
+  {
+   "quartil": "Q1",
+   "destino": "fora_da_forca",
+   "pre": 6.8347,
+   "pos": 8.5844,
+   "n_pre": 548796,
+   "n_pos": 490520,
+   "dif_pp": 1.7497
+  },
+  {
+   "quartil": "Q1",
+   "destino": "mesmo_grupo",
+   "pre": 75.4196,
+   "pos": 68.9757,
+   "n_pre": 548796,
+   "n_pos": 490520,
+   "dif_pp": -6.4439
+  },
+  {
+   "quartil": "Q1",
+   "destino": "outro_grupo",
+   "pre": 13.9269,
+   "pos": 19.522,
+   "n_pre": 548796,
+   "n_pos": 490520,
+   "dif_pp": 5.5951
+  },
+  {
+   "quartil": "Q2",
+   "destino": "desocupado",
+   "pre": 3.0477,
+   "pos": 2.3205,
+   "n_pre": 279548,
+   "n_pos": 273413,
+   "dif_pp": -0.7271
+  },
+  {
+   "quartil": "Q2",
+   "destino": "fora_da_forca",
+   "pre": 4.6252,
+   "pos": 5.2418,
+   "n_pre": 279548,
+   "n_pos": 273413,
+   "dif_pp": 0.6166
+  },
+  {
+   "quartil": "Q2",
+   "destino": "mesmo_grupo",
+   "pre": 76.285,
+   "pos": 70.7741,
+   "n_pre": 279548,
+   "n_pos": 273413,
+   "dif_pp": -5.5109
+  },
+  {
+   "quartil": "Q2",
+   "destino": "outro_grupo",
+   "pre": 16.0421,
+   "pos": 21.6636,
+   "n_pre": 279548,
+   "n_pos": 273413,
+   "dif_pp": 5.6215
+  },
+  {
+   "quartil": "Q3",
+   "destino": "desocupado",
+   "pre": 2.6965,
+   "pos": 2.0099,
+   "n_pre": 348600,
+   "n_pos": 338657,
+   "dif_pp": -0.6865
+  },
+  {
+   "quartil": "Q3",
+   "destino": "fora_da_forca",
+   "pre": 4.6745,
+   "pos": 5.2732,
+   "n_pre": 348600,
+   "n_pos": 338657,
+   "dif_pp": 0.5987
+  },
+  {
+   "quartil": "Q3",
+   "destino": "mesmo_grupo",
+   "pre": 77.8105,
+   "pos": 72.6952,
+   "n_pre": 348600,
+   "n_pos": 338657,
+   "dif_pp": -5.1153
+  },
+  {
+   "quartil": "Q3",
+   "destino": "outro_grupo",
+   "pre": 14.8185,
+   "pos": 20.0216,
+   "n_pre": 348600,
+   "n_pos": 338657,
+   "dif_pp": 5.2031
+  },
+  {
+   "quartil": "Q4",
+   "destino": "desocupado",
+   "pre": 2.1449,
+   "pos": 1.6231,
+   "n_pre": 343990,
+   "n_pos": 319712,
+   "dif_pp": -0.5217
+  },
+  {
+   "quartil": "Q4",
+   "destino": "fora_da_forca",
+   "pre": 3.3257,
+   "pos": 3.7919,
+   "n_pre": 343990,
+   "n_pos": 319712,
+   "dif_pp": 0.4662
+  },
+  {
+   "quartil": "Q4",
+   "destino": "mesmo_grupo",
+   "pre": 76.2462,
+   "pos": 69.2877,
+   "n_pre": 343990,
+   "n_pos": 319712,
+   "dif_pp": -6.9585
+  },
+  {
+   "quartil": "Q4",
+   "destino": "outro_grupo",
+   "pre": 18.2832,
+   "pos": 25.2973,
+   "n_pre": 343990,
+   "n_pos": 319712,
+   "dif_pp": 7.014
+  },
+  {
+   "quartil": "Todos",
+   "destino": "desocupado",
+   "pre": 2.9585,
+   "pos": 2.2344,
+   "n_pre": 1520934,
+   "n_pos": 1422302,
+   "dif_pp": -0.7241
+  },
+  {
+   "quartil": "Todos",
+   "destino": "fora_da_forca",
+   "pre": 4.9623,
+   "pos": 5.8329,
+   "n_pre": 1520934,
+   "n_pos": 1422302,
+   "dif_pp": 0.8706
+  },
+  {
+   "quartil": "Todos",
+   "destino": "mesmo_grupo",
+   "pre": 76.3939,
+   "pos": 70.3835,
+   "n_pre": 1520934,
+   "n_pos": 1422302,
+   "dif_pp": -6.0104
+  },
+  {
+   "quartil": "Todos",
+   "destino": "outro_grupo",
+   "pre": 15.6852,
+   "pos": 21.5491,
+   "n_pre": 1520934,
+   "n_pos": 1422302,
+   "dif_pp": 5.8639
+  }
+ ],
+ "B_grupo_destino_dos_que_mudam": [
+  {
+   "quartil": "Q1",
+   "grupo_destino": "0",
+   "pre": 0.1097,
+   "pos": 0.1396,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": 0.03,
+   "nome_grupo": "Forças armadas, policiais e bombeiros militares"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "1",
+   "pre": 2.6198,
+   "pos": 2.199,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": -0.4208,
+   "nome_grupo": "Diretores e gerentes"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "2",
+   "pre": 2.0967,
+   "pos": 2.3066,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": 0.2099,
+   "nome_grupo": "Profissionais das ciências e intelectuais"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "3",
+   "pre": 6.1256,
+   "pos": 7.1084,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": 0.9829,
+   "nome_grupo": "Técnicos e profissionais de nível médio"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "4",
+   "pre": 5.0274,
+   "pos": 5.2409,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": 0.2135,
+   "nome_grupo": "Apoio administrativo"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "5",
+   "pre": 20.8486,
+   "pos": 20.0497,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": -0.7988,
+   "nome_grupo": "Serviços, vendedores do comércio e mercados"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "6",
+   "pre": 11.4544,
+   "pos": 10.3831,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": -1.0713,
+   "nome_grupo": "Qualificados da agropecuária, florestais, caça e pesca"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "7",
+   "pre": 15.9624,
+   "pos": 16.6952,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": 0.7329,
+   "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "8",
+   "pre": 13.6357,
+   "pos": 14.131,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": 0.4953,
+   "nome_grupo": "Operadores de instalações e máquinas e montadores"
+  },
+  {
+   "quartil": "Q1",
+   "grupo_destino": "9",
+   "pre": 22.12,
+   "pos": 21.7465,
+   "n_pre": 61089,
+   "n_pos": 90852,
+   "dif_pp": -0.3735,
+   "nome_grupo": "Ocupações elementares"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "0",
+   "pre": 0.4168,
+   "pos": 0.395,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": -0.0218,
+   "nome_grupo": "Forças armadas, policiais e bombeiros militares"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "1",
+   "pre": 4.4681,
+   "pos": 3.4037,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": -1.0644,
+   "nome_grupo": "Diretores e gerentes"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "2",
+   "pre": 4.174,
+   "pos": 4.9018,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": 0.7278,
+   "nome_grupo": "Profissionais das ciências e intelectuais"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "3",
+   "pre": 11.7007,
+   "pos": 12.3242,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": 0.6236,
+   "nome_grupo": "Técnicos e profissionais de nível médio"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "4",
+   "pre": 8.6589,
+   "pos": 9.1332,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": 0.4743,
+   "nome_grupo": "Apoio administrativo"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "5",
+   "pre": 19.4174,
+   "pos": 19.5995,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": 0.182,
+   "nome_grupo": "Serviços, vendedores do comércio e mercados"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "6",
+   "pre": 2.9517,
+   "pos": 2.331,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": -0.6207,
+   "nome_grupo": "Qualificados da agropecuária, florestais, caça e pesca"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "7",
+   "pre": 14.8455,
+   "pos": 15.0034,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": 0.1579,
+   "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "8",
+   "pre": 12.0532,
+   "pos": 11.4947,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": -0.5585,
+   "nome_grupo": "Operadores de instalações e máquinas e montadores"
+  },
+  {
+   "quartil": "Q2",
+   "grupo_destino": "9",
+   "pre": 21.3137,
+   "pos": 21.4137,
+   "n_pre": 35993,
+   "n_pos": 58436,
+   "dif_pp": 0.1,
+   "nome_grupo": "Ocupações elementares"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "0",
+   "pre": 0.2993,
+   "pos": 0.2941,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": -0.0052,
+   "nome_grupo": "Forças armadas, policiais e bombeiros militares"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "1",
+   "pre": 12.0988,
+   "pos": 10.0109,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": -2.088,
+   "nome_grupo": "Diretores e gerentes"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "2",
+   "pre": 11.6017,
+   "pos": 13.214,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": 1.6124,
+   "nome_grupo": "Profissionais das ciências e intelectuais"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "3",
+   "pre": 10.1972,
+   "pos": 11.4823,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": 1.2851,
+   "nome_grupo": "Técnicos e profissionais de nível médio"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "4",
+   "pre": 12.6302,
+   "pos": 13.3302,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": 0.7,
+   "nome_grupo": "Apoio administrativo"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "5",
+   "pre": 12.941,
+   "pos": 12.3653,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": -0.5756,
+   "nome_grupo": "Serviços, vendedores do comércio e mercados"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "6",
+   "pre": 2.1915,
+   "pos": 1.8088,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": -0.3828,
+   "nome_grupo": "Qualificados da agropecuária, florestais, caça e pesca"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "7",
+   "pre": 17.4583,
+   "pos": 16.4344,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": -1.0239,
+   "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "8",
+   "pre": 6.6441,
+   "pos": 7.5391,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": 0.8951,
+   "nome_grupo": "Operadores de instalações e máquinas e montadores"
+  },
+  {
+   "quartil": "Q3",
+   "grupo_destino": "9",
+   "pre": 13.9378,
+   "pos": 13.5208,
+   "n_pre": 40121,
+   "n_pos": 66201,
+   "dif_pp": -0.417,
+   "nome_grupo": "Ocupações elementares"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "0",
+   "pre": 0.3065,
+   "pos": 0.2459,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": -0.0606,
+   "nome_grupo": "Forças armadas, policiais e bombeiros militares"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "1",
+   "pre": 12.6303,
+   "pos": 11.2735,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": -1.3568,
+   "nome_grupo": "Diretores e gerentes"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "2",
+   "pre": 14.8472,
+   "pos": 16.3469,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": 1.4998,
+   "nome_grupo": "Profissionais das ciências e intelectuais"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "3",
+   "pre": 18.924,
+   "pos": 21.1329,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": 2.2089,
+   "nome_grupo": "Técnicos e profissionais de nível médio"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "4",
+   "pre": 14.4509,
+   "pos": 14.7421,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": 0.2911,
+   "nome_grupo": "Apoio administrativo"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "5",
+   "pre": 19.8645,
+   "pos": 19.2776,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": -0.5869,
+   "nome_grupo": "Serviços, vendedores do comércio e mercados"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "6",
+   "pre": 1.0316,
+   "pos": 0.8082,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": -0.2234,
+   "nome_grupo": "Qualificados da agropecuária, florestais, caça e pesca"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "7",
+   "pre": 7.5683,
+   "pos": 6.9621,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": -0.6062,
+   "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "8",
+   "pre": 3.6568,
+   "pos": 3.5697,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": -0.0871,
+   "nome_grupo": "Operadores de instalações e máquinas e montadores"
+  },
+  {
+   "quartil": "Q4",
+   "grupo_destino": "9",
+   "pre": 6.7199,
+   "pos": 5.641,
+   "n_pre": 48481,
+   "n_pos": 78915,
+   "dif_pp": -1.0789,
+   "nome_grupo": "Ocupações elementares"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "0",
+   "pre": 0.2734,
+   "pos": 0.2612,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": -0.0123,
+   "nome_grupo": "Forças armadas, policiais e bombeiros militares"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "1",
+   "pre": 8.114,
+   "pos": 7.0001,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": -1.1139,
+   "nome_grupo": "Diretores e gerentes"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "2",
+   "pre": 8.4467,
+   "pos": 9.6056,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": 1.1589,
+   "nome_grupo": "Profissionais das ciências e intelectuais"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "3",
+   "pre": 11.9476,
+   "pos": 13.3876,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": 1.44,
+   "nome_grupo": "Técnicos e profissionais de nível médio"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "4",
+   "pre": 10.2792,
+   "pos": 10.7944,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": 0.5151,
+   "nome_grupo": "Apoio administrativo"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "5",
+   "pre": 18.4472,
+   "pos": 17.8915,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": -0.5557,
+   "nome_grupo": "Serviços, vendedores do comércio e mercados"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "6",
+   "pre": 4.538,
+   "pos": 3.8253,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": -0.7127,
+   "nome_grupo": "Qualificados da agropecuária, florestais, caça e pesca"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "7",
+   "pre": 13.6197,
+   "pos": 13.4021,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": -0.2176,
+   "nome_grupo": "Operários, artesãos da construção e ofícios mecânicos"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "8",
+   "pre": 8.7779,
+   "pos": 8.8834,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": 0.1055,
+   "nome_grupo": "Operadores de instalações e máquinas e montadores"
+  },
+  {
+   "quartil": "Todos",
+   "grupo_destino": "9",
+   "pre": 15.5562,
+   "pos": 14.9489,
+   "n_pre": 185684,
+   "n_pos": 294404,
+   "dif_pp": -0.6074,
+   "nome_grupo": "Ocupações elementares"
+  }
+ ],
+ "D_direcao_exposicao": [
+  {
+   "quartil": "Q1",
+   "direcao": "mais_exposta",
+   "pre": 50.9668,
+   "pos": 51.5777,
+   "n_pre": 60894,
+   "n_pos": 90629,
+   "dif_pp": 0.6109,
+   "delta_aioe_medio_pre": 0.6708,
+   "delta_aioe_medio_pos": 0.6611
+  },
+  {
+   "quartil": "Q1",
+   "direcao": "menos_exposta",
+   "pre": 0.0,
+   "pos": 0.0,
+   "n_pre": 60894,
+   "n_pos": 90629,
+   "dif_pp": 0.0,
+   "delta_aioe_medio_pre": 0.6708,
+   "delta_aioe_medio_pos": 0.6611
+  },
+  {
+   "quartil": "Q1",
+   "direcao": "mesmo_quartil",
+   "pre": 49.0332,
+   "pos": 48.4223,
+   "n_pre": 60894,
+   "n_pos": 90629,
+   "dif_pp": -0.6109,
+   "delta_aioe_medio_pre": 0.6708,
+   "delta_aioe_medio_pos": 0.6611
+  },
+  {
+   "quartil": "Q2",
+   "direcao": "mais_exposta",
+   "pre": 41.1733,
+   "pos": 41.7169,
+   "n_pre": 35800,
+   "n_pos": 58118,
+   "dif_pp": 0.5436,
+   "delta_aioe_medio_pre": 0.2982,
+   "delta_aioe_medio_pos": 0.3018
+  },
+  {
+   "quartil": "Q2",
+   "direcao": "menos_exposta",
+   "pre": 28.59,
+   "pos": 27.8098,
+   "n_pre": 35800,
+   "n_pos": 58118,
+   "dif_pp": -0.7802,
+   "delta_aioe_medio_pre": 0.2982,
+   "delta_aioe_medio_pos": 0.3018
+  },
+  {
+   "quartil": "Q2",
+   "direcao": "mesmo_quartil",
+   "pre": 30.2367,
+   "pos": 30.4733,
+   "n_pre": 35800,
+   "n_pos": 58118,
+   "dif_pp": 0.2366,
+   "delta_aioe_medio_pre": 0.2982,
+   "delta_aioe_medio_pos": 0.3018
+  },
+  {
+   "quartil": "Q3",
+   "direcao": "mais_exposta",
+   "pre": 30.8119,
+   "pos": 31.3154,
+   "n_pre": 39891,
+   "n_pos": 65845,
+   "dif_pp": 0.5035,
+   "delta_aioe_medio_pre": -0.1906,
+   "delta_aioe_medio_pos": -0.1702
+  },
+  {
+   "quartil": "Q3",
+   "direcao": "menos_exposta",
+   "pre": 43.7121,
+   "pos": 42.922,
+   "n_pre": 39891,
+   "n_pos": 65845,
+   "dif_pp": -0.7902,
+   "delta_aioe_medio_pre": -0.1906,
+   "delta_aioe_medio_pos": -0.1702
+  },
+  {
+   "quartil": "Q3",
+   "direcao": "mesmo_quartil",
+   "pre": 25.4759,
+   "pos": 25.7626,
+   "n_pre": 39891,
+   "n_pos": 65845,
+   "dif_pp": 0.2867,
+   "delta_aioe_medio_pre": -0.1906,
+   "delta_aioe_medio_pos": -0.1702
+  },
+  {
+   "quartil": "Q4",
+   "direcao": "mais_exposta",
+   "pre": 0.0,
+   "pos": 0.0,
+   "n_pre": 48226,
+   "n_pos": 78559,
+   "dif_pp": 0.0,
+   "delta_aioe_medio_pre": -0.6741,
+   "delta_aioe_medio_pos": -0.6436
+  },
+  {
+   "quartil": "Q4",
+   "direcao": "menos_exposta",
+   "pre": 45.6129,
+   "pos": 44.0528,
+   "n_pre": 48226,
+   "n_pos": 78559,
+   "dif_pp": -1.5601,
+   "delta_aioe_medio_pre": -0.6741,
+   "delta_aioe_medio_pos": -0.6436
+  },
+  {
+   "quartil": "Q4",
+   "direcao": "mesmo_quartil",
+   "pre": 54.3871,
+   "pos": 55.9472,
+   "n_pre": 48226,
+   "n_pos": 78559,
+   "dif_pp": 1.5601,
+   "delta_aioe_medio_pre": -0.6741,
+   "delta_aioe_medio_pos": -0.6436
+  },
+  {
+   "quartil": "Todos",
+   "direcao": "mais_exposta",
+   "pre": 29.4018,
+   "pos": 29.4333,
+   "n_pre": 184811,
+   "n_pos": 293151,
+   "dif_pp": 0.0315,
+   "delta_aioe_medio_pre": 0.0027,
+   "delta_aioe_medio_pos": 0.002
+  },
+  {
+   "quartil": "Todos",
+   "direcao": "menos_exposta",
+   "pre": 29.2352,
+   "pos": 29.0633,
+   "n_pre": 184811,
+   "n_pos": 293151,
+   "dif_pp": -0.1719,
+   "delta_aioe_medio_pre": 0.0027,
+   "delta_aioe_medio_pos": 0.002
+  },
+  {
+   "quartil": "Todos",
+   "direcao": "mesmo_quartil",
+   "pre": 41.363,
+   "pos": 41.5034,
+   "n_pre": 184811,
+   "n_pos": 293151,
+   "dif_pp": 0.1404,
+   "delta_aioe_medio_pre": 0.0027,
+   "delta_aioe_medio_pos": 0.002
+  }
+ ],
+ "E_serie_Q4_vs_Q1": [
+  {
+   "trimestre_origem": "2019T1",
+   "muda_grupo_Q1": 18.3191,
+   "muda_grupo_Q4": 23.8596,
+   "sai_emprego_Q1": 11.7909,
+   "sai_emprego_Q4": 6.1695,
+   "n_Q1": 50775,
+   "n_Q4": 30822,
+   "dif_muda_grupo_Q4_Q1": 5.5406,
+   "dif_sai_emprego_Q4_Q1": -5.6214,
+   "periodo": "pre"
+  },
+  {
+   "trimestre_origem": "2019T2",
+   "muda_grupo_Q1": 17.8396,
+   "muda_grupo_Q4": 23.4739,
+   "sai_emprego_Q1": 12.3668,
+   "sai_emprego_Q4": 5.7786,
+   "n_Q1": 51589,
+   "n_Q4": 31199,
+   "dif_muda_grupo_Q4_Q1": 5.6344,
+   "dif_sai_emprego_Q4_Q1": -6.5882,
+   "periodo": "pre"
+  },
+  {
+   "trimestre_origem": "2019T3",
+   "muda_grupo_Q1": 18.2125,
+   "muda_grupo_Q4": 23.425,
+   "sai_emprego_Q1": 11.9211,
+   "sai_emprego_Q4": 5.871,
+   "n_Q1": 52236,
+   "n_Q4": 32016,
+   "dif_muda_grupo_Q4_Q1": 5.2126,
+   "dif_sai_emprego_Q4_Q1": -6.05,
+   "periodo": "pre"
+  },
+  {
+   "trimestre_origem": "2019T4",
+   "muda_grupo_Q1": 17.7011,
+   "muda_grupo_Q4": 23.3461,
+   "sai_emprego_Q1": 13.1187,
+   "sai_emprego_Q4": 7.1197,
+   "n_Q1": 49568,
+   "n_Q4": 30790,
+   "dif_muda_grupo_Q4_Q1": 5.645,
+   "dif_sai_emprego_Q4_Q1": -5.999,
+   "periodo": "pre"
+  },
+  {
+   "trimestre_origem": "2020T1",
+   "muda_grupo_Q1": 8.1712,
+   "muda_grupo_Q4": 12.4257,
+   "sai_emprego_Q1": 15.6425,
+   "sai_emprego_Q4": 8.0316,
+   "n_Q1": 38695,
+   "n_Q4": 26684,
+   "dif_muda_grupo_Q4_Q1": 4.2545,
+   "dif_sai_emprego_Q4_Q1": -7.6109,
+   "periodo": "atipico"
+  },
+  {
+   "trimestre_origem": "2020T2",
+   "muda_grupo_Q1": 8.244,
+   "muda_grupo_Q4": 11.0725,
+   "sai_emprego_Q1": 10.2211,
+   "sai_emprego_Q4": 6.4731,
+   "n_Q1": 29476,
+   "n_Q4": 21191,
+   "dif_muda_grupo_Q4_Q1": 2.8286,
+   "dif_sai_emprego_Q4_Q1": -3.748,
+   "periodo": "atipico"
+  },
+  {
+   "trimestre_origem": "2020T3",
+   "muda_grupo_Q1": 8.1513,
+   "muda_grupo_Q4": 11.0675,
+   "sai_emprego_Q1": 6.764,
+   "sai_emprego_Q4": 3.5786,
+   "n_Q1": 29373,
+   "n_Q4": 19954,
+   "dif_muda_grupo_Q4_Q1": 2.9162,
+   "dif_sai_emprego_Q4_Q1": -3.1854,
+   "periodo": "atipico"
+  },
+  {
+   "trimestre_origem": "2020T4",
+   "muda_grupo_Q1": 8.529,
+   "muda_grupo_Q4": 11.1037,
+   "sai_emprego_Q1": 7.4473,
+   "sai_emprego_Q4": 4.6822,
+   "n_Q1": 26671,
+   "n_Q4": 18088,
+   "dif_muda_grupo_Q4_Q1": 2.5746,
+   "dif_sai_emprego_Q4_Q1": -2.7652,
+   "periodo": "atipico"
+  },
+  {
+   "trimestre_origem": "2021T1",
+   "muda_grupo_Q1": 8.1019,
+   "muda_grupo_Q4": 11.8939,
+   "sai_emprego_Q1": 6.9323,
+   "sai_emprego_Q4": 3.6699,
+   "n_Q1": 25407,
+   "n_Q4": 16970,
+   "dif_muda_grupo_Q4_Q1": 3.792,
+   "dif_sai_emprego_Q4_Q1": -3.2624,
+   "periodo": "atipico"
+  },
+  {
+   "trimestre_origem": "2021T2",
+   "muda_grupo_Q1": 8.8285,
+   "muda_grupo_Q4": 12.7231,
+   "sai_emprego_Q1": 5.722,
+   "sai_emprego_Q4": 2.9813,
+   "n_Q1": 31164,
+   "n_Q4": 19478,
+   "dif_muda_grupo_Q4_Q1": 3.8946,
+   "dif_sai_emprego_Q4_Q1": -2.7407,
+   "periodo": "atipico"
+  },
+  {
+   "trimestre_origem": "2021T3",
+   "muda_grupo_Q1": 8.8749,
+   "muda_grupo_Q4": 13.3933,
+   "sai_emprego_Q1": 6.5866,
+   "sai_emprego_Q4": 2.9979,
+   "n_Q1": 37595,
+   "n_Q4": 22158,
+   "dif_muda_grupo_Q4_Q1": 4.5184,
+   "dif_sai_emprego_Q4_Q1": -3.5886,
+   "periodo": "atipico"
+  },
+  {
+   "trimestre_origem": "2021T4",
+   "muda_grupo_Q1": 19.9862,
+   "muda_grupo_Q4": 26.0239,
+   "sai_emprego_Q1": 14.6548,
+   "sai_emprego_Q4": 7.7089,
+   "n_Q1": 40505,
+   "n_Q4": 23548,
+   "dif_muda_grupo_Q4_Q1": 6.0377,
+   "dif_sai_emprego_Q4_Q1": -6.9459,
+   "periodo": "pre"
+  },
+  {
+   "trimestre_origem": "2022T1",
+   "muda_grupo_Q1": 20.4565,
+   "muda_grupo_Q4": 26.2024,
+   "sai_emprego_Q1": 12.201,
+   "sai_emprego_Q4": 5.8589,
+   "n_Q1": 41448,
+   "n_Q4": 24367,
+   "dif_muda_grupo_Q4_Q1": 5.746,
+   "dif_sai_emprego_Q4_Q1": -6.3421,
+   "periodo": "pre"
+  },
+  {
+   "trimestre_origem": "2022T2",
+   "muda_grupo_Q1": 19.6244,
+   "muda_grupo_Q4": 25.3746,
+   "sai_emprego_Q1": 12.4075,
+   "sai_emprego_Q4": 5.524,
+   "n_Q1": 44294,
+   "n_Q4": 26725,
+   "dif_muda_grupo_Q4_Q1": 5.7502,
+   "dif_sai_emprego_Q4_Q1": -6.8835,
+   "periodo": "pre"
+  },
+  {
+   "trimestre_origem": "2022T3",
+   "muda_grupo_Q1": 19.1944,
+   "muda_grupo_Q4": 24.1997,
+   "sai_emprego_Q1": 11.8618,
+   "sai_emprego_Q4": 5.3527,
+   "n_Q1": 44000,
+   "n_Q4": 27231,
+   "dif_muda_grupo_Q4_Q1": 5.0053,
+   "dif_sai_emprego_Q4_Q1": -6.5091,
+   "periodo": "excluido"
+  },
+  {
+   "trimestre_origem": "2022T4",
+   "muda_grupo_Q1": 18.5402,
+   "muda_grupo_Q4": 23.7647,
+   "sai_emprego_Q1": 12.3108,
+   "sai_emprego_Q4": 6.6206,
+   "n_Q1": 42668,
+   "n_Q4": 26712,
+   "dif_muda_grupo_Q4_Q1": 5.2245,
+   "dif_sai_emprego_Q4_Q1": -5.6902,
+   "periodo": "excluido"
+  },
+  {
+   "trimestre_origem": "2023T1",
+   "muda_grupo_Q1": 18.3409,
+   "muda_grupo_Q4": 23.5302,
+   "sai_emprego_Q1": 11.6429,
+   "sai_emprego_Q4": 5.4526,
+   "n_Q1": 41601,
+   "n_Q4": 26021,
+   "dif_muda_grupo_Q4_Q1": 5.1894,
+   "dif_sai_emprego_Q4_Q1": -6.1903,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2023T2",
+   "muda_grupo_Q1": 18.4662,
+   "muda_grupo_Q4": 23.3656,
+   "sai_emprego_Q1": 11.6023,
+   "sai_emprego_Q4": 5.3655,
+   "n_Q1": 42228,
+   "n_Q4": 27278,
+   "dif_muda_grupo_Q4_Q1": 4.8994,
+   "dif_sai_emprego_Q4_Q1": -6.2368,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2023T3",
+   "muda_grupo_Q1": 18.8522,
+   "muda_grupo_Q4": 24.2656,
+   "sai_emprego_Q1": 12.1283,
+   "sai_emprego_Q4": 5.4093,
+   "n_Q1": 43656,
+   "n_Q4": 28042,
+   "dif_muda_grupo_Q4_Q1": 5.4134,
+   "dif_sai_emprego_Q4_Q1": -6.719,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2023T4",
+   "muda_grupo_Q1": 19.3454,
+   "muda_grupo_Q4": 25.4454,
+   "sai_emprego_Q1": 12.8951,
+   "sai_emprego_Q4": 6.4783,
+   "n_Q1": 44442,
+   "n_Q4": 28962,
+   "dif_muda_grupo_Q4_Q1": 6.1,
+   "dif_sai_emprego_Q4_Q1": -6.4169,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2024T1",
+   "muda_grupo_Q1": 19.6675,
+   "muda_grupo_Q4": 26.3525,
+   "sai_emprego_Q1": 11.4179,
+   "sai_emprego_Q4": 5.0055,
+   "n_Q1": 44689,
+   "n_Q4": 29023,
+   "dif_muda_grupo_Q4_Q1": 6.685,
+   "dif_sai_emprego_Q4_Q1": -6.4124,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2024T2",
+   "muda_grupo_Q1": 19.7336,
+   "muda_grupo_Q4": 25.1131,
+   "sai_emprego_Q1": 10.8178,
+   "sai_emprego_Q4": 4.9064,
+   "n_Q1": 45595,
+   "n_Q4": 29957,
+   "dif_muda_grupo_Q4_Q1": 5.3795,
+   "dif_sai_emprego_Q4_Q1": -5.9114,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2024T3",
+   "muda_grupo_Q1": 20.1941,
+   "muda_grupo_Q4": 24.9873,
+   "sai_emprego_Q1": 10.9854,
+   "sai_emprego_Q4": 5.2241,
+   "n_Q1": 45387,
+   "n_Q4": 29237,
+   "dif_muda_grupo_Q4_Q1": 4.7932,
+   "dif_sai_emprego_Q4_Q1": -5.7613,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2024T4",
+   "muda_grupo_Q1": 19.9973,
+   "muda_grupo_Q4": 26.1879,
+   "sai_emprego_Q1": 12.2682,
+   "sai_emprego_Q4": 6.4926,
+   "n_Q1": 45286,
+   "n_Q4": 29382,
+   "dif_muda_grupo_Q4_Q1": 6.1906,
+   "dif_sai_emprego_Q4_Q1": -5.7755,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2025T1",
+   "muda_grupo_Q1": 20.4214,
+   "muda_grupo_Q4": 26.3353,
+   "sai_emprego_Q1": 10.6672,
+   "sai_emprego_Q4": 5.0076,
+   "n_Q1": 44673,
+   "n_Q4": 29536,
+   "dif_muda_grupo_Q4_Q1": 5.9139,
+   "dif_sai_emprego_Q4_Q1": -5.6597,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2025T2",
+   "muda_grupo_Q1": 19.7738,
+   "muda_grupo_Q4": 26.5641,
+   "sai_emprego_Q1": 10.9498,
+   "sai_emprego_Q4": 5.2099,
+   "n_Q1": 45848,
+   "n_Q4": 30515,
+   "dif_muda_grupo_Q4_Q1": 6.7903,
+   "dif_sai_emprego_Q4_Q1": -5.7399,
+   "periodo": "pos"
+  },
+  {
+   "trimestre_origem": "2025T3",
+   "muda_grupo_Q1": 19.8385,
+   "muda_grupo_Q4": 25.6897,
+   "sai_emprego_Q1": 11.1482,
+   "sai_emprego_Q4": 5.0401,
+   "n_Q1": 47115,
+   "n_Q4": 31759,
+   "dif_muda_grupo_Q4_Q1": 5.8513,
+   "dif_sai_emprego_Q4_Q1": -6.1081,
+   "periodo": "pos"
+  }
+ ],
+ "sankey": [
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "Desocupado",
+   "peso": 42774.793,
+   "n": 84,
+   "pct_da_origem": 0.7106,
+   "pct_do_total": 0.0061
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "Fora da força",
+   "peso": 139969.6496,
+   "n": 310,
+   "pct_da_origem": 2.3252,
+   "pct_do_total": 0.02
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G0",
+   "peso": 5478130.4401,
+   "n": 10967,
+   "pct_da_origem": 91.0052,
+   "pct_do_total": 0.7834
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G1",
+   "peso": 13277.0687,
+   "n": 29,
+   "pct_da_origem": 0.2206,
+   "pct_do_total": 0.0019
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G2",
+   "peso": 64011.9511,
+   "n": 103,
+   "pct_da_origem": 1.0634,
+   "pct_do_total": 0.0092
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G3",
+   "peso": 48109.4249,
+   "n": 100,
+   "pct_da_origem": 0.7992,
+   "pct_do_total": 0.0069
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G4",
+   "peso": 32314.2818,
+   "n": 75,
+   "pct_da_origem": 0.5368,
+   "pct_do_total": 0.0046
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G5",
+   "peso": 127510.6062,
+   "n": 243,
+   "pct_da_origem": 2.1183,
+   "pct_do_total": 0.0182
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G6",
+   "peso": 2809.8958,
+   "n": 12,
+   "pct_da_origem": 0.0467,
+   "pct_do_total": 0.0004
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G7",
+   "peso": 22847.3734,
+   "n": 41,
+   "pct_da_origem": 0.3796,
+   "pct_do_total": 0.0033
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G8",
+   "peso": 28519.5073,
+   "n": 57,
+   "pct_da_origem": 0.4738,
+   "pct_do_total": 0.0041
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G0",
+   "alvo": "G9",
+   "peso": 19306.2323,
+   "n": 37,
+   "pct_da_origem": 0.3207,
+   "pct_do_total": 0.0028
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "Desocupado",
+   "peso": 199398.9746,
+   "n": 331,
+   "pct_da_origem": 0.7995,
+   "pct_do_total": 0.0285
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "Fora da força",
+   "peso": 479318.9334,
+   "n": 970,
+   "pct_da_origem": 1.9219,
+   "pct_do_total": 0.0685
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G0",
+   "peso": 9900.0909,
+   "n": 28,
+   "pct_da_origem": 0.0397,
+   "pct_do_total": 0.0014
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G1",
+   "peso": 13882055.6356,
+   "n": 24252,
+   "pct_da_origem": 55.6624,
+   "pct_do_total": 1.9852
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G2",
+   "peso": 2647123.7308,
+   "n": 4352,
+   "pct_da_origem": 10.6141,
+   "pct_do_total": 0.3786
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G3",
+   "peso": 1883160.1562,
+   "n": 3267,
+   "pct_da_origem": 7.5508,
+   "pct_do_total": 0.2693
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G4",
+   "peso": 1415975.5133,
+   "n": 2688,
+   "pct_da_origem": 5.6776,
+   "pct_do_total": 0.2025
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G5",
+   "peso": 2846519.2097,
+   "n": 5431,
+   "pct_da_origem": 11.4136,
+   "pct_do_total": 0.4071
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G6",
+   "peso": 176761.3878,
+   "n": 617,
+   "pct_da_origem": 0.7088,
+   "pct_do_total": 0.0253
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G7",
+   "peso": 734951.8858,
+   "n": 1329,
+   "pct_da_origem": 2.9469,
+   "pct_do_total": 0.1051
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G8",
+   "peso": 344515.4212,
+   "n": 645,
+   "pct_da_origem": 1.3814,
+   "pct_do_total": 0.0493
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G1",
+   "alvo": "G9",
+   "peso": 320063.4662,
+   "n": 633,
+   "pct_da_origem": 1.2833,
+   "pct_do_total": 0.0458
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "Desocupado",
+   "peso": 1097246.6101,
+   "n": 2017,
+   "pct_da_origem": 1.1653,
+   "pct_do_total": 0.1569
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "Fora da força",
+   "peso": 2482628.8636,
+   "n": 5149,
+   "pct_da_origem": 2.6365,
+   "pct_do_total": 0.355
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G0",
+   "peso": 73907.926,
+   "n": 130,
+   "pct_da_origem": 0.0785,
+   "pct_do_total": 0.0106
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G1",
+   "peso": 2698433.0986,
+   "n": 4530,
+   "pct_da_origem": 2.8657,
+   "pct_do_total": 0.3859
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G2",
+   "peso": 76396474.9502,
+   "n": 141059,
+   "pct_da_origem": 81.1327,
+   "pct_do_total": 10.9251
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G3",
+   "peso": 4455378.0384,
+   "n": 7543,
+   "pct_da_origem": 4.7316,
+   "pct_do_total": 0.6371
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G4",
+   "peso": 2473615.6979,
+   "n": 4610,
+   "pct_da_origem": 2.627,
+   "pct_do_total": 0.3537
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G5",
+   "peso": 2712335.2623,
+   "n": 5038,
+   "pct_da_origem": 2.8805,
+   "pct_do_total": 0.3879
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G6",
+   "peso": 96353.7204,
+   "n": 262,
+   "pct_da_origem": 0.1023,
+   "pct_do_total": 0.0138
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G7",
+   "peso": 936822.5916,
+   "n": 1533,
+   "pct_da_origem": 0.9949,
+   "pct_do_total": 0.134
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G8",
+   "peso": 352632.6384,
+   "n": 587,
+   "pct_da_origem": 0.3745,
+   "pct_do_total": 0.0504
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G2",
+   "alvo": "G9",
+   "peso": 386565.2105,
+   "n": 759,
+   "pct_da_origem": 0.4105,
+   "pct_do_total": 0.0553
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "Desocupado",
+   "peso": 999548.2729,
+   "n": 1730,
+   "pct_da_origem": 1.5704,
+   "pct_do_total": 0.1429
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "Fora da força",
+   "peso": 2106194.8416,
+   "n": 4222,
+   "pct_da_origem": 3.3092,
+   "pct_do_total": 0.3012
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G0",
+   "peso": 64468.8242,
+   "n": 122,
+   "pct_da_origem": 0.1013,
+   "pct_do_total": 0.0092
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G1",
+   "peso": 1912060.1987,
+   "n": 3266,
+   "pct_da_origem": 3.0041,
+   "pct_do_total": 0.2734
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G2",
+   "peso": 4536868.1465,
+   "n": 7713,
+   "pct_da_origem": 7.1281,
+   "pct_do_total": 0.6488
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G3",
+   "peso": 40577063.1685,
+   "n": 74033,
+   "pct_da_origem": 63.7528,
+   "pct_do_total": 5.8027
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G4",
+   "peso": 4282640.9712,
+   "n": 7633,
+   "pct_da_origem": 6.7287,
+   "pct_do_total": 0.6124
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G5",
+   "peso": 3740702.7284,
+   "n": 6699,
+   "pct_da_origem": 5.8772,
+   "pct_do_total": 0.5349
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G6",
+   "peso": 151922.4491,
+   "n": 375,
+   "pct_da_origem": 0.2387,
+   "pct_do_total": 0.0217
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G7",
+   "peso": 3102210.7627,
+   "n": 5285,
+   "pct_da_origem": 4.8741,
+   "pct_do_total": 0.4436
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G8",
+   "peso": 1166308.7611,
+   "n": 1991,
+   "pct_da_origem": 1.8325,
+   "pct_do_total": 0.1668
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G3",
+   "alvo": "G9",
+   "peso": 1007502.1954,
+   "n": 1867,
+   "pct_da_origem": 1.5829,
+   "pct_do_total": 0.1441
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "Desocupado",
+   "peso": 1308324.4243,
+   "n": 2330,
+   "pct_da_origem": 2.2201,
+   "pct_do_total": 0.1871
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "Fora da força",
+   "peso": 2350164.4874,
+   "n": 4660,
+   "pct_da_origem": 3.988,
+   "pct_do_total": 0.3361
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G0",
+   "peso": 34884.055,
+   "n": 74,
+   "pct_da_origem": 0.0592,
+   "pct_do_total": 0.005
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G1",
+   "peso": 1442332.9989,
+   "n": 2727,
+   "pct_da_origem": 2.4475,
+   "pct_do_total": 0.2063
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G2",
+   "peso": 2579647.7195,
+   "n": 4717,
+   "pct_da_origem": 4.3774,
+   "pct_do_total": 0.3689
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G3",
+   "peso": 4221711.8091,
+   "n": 7682,
+   "pct_da_origem": 7.1638,
+   "pct_do_total": 0.6037
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G4",
+   "peso": 39138065.1142,
+   "n": 71886,
+   "pct_da_origem": 66.4128,
+   "pct_do_total": 5.5969
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G5",
+   "peso": 3797987.7746,
+   "n": 6997,
+   "pct_da_origem": 6.4448,
+   "pct_do_total": 0.5431
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G6",
+   "peso": 70858.6381,
+   "n": 191,
+   "pct_da_origem": 0.1202,
+   "pct_do_total": 0.0101
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G7",
+   "peso": 1049359.5887,
+   "n": 1802,
+   "pct_da_origem": 1.7806,
+   "pct_do_total": 0.1501
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G8",
+   "peso": 961654.3956,
+   "n": 1601,
+   "pct_da_origem": 1.6318,
+   "pct_do_total": 0.1375
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G4",
+   "alvo": "G9",
+   "peso": 1976486.2348,
+   "n": 3511,
+   "pct_da_origem": 3.3539,
+   "pct_do_total": 0.2826
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "Desocupado",
+   "peso": 3860331.4298,
+   "n": 7248,
+   "pct_da_origem": 2.5253,
+   "pct_do_total": 0.552
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "Fora da força",
+   "peso": 10755988.1486,
+   "n": 24264,
+   "pct_da_origem": 7.0361,
+   "pct_do_total": 1.5382
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G0",
+   "peso": 123703.0254,
+   "n": 231,
+   "pct_da_origem": 0.0809,
+   "pct_do_total": 0.0177
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G1",
+   "peso": 2825398.6763,
+   "n": 5357,
+   "pct_da_origem": 1.8482,
+   "pct_do_total": 0.404
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G2",
+   "peso": 2822855.5267,
+   "n": 5185,
+   "pct_da_origem": 1.8466,
+   "pct_do_total": 0.4037
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G3",
+   "peso": 3868967.9439,
+   "n": 6796,
+   "pct_da_origem": 2.5309,
+   "pct_do_total": 0.5533
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G4",
+   "peso": 3903748.2797,
+   "n": 7151,
+   "pct_da_origem": 2.5537,
+   "pct_do_total": 0.5583
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G5",
+   "peso": 110729929.3074,
+   "n": 214626,
+   "pct_da_origem": 72.4345,
+   "pct_do_total": 15.8349
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G6",
+   "peso": 615042.8136,
+   "n": 1944,
+   "pct_da_origem": 0.4023,
+   "pct_do_total": 0.088
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G7",
+   "peso": 4270164.5851,
+   "n": 8135,
+   "pct_da_origem": 2.7933,
+   "pct_do_total": 0.6107
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G8",
+   "peso": 2120006.5091,
+   "n": 3837,
+   "pct_da_origem": 1.3868,
+   "pct_do_total": 0.3032
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G5",
+   "alvo": "G9",
+   "peso": 6972840.5233,
+   "n": 14491,
+   "pct_da_origem": 4.5613,
+   "pct_do_total": 0.9971
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "Desocupado",
+   "peso": 475095.1753,
+   "n": 1457,
+   "pct_da_origem": 1.3663,
+   "pct_do_total": 0.0679
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "Fora da força",
+   "peso": 3919168.7811,
+   "n": 16691,
+   "pct_da_origem": 11.2713,
+   "pct_do_total": 0.5605
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G0",
+   "peso": 3212.3808,
+   "n": 17,
+   "pct_da_origem": 0.0092,
+   "pct_do_total": 0.0005
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G1",
+   "peso": 187108.0519,
+   "n": 607,
+   "pct_da_origem": 0.5381,
+   "pct_do_total": 0.0268
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G2",
+   "peso": 98961.3506,
+   "n": 280,
+   "pct_da_origem": 0.2846,
+   "pct_do_total": 0.0142
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G3",
+   "peso": 153155.1428,
+   "n": 374,
+   "pct_da_origem": 0.4405,
+   "pct_do_total": 0.0219
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G4",
+   "peso": 76622.4916,
+   "n": 219,
+   "pct_da_origem": 0.2204,
+   "pct_do_total": 0.011
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G5",
+   "peso": 661891.4204,
+   "n": 2101,
+   "pct_da_origem": 1.9036,
+   "pct_do_total": 0.0947
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G6",
+   "peso": 24500864.6737,
+   "n": 100361,
+   "pct_da_origem": 70.4631,
+   "pct_do_total": 3.5037
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G7",
+   "peso": 651227.0054,
+   "n": 2281,
+   "pct_da_origem": 1.8729,
+   "pct_do_total": 0.0931
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G8",
+   "peso": 605061.6282,
+   "n": 1970,
+   "pct_da_origem": 1.7401,
+   "pct_do_total": 0.0865
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G6",
+   "alvo": "G9",
+   "peso": 3438849.9886,
+   "n": 12042,
+   "pct_da_origem": 9.8899,
+   "pct_do_total": 0.4918
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "Desocupado",
+   "peso": 2203861.6944,
+   "n": 4290,
+   "pct_da_origem": 2.435,
+   "pct_do_total": 0.3152
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "Fora da força",
+   "peso": 5306416.8889,
+   "n": 12391,
+   "pct_da_origem": 5.863,
+   "pct_do_total": 0.7588
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G0",
+   "peso": 21861.5909,
+   "n": 41,
+   "pct_da_origem": 0.0242,
+   "pct_do_total": 0.0031
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G1",
+   "peso": 691014.9481,
+   "n": 1265,
+   "pct_da_origem": 0.7635,
+   "pct_do_total": 0.0988
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G2",
+   "peso": 912154.7796,
+   "n": 1502,
+   "pct_da_origem": 1.0078,
+   "pct_do_total": 0.1304
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G3",
+   "peso": 3171614.8874,
+   "n": 5307,
+   "pct_da_origem": 3.5043,
+   "pct_do_total": 0.4536
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G4",
+   "peso": 1008418.7649,
+   "n": 1693,
+   "pct_da_origem": 1.1142,
+   "pct_do_total": 0.1442
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G5",
+   "peso": 4218117.8945,
+   "n": 8086,
+   "pct_da_origem": 4.6605,
+   "pct_do_total": 0.6032
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G6",
+   "peso": 655580.7256,
+   "n": 2239,
+   "pct_da_origem": 0.7243,
+   "pct_do_total": 0.0938
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G7",
+   "peso": 63224732.8582,
+   "n": 119979,
+   "pct_da_origem": 69.8559,
+   "pct_do_total": 9.0414
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G8",
+   "peso": 4226120.4133,
+   "n": 7524,
+   "pct_da_origem": 4.6694,
+   "pct_do_total": 0.6044
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G7",
+   "alvo": "G9",
+   "peso": 4867449.374,
+   "n": 10214,
+   "pct_da_origem": 5.378,
+   "pct_do_total": 0.6961
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "Desocupado",
+   "peso": 1259744.6506,
+   "n": 2404,
+   "pct_da_origem": 1.9335,
+   "pct_do_total": 0.1801
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "Fora da força",
+   "peso": 2600844.2536,
+   "n": 5920,
+   "pct_da_origem": 3.9919,
+   "pct_do_total": 0.3719
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G0",
+   "peso": 28245.5398,
+   "n": 57,
+   "pct_da_origem": 0.0434,
+   "pct_do_total": 0.004
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G1",
+   "peso": 355157.5974,
+   "n": 630,
+   "pct_da_origem": 0.5451,
+   "pct_do_total": 0.0508
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G2",
+   "peso": 356113.9926,
+   "n": 610,
+   "pct_da_origem": 0.5466,
+   "pct_do_total": 0.0509
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G3",
+   "peso": 1131881.09,
+   "n": 1952,
+   "pct_da_origem": 1.7373,
+   "pct_do_total": 0.1619
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G4",
+   "peso": 946502.2438,
+   "n": 1597,
+   "pct_da_origem": 1.4527,
+   "pct_do_total": 0.1354
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G5",
+   "peso": 1944513.8134,
+   "n": 3628,
+   "pct_da_origem": 2.9845,
+   "pct_do_total": 0.2781
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G6",
+   "peso": 526041.8511,
+   "n": 1781,
+   "pct_da_origem": 0.8074,
+   "pct_do_total": 0.0752
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G7",
+   "peso": 4175364.0005,
+   "n": 7409,
+   "pct_da_origem": 6.4086,
+   "pct_do_total": 0.5971
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G8",
+   "peso": 48486675.5204,
+   "n": 91614,
+   "pct_da_origem": 74.4199,
+   "pct_do_total": 6.9338
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G8",
+   "alvo": "G9",
+   "peso": 3341783.9633,
+   "n": 6757,
+   "pct_da_origem": 5.1291,
+   "pct_do_total": 0.4779
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "Desocupado",
+   "peso": 4113980.1936,
+   "n": 8728,
+   "pct_da_origem": 3.7995,
+   "pct_do_total": 0.5883
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "Fora da força",
+   "peso": 10479543.1612,
+   "n": 28209,
+   "pct_da_origem": 9.6785,
+   "pct_do_total": 1.4986
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G0",
+   "peso": 29386.4524,
+   "n": 51,
+   "pct_da_origem": 0.0271,
+   "pct_do_total": 0.0042
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G1",
+   "peso": 334269.2098,
+   "n": 661,
+   "pct_da_origem": 0.3087,
+   "pct_do_total": 0.0478
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G2",
+   "peso": 400291.7403,
+   "n": 775,
+   "pct_da_origem": 0.3697,
+   "pct_do_total": 0.0572
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G3",
+   "peso": 1105085.2793,
+   "n": 1966,
+   "pct_da_origem": 1.0206,
+   "pct_do_total": 0.158
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G4",
+   "peso": 2016455.471,
+   "n": 3677,
+   "pct_da_origem": 1.8623,
+   "pct_do_total": 0.2884
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G5",
+   "peso": 6824150.4974,
+   "n": 14320,
+   "pct_da_origem": 6.3025,
+   "pct_do_total": 0.9759
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G6",
+   "peso": 3426442.6715,
+   "n": 12128,
+   "pct_da_origem": 3.1645,
+   "pct_do_total": 0.49
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G7",
+   "peso": 5114755.1996,
+   "n": 10686,
+   "pct_da_origem": 4.7238,
+   "pct_do_total": 0.7314
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G8",
+   "peso": 3498363.4094,
+   "n": 7072,
+   "pct_da_origem": 3.2309,
+   "pct_do_total": 0.5003
+  },
+  {
+   "periodo": "pos",
+   "fonte": "G9",
+   "alvo": "G9",
+   "peso": 70934175.4949,
+   "n": 158858,
+   "pct_da_origem": 65.5118,
+   "pct_do_total": 10.1439
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "Desocupado",
+   "peso": 40537.4309,
+   "n": 83,
+   "pct_da_origem": 1.048,
+   "pct_do_total": 0.01
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "Fora da força",
+   "peso": 95192.8694,
+   "n": 246,
+   "pct_da_origem": 2.4609,
+   "pct_do_total": 0.0235
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G0",
+   "peso": 3502883.7277,
+   "n": 7484,
+   "pct_da_origem": 90.5562,
+   "pct_do_total": 0.863
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G1",
+   "peso": 9166.3731,
+   "n": 23,
+   "pct_da_origem": 0.237,
+   "pct_do_total": 0.0023
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G2",
+   "peso": 37194.7946,
+   "n": 83,
+   "pct_da_origem": 0.9616,
+   "pct_do_total": 0.0092
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G3",
+   "peso": 38190.1698,
+   "n": 78,
+   "pct_da_origem": 0.9873,
+   "pct_do_total": 0.0094
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G4",
+   "peso": 22869.4689,
+   "n": 52,
+   "pct_da_origem": 0.5912,
+   "pct_do_total": 0.0056
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G5",
+   "peso": 63589.1335,
+   "n": 141,
+   "pct_da_origem": 1.6439,
+   "pct_do_total": 0.0157
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G6",
+   "peso": 2361.0493,
+   "n": 15,
+   "pct_da_origem": 0.061,
+   "pct_do_total": 0.0006
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G7",
+   "peso": 14379.4368,
+   "n": 33,
+   "pct_da_origem": 0.3717,
+   "pct_do_total": 0.0035
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G8",
+   "peso": 21355.7952,
+   "n": 49,
+   "pct_da_origem": 0.5521,
+   "pct_do_total": 0.0053
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G0",
+   "alvo": "G9",
+   "peso": 20468.0,
+   "n": 54,
+   "pct_da_origem": 0.5291,
+   "pct_do_total": 0.005
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "Desocupado",
+   "peso": 189798.2703,
+   "n": 326,
+   "pct_da_origem": 1.118,
+   "pct_do_total": 0.0468
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "Fora da força",
+   "peso": 319206.0405,
+   "n": 730,
+   "pct_da_origem": 1.8802,
+   "pct_do_total": 0.0786
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G0",
+   "peso": 7517.6407,
+   "n": 19,
+   "pct_da_origem": 0.0443,
+   "pct_do_total": 0.0019
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G1",
+   "peso": 9579666.9512,
+   "n": 17590,
+   "pct_da_origem": 56.4263,
+   "pct_do_total": 2.3602
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G2",
+   "peso": 1582743.3186,
+   "n": 2829,
+   "pct_da_origem": 9.3227,
+   "pct_do_total": 0.3899
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G3",
+   "peso": 1094763.0081,
+   "n": 2002,
+   "pct_da_origem": 6.4484,
+   "pct_do_total": 0.2697
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G4",
+   "peso": 1023828.5209,
+   "n": 2103,
+   "pct_da_origem": 6.0306,
+   "pct_do_total": 0.2522
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G5",
+   "peso": 2010739.7243,
+   "n": 4147,
+   "pct_da_origem": 11.8437,
+   "pct_do_total": 0.4954
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G6",
+   "peso": 125746.2644,
+   "n": 447,
+   "pct_da_origem": 0.7407,
+   "pct_do_total": 0.031
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G7",
+   "peso": 549981.3553,
+   "n": 1070,
+   "pct_da_origem": 3.2395,
+   "pct_do_total": 0.1355
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G8",
+   "peso": 227007.7233,
+   "n": 488,
+   "pct_da_origem": 1.3371,
+   "pct_do_total": 0.0559
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G1",
+   "alvo": "G9",
+   "peso": 266305.2291,
+   "n": 584,
+   "pct_da_origem": 1.5686,
+   "pct_do_total": 0.0656
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "Desocupado",
+   "peso": 773359.2022,
+   "n": 1590,
+   "pct_da_origem": 1.5823,
+   "pct_do_total": 0.1905
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "Fora da força",
+   "peso": 1241933.9962,
+   "n": 3036,
+   "pct_da_origem": 2.541,
+   "pct_do_total": 0.306
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G0",
+   "peso": 33313.5058,
+   "n": 68,
+   "pct_da_origem": 0.0682,
+   "pct_do_total": 0.0082
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G1",
+   "peso": 1670014.484,
+   "n": 2908,
+   "pct_da_origem": 3.4169,
+   "pct_do_total": 0.4114
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G2",
+   "peso": 39720002.7812,
+   "n": 78522,
+   "pct_da_origem": 81.2682,
+   "pct_do_total": 9.7859
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G3",
+   "peso": 1955037.7402,
+   "n": 3629,
+   "pct_da_origem": 4.0001,
+   "pct_do_total": 0.4817
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G4",
+   "peso": 1239914.3605,
+   "n": 2474,
+   "pct_da_origem": 2.5369,
+   "pct_do_total": 0.3055
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G5",
+   "peso": 1342746.9394,
+   "n": 2717,
+   "pct_da_origem": 2.7473,
+   "pct_do_total": 0.3308
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G6",
+   "peso": 56980.3974,
+   "n": 162,
+   "pct_da_origem": 0.1166,
+   "pct_do_total": 0.014
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G7",
+   "peso": 443809.2852,
+   "n": 844,
+   "pct_da_origem": 0.908,
+   "pct_do_total": 0.1093
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G8",
+   "peso": 200930.1052,
+   "n": 339,
+   "pct_da_origem": 0.4111,
+   "pct_do_total": 0.0495
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G2",
+   "alvo": "G9",
+   "peso": 197156.8456,
+   "n": 413,
+   "pct_da_origem": 0.4034,
+   "pct_do_total": 0.0486
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "Desocupado",
+   "peso": 794258.3367,
+   "n": 1520,
+   "pct_da_origem": 2.3694,
+   "pct_do_total": 0.1957
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "Fora da força",
+   "peso": 1098520.4996,
+   "n": 2499,
+   "pct_da_origem": 3.2771,
+   "pct_do_total": 0.2706
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G0",
+   "peso": 32993.1728,
+   "n": 83,
+   "pct_da_origem": 0.0984,
+   "pct_do_total": 0.0081
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G1",
+   "peso": 1107494.3599,
+   "n": 1938,
+   "pct_da_origem": 3.3039,
+   "pct_do_total": 0.2729
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G2",
+   "peso": 1975455.1154,
+   "n": 3669,
+   "pct_da_origem": 5.8932,
+   "pct_do_total": 0.4867
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G3",
+   "peso": 21626618.9703,
+   "n": 42778,
+   "pct_da_origem": 64.5166,
+   "pct_do_total": 5.3282
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G4",
+   "peso": 2060437.4879,
+   "n": 4300,
+   "pct_da_origem": 6.1467,
+   "pct_do_total": 0.5076
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G5",
+   "peso": 1907175.8076,
+   "n": 3860,
+   "pct_da_origem": 5.6895,
+   "pct_do_total": 0.4699
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G6",
+   "peso": 76483.6709,
+   "n": 224,
+   "pct_da_origem": 0.2282,
+   "pct_do_total": 0.0188
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G7",
+   "peso": 1739122.4883,
+   "n": 3213,
+   "pct_da_origem": 5.1882,
+   "pct_do_total": 0.4285
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G8",
+   "peso": 566516.2312,
+   "n": 1113,
+   "pct_da_origem": 1.69,
+   "pct_do_total": 0.1396
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G3",
+   "alvo": "G9",
+   "peso": 535919.8412,
+   "n": 1107,
+   "pct_da_origem": 1.5988,
+   "pct_do_total": 0.132
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "Desocupado",
+   "peso": 1062910.4692,
+   "n": 1893,
+   "pct_da_origem": 3.1557,
+   "pct_do_total": 0.2619
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "Fora da força",
+   "peso": 1144830.3595,
+   "n": 2685,
+   "pct_da_origem": 3.399,
+   "pct_do_total": 0.2821
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G0",
+   "peso": 31340.5602,
+   "n": 68,
+   "pct_da_origem": 0.093,
+   "pct_do_total": 0.0077
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G1",
+   "peso": 986304.5381,
+   "n": 1986,
+   "pct_da_origem": 2.9283,
+   "pct_do_total": 0.243
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G2",
+   "peso": 1261450.116,
+   "n": 2517,
+   "pct_da_origem": 3.7452,
+   "pct_do_total": 0.3108
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G3",
+   "peso": 2144570.8162,
+   "n": 4319,
+   "pct_da_origem": 6.3672,
+   "pct_do_total": 0.5284
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G4",
+   "peso": 22926352.2055,
+   "n": 45214,
+   "pct_da_origem": 68.0675,
+   "pct_do_total": 5.6484
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G5",
+   "peso": 2020036.3695,
+   "n": 4237,
+   "pct_da_origem": 5.9974,
+   "pct_do_total": 0.4977
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G6",
+   "peso": 47082.3112,
+   "n": 117,
+   "pct_da_origem": 0.1398,
+   "pct_do_total": 0.0116
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G7",
+   "peso": 575737.6026,
+   "n": 1041,
+   "pct_da_origem": 1.7093,
+   "pct_do_total": 0.1418
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G8",
+   "peso": 443877.1927,
+   "n": 908,
+   "pct_da_origem": 1.3179,
+   "pct_do_total": 0.1094
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G4",
+   "alvo": "G9",
+   "peso": 1037293.8805,
+   "n": 2144,
+   "pct_da_origem": 3.0797,
+   "pct_do_total": 0.2556
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "Desocupado",
+   "peso": 3471221.4675,
+   "n": 7095,
+   "pct_da_origem": 3.8291,
+   "pct_do_total": 0.8552
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "Fora da força",
+   "peso": 6323525.6772,
+   "n": 15944,
+   "pct_da_origem": 6.9754,
+   "pct_do_total": 1.5579
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G0",
+   "peso": 70258.3203,
+   "n": 154,
+   "pct_da_origem": 0.0775,
+   "pct_do_total": 0.0173
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G1",
+   "peso": 1892390.4057,
+   "n": 3980,
+   "pct_da_origem": 2.0875,
+   "pct_do_total": 0.4662
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G2",
+   "peso": 1337958.5609,
+   "n": 2711,
+   "pct_da_origem": 1.4759,
+   "pct_do_total": 0.3296
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G3",
+   "peso": 1916688.1378,
+   "n": 3885,
+   "pct_da_origem": 2.1143,
+   "pct_do_total": 0.4722
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G4",
+   "peso": 2095364.2045,
+   "n": 4275,
+   "pct_da_origem": 2.3114,
+   "pct_do_total": 0.5162
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G5",
+   "peso": 65487282.8974,
+   "n": 138523,
+   "pct_da_origem": 72.2387,
+   "pct_do_total": 16.1342
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G6",
+   "peso": 435073.8169,
+   "n": 1503,
+   "pct_da_origem": 0.4799,
+   "pct_do_total": 0.1072
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G7",
+   "peso": 2527081.553,
+   "n": 5441,
+   "pct_da_origem": 2.7876,
+   "pct_do_total": 0.6226
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G8",
+   "peso": 1059484.5389,
+   "n": 2232,
+   "pct_da_origem": 1.1687,
+   "pct_do_total": 0.261
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G5",
+   "alvo": "G9",
+   "peso": 4037739.2661,
+   "n": 9424,
+   "pct_da_origem": 4.454,
+   "pct_do_total": 0.9948
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "Desocupado",
+   "peso": 475766.5301,
+   "n": 1606,
+   "pct_da_origem": 2.0139,
+   "pct_do_total": 0.1172
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "Fora da força",
+   "peso": 2704317.1799,
+   "n": 12448,
+   "pct_da_origem": 11.4475,
+   "pct_do_total": 0.6663
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G0",
+   "peso": 3026.0773,
+   "n": 19,
+   "pct_da_origem": 0.0128,
+   "pct_do_total": 0.0007
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G1",
+   "peso": 140624.5871,
+   "n": 459,
+   "pct_da_origem": 0.5953,
+   "pct_do_total": 0.0346
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G2",
+   "peso": 59486.8441,
+   "n": 175,
+   "pct_da_origem": 0.2518,
+   "pct_do_total": 0.0147
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G3",
+   "peso": 68439.3124,
+   "n": 220,
+   "pct_da_origem": 0.2897,
+   "pct_do_total": 0.0169
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G4",
+   "peso": 53245.6666,
+   "n": 161,
+   "pct_da_origem": 0.2254,
+   "pct_do_total": 0.0131
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G5",
+   "peso": 443026.3437,
+   "n": 1578,
+   "pct_da_origem": 1.8754,
+   "pct_do_total": 0.1091
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G6",
+   "peso": 16598016.2125,
+   "n": 71124,
+   "pct_da_origem": 70.2602,
+   "pct_do_total": 4.0893
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G7",
+   "peso": 422717.1024,
+   "n": 1547,
+   "pct_da_origem": 1.7894,
+   "pct_do_total": 0.1041
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G8",
+   "peso": 387559.7101,
+   "n": 1409,
+   "pct_da_origem": 1.6406,
+   "pct_do_total": 0.0955
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G6",
+   "alvo": "G9",
+   "peso": 2267412.5141,
+   "n": 8711,
+   "pct_da_origem": 9.5981,
+   "pct_do_total": 0.5586
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "Desocupado",
+   "peso": 2196570.667,
+   "n": 4648,
+   "pct_da_origem": 4.0539,
+   "pct_do_total": 0.5412
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "Fora da força",
+   "peso": 3176381.914,
+   "n": 8189,
+   "pct_da_origem": 5.8622,
+   "pct_do_total": 0.7826
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G0",
+   "peso": 14151.6963,
+   "n": 30,
+   "pct_da_origem": 0.0261,
+   "pct_do_total": 0.0035
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G1",
+   "peso": 511343.6209,
+   "n": 1022,
+   "pct_da_origem": 0.9437,
+   "pct_do_total": 0.126
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G2",
+   "peso": 477625.7821,
+   "n": 883,
+   "pct_da_origem": 0.8815,
+   "pct_do_total": 0.1177
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G3",
+   "peso": 1712165.9966,
+   "n": 3243,
+   "pct_da_origem": 3.1599,
+   "pct_do_total": 0.4218
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G4",
+   "peso": 578881.5045,
+   "n": 1064,
+   "pct_da_origem": 1.0684,
+   "pct_do_total": 0.1426
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G5",
+   "peso": 2541309.9886,
+   "n": 5660,
+   "pct_da_origem": 4.6901,
+   "pct_do_total": 0.6261
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G6",
+   "peso": 415444.3868,
+   "n": 1493,
+   "pct_da_origem": 0.7667,
+   "pct_do_total": 0.1024
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G7",
+   "peso": 37299539.0081,
+   "n": 77257,
+   "pct_da_origem": 68.8385,
+   "pct_do_total": 9.1896
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G8",
+   "peso": 2438837.9973,
+   "n": 4949,
+   "pct_da_origem": 4.501,
+   "pct_do_total": 0.6009
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G7",
+   "alvo": "G9",
+   "peso": 2821893.3571,
+   "n": 6569,
+   "pct_da_origem": 5.208,
+   "pct_do_total": 0.6952
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "Desocupado",
+   "peso": 987310.5589,
+   "n": 2048,
+   "pct_da_origem": 2.8317,
+   "pct_do_total": 0.2432
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "Fora da força",
+   "peso": 1301696.4649,
+   "n": 3497,
+   "pct_da_origem": 3.7334,
+   "pct_do_total": 0.3207
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G0",
+   "peso": 15473.982,
+   "n": 33,
+   "pct_da_origem": 0.0444,
+   "pct_do_total": 0.0038
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G1",
+   "peso": 230582.515,
+   "n": 480,
+   "pct_da_origem": 0.6613,
+   "pct_do_total": 0.0568
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G2",
+   "peso": 174313.0348,
+   "n": 335,
+   "pct_da_origem": 0.5,
+   "pct_do_total": 0.0429
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G3",
+   "peso": 557015.4396,
+   "n": 1046,
+   "pct_da_origem": 1.5976,
+   "pct_do_total": 0.1372
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G4",
+   "peso": 484214.0728,
+   "n": 910,
+   "pct_da_origem": 1.3888,
+   "pct_do_total": 0.1193
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G5",
+   "peso": 1011772.1946,
+   "n": 2113,
+   "pct_da_origem": 2.9019,
+   "pct_do_total": 0.2493
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G6",
+   "peso": 388239.3701,
+   "n": 1361,
+   "pct_da_origem": 1.1135,
+   "pct_do_total": 0.0957
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G7",
+   "peso": 2286368.5281,
+   "n": 4729,
+   "pct_da_origem": 6.5576,
+   "pct_do_total": 0.5633
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G8",
+   "peso": 25572047.6434,
+   "n": 53246,
+   "pct_da_origem": 73.3441,
+   "pct_do_total": 6.3002
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G8",
+   "alvo": "G9",
+   "peso": 1856810.4953,
+   "n": 4209,
+   "pct_da_origem": 5.3256,
+   "pct_do_total": 0.4575
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "Desocupado",
+   "peso": 3597906.631,
+   "n": 8450,
+   "pct_da_origem": 5.4813,
+   "pct_do_total": 0.8864
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "Fora da força",
+   "peso": 5761531.1085,
+   "n": 17178,
+   "pct_da_origem": 8.7775,
+   "pct_do_total": 1.4195
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G0",
+   "peso": 20670.4046,
+   "n": 56,
+   "pct_da_origem": 0.0315,
+   "pct_do_total": 0.0051
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G1",
+   "peso": 244959.2017,
+   "n": 516,
+   "pct_da_origem": 0.3732,
+   "pct_do_total": 0.0604
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G2",
+   "peso": 212531.7999,
+   "n": 436,
+   "pct_da_origem": 0.3238,
+   "pct_do_total": 0.0524
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G3",
+   "peso": 557671.8391,
+   "n": 1173,
+   "pct_da_origem": 0.8496,
+   "pct_do_total": 0.1374
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G4",
+   "peso": 1065367.8829,
+   "n": 2228,
+   "pct_da_origem": 1.6231,
+   "pct_do_total": 0.2625
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G5",
+   "peso": 4171623.4501,
+   "n": 9792,
+   "pct_da_origem": 6.3553,
+   "pct_do_total": 1.0278
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G6",
+   "peso": 2253643.3467,
+   "n": 8681,
+   "pct_da_origem": 3.4334,
+   "pct_do_total": 0.5552
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G7",
+   "peso": 2861857.3661,
+   "n": 6560,
+   "pct_da_origem": 4.36,
+   "pct_do_total": 0.7051
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G8",
+   "peso": 2026573.1486,
+   "n": 4467,
+   "pct_da_origem": 3.0874,
+   "pct_do_total": 0.4993
+  },
+  {
+   "periodo": "pre",
+   "fonte": "G9",
+   "alvo": "G9",
+   "peso": 42865270.2248,
+   "n": 103029,
+   "pct_da_origem": 65.304,
+   "pct_do_total": 10.5608
+  }
+ ]
+}
