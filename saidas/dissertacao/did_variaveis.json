@@ -1,0 +1,49 @@
+{
+ "unidade_de_observacao": "Par pessoa-trimestre (entrevista de origem t ligada a t+1), agregado em células por UF × UPA × ocupação de origem × covariáveis.",
+ "tratamento_exposicao": {
+  "variavel": "aioe_origem",
+  "tipo": "contínua, padronizada entre ocupações (desvio-padrão 0,9445 entre 416 códigos)",
+  "interacao": "aioe_origem:pos"
+ },
+ "periodo": {
+  "pre": "destino até 2022T3",
+  "pos": "origem a partir de 2023T1",
+  "excluido": "2022T4 (parcialmente tratado) e 2020T1–2021T3 (coleta telefônica, sai só do pré)"
+ },
+ "outcomes_planejados": [
+  "pareado (teste de atrito)",
+  "muda_ocupacao_2",
+  "muda_ocupacao_3",
+  "sai_do_emprego",
+  "formal_para_informal",
+  "mobilidade_descendente_aioe",
+  "mobilidade_ascendente_aioe"
+ ],
+ "controles": [
+  "telework:pos",
+  "idade",
+  "idade_quadrado",
+  "sexo",
+  "raça",
+  "escolaridade",
+  "tempo_emprego_categoria",
+  "tamanho_empresa_categoria",
+  "setor"
+ ],
+ "efeitos_fixos": [
+  "cod_origem (absorve o nível permanente de cada ocupação)",
+  "sigla_uf × mês (absorve componentes aditivos comuns a cada UF-mês, inclusive o ciclo nacional)"
+ ],
+ "pesos_e_cluster": {
+  "pesos": "soma de V1028 da entrevista de origem (peso transversal)",
+  "cluster": "UPA — nível do desenho amostral"
+ },
+ "modelo": "LPM (pyfixest), não logit — com efeitos fixos de alta dimensão o LPM é o que permite estimação e inferência viáveis; alvo é o efeito marginal médio.",
+ "risco_de_identificacao": "Não é o viés clássico de adoção escalonada do TWFE (todo mundo é 'tratado' na mesma data). O tratamento é contínuo (intensidade do AIOE), o que exige uma versão mais forte de tendências paralelas — Callaway, Goodman-Bacon & Sant'Anna (2024).",
+ "proximos_passos": [
+  "Diff-in-Diff com tratamento contínuo (LPM acima)",
+  "Estudo de evento em torno de 2022T4",
+  "Teste de tendências prévias (séries por quartil, Ato V)",
+  "Robustez: sem a janela de coleta atípica, cluster alternativo, amostra restrita a pareados"
+ ]
+}

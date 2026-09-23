@@ -1,0 +1,92 @@
+{
+ "Q1": {
+  "pre": {
+   "permaneceu_na_ocupacao": 68.04,
+   "mudou_de_ocupacao": 19.44,
+   "desemprego": 4.95,
+   "fora_da_forca_de_trabalho": 7.57,
+   "informalidade_entre_quem_estava_formal": 8.33,
+   "n": 238165
+  },
+  "pos": {
+   "permaneceu_na_ocupacao": 68.59,
+   "mudou_de_ocupacao": 20.06,
+   "desemprego": 3.23,
+   "fora_da_forca_de_trabalho": 8.13,
+   "informalidade_entre_quem_estava_formal": 9.02,
+   "n": 361995
+  }
+ },
+ "Q2": {
+  "pre": {
+   "permaneceu_na_ocupacao": 70.31,
+   "mudou_de_ocupacao": 20.18,
+   "desemprego": 3.09,
+   "fora_da_forca_de_trabalho": 6.42,
+   "informalidade_entre_quem_estava_formal": 8.72,
+   "n": 260097
+  },
+  "pos": {
+   "permaneceu_na_ocupacao": 70.81,
+   "mudou_de_ocupacao": 20.77,
+   "desemprego": 2.14,
+   "fora_da_forca_de_trabalho": 6.28,
+   "informalidade_entre_quem_estava_formal": 9.52,
+   "n": 401938
+  }
+ },
+ "Q3": {
+  "pre": {
+   "permaneceu_na_ocupacao": 72.9,
+   "mudou_de_ocupacao": 18.92,
+   "desemprego": 3.02,
+   "fora_da_forca_de_trabalho": 5.16,
+   "informalidade_entre_quem_estava_formal": 8.62,
+   "n": 206614
+  },
+  "pos": {
+   "permaneceu_na_ocupacao": 72.98,
+   "mudou_de_ocupacao": 19.72,
+   "desemprego": 1.99,
+   "fora_da_forca_de_trabalho": 5.31,
+   "informalidade_entre_quem_estava_formal": 9.51,
+   "n": 332982
+  }
+ },
+ "Q4": {
+  "pre": {
+   "permaneceu_na_ocupacao": 69.06,
+   "mudou_de_ocupacao": 24.67,
+   "desemprego": 2.44,
+   "fora_da_forca_de_trabalho": 3.83,
+   "informalidade_entre_quem_estava_formal": 6.8,
+   "n": 202297
+  },
+  "pos": {
+   "permaneceu_na_ocupacao": 69.08,
+   "mudou_de_ocupacao": 25.48,
+   "desemprego": 1.65,
+   "fora_da_forca_de_trabalho": 3.79,
+   "informalidade_entre_quem_estava_formal": 7.91,
+   "n": 325387
+  }
+ },
+ "Todos": {
+  "pre": {
+   "permaneceu_na_ocupacao": 70.26,
+   "mudou_de_ocupacao": 20.68,
+   "desemprego": 3.35,
+   "fora_da_forca_de_trabalho": 5.71,
+   "informalidade_entre_quem_estava_formal": 7.91,
+   "n": 917015
+  },
+  "pos": {
+   "permaneceu_na_ocupacao": 70.55,
+   "mudou_de_ocupacao": 21.41,
+   "desemprego": 2.23,
+   "fora_da_forca_de_trabalho": 5.81,
+   "informalidade_entre_quem_estava_formal": 8.81,
+   "n": 1436618
+  }
+ }
+}

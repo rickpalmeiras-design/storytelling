@@ -1,0 +1,51 @@
+{
+ "unidade_de_observacao": {
+  "descricao": "Célula agregada por trimestre × UF × UPA × ocupação de origem × ocupação de destino × covariáveis (idade, sexo, escolaridade etc.), com contagem de observações (n) e soma de peso amostral (V1028).",
+  "por_que_celula_e_nao_pessoa": "A auto-junção acontece no BigQuery e só descem células agregadas — o projeto do IDP proíbe baixar microdado individual (`src/common.query` recusa qualquer consulta sem agregação). Como todas as regressoras e desfechos são constantes dentro da célula, a estimação em células reproduz exatamente a estimação pessoa a pessoa. Por isso 'quantidade de pessoas' abaixo é a soma de peso amostral (estimativa populacional) e a soma de n (contagem de pares na amostra), não uma contagem de identificadores únicos — este script não tem acesso a eles."
+ },
+ "fontes": {
+  "pnadc": "PNAD Contínua trimestral, IBGE, via basedosdados.br_ibge_pnadc.microdados.",
+  "aioe": "Felten, Raj e Seamans — AIOE, apêndice de dados em IDP/data/raw/aioe/.",
+  "crosswalk": "COD (IBGE) → ISCO-08 → SOC2010, reprodução arquivada da correspondência do BLS.",
+  "consolidacao": "Pareamento pessoa a pessoa no BigQuery (mesmo domicílio, número de ordem, visita seguinte, sexo, dia/mês de nascimento iguais, ano de nascimento com diferença ≤1, idade avançando 0–1 ano); exposição do COD é a média dos SOC ponderada por pesos declarados no crosswalk, ignorando elos sem valor em vez de tratá-los como zero."
+ },
+ "periodo": {
+  "primeiro_trimestre": "2019T1",
+  "ultimo_trimestre": "2025T3",
+  "n_trimestres_de_origem": 27
+ },
+ "escala": {
+  "celulas": 4014438,
+  "n_pares_amostrais": 4017289,
+  "peso_amostral_total_ocupados_origem": 2000911081.9112768,
+  "cod_origem_distintos": 435,
+  "cod_destino_distintos": 433,
+  "grandes_grupos": 10
+ },
+ "ausentes_e_inconsistencias": {
+  "cod_sem_aioe": {
+   "peso": 21563559.06607233,
+   "pct_do_peso_ocupados": 1.08,
+   "n_cods_distintos": 19,
+   "nota": "Militares e um grupo de base sem correspondência no BLS ficam sem AIOE por desenho (METODOLOGIA.md §4); saem dos quartis."
+  },
+  "formal_origem_nulo": {
+   "observacoes": 0,
+   "nota": "Conta-própria e empregador sem CNPJ declarado ficam nulos em formal_origem — não viram zero (METODOLOGIA.md §3)."
+  },
+  "chave_duplicada_no_trimestre": 0,
+  "peso_invalido": 0,
+  "taxa_de_pareamento_abaixo_de_70pct": []
+ },
+ "filtros_aplicados": [
+  "Idade na PNADC entre 18 e 65 anos (aplicado antes deste script, na consulta do IDP — config.yaml: idade_minima_pnadc / idade_maxima_pnadc).",
+  "Origem é pessoa ocupada (o painel de transições só existe a partir de quem tinha ocupação na entrevista de origem).",
+  "Só pares de trimestres consecutivos entram — a auto-junção do BigQuery liga t a t+1 diretamente; um salto de dois trimestres não gera par.",
+  "2022T4 sai da análise pré/pós: o ChatGPT foi lançado em 30/11/2022, então esse trimestre é parcialmente tratado. Nenhum dado é apagado — o trimestre continua no arquivo, só não entra na comparação pré/pós.",
+  "Pré = destino até 2022T3; pós = origem a partir de 2023T1.",
+  "Coleta telefônica da pandemia (origens 2020T1 a 2021T3) sai do pré: nela a mudança de ocupação cai por artefato de coleta, não por comportamento — ver 'Quebra da coleta telefônica' nas estatísticas descritivas.",
+  "Quartis de AIOE fixados na distribuição do pré-choque, ponderada pelo peso amostral dos ocupados — o pós não contamina os cortes.",
+  "Mobilidade ocupacional lida no grande grupo COD (1 dígito), não no código de 4 dígitos: erro de codificação entre entrevistas na PNADC infla artificialmente a mobilidade fina."
+ ],
+ "alteracoes_na_base_original": "Nenhuma. Este script só lê `data/processed/pnadc_transicoes.parquet` e `data/interim/exposicao_cod.parquet` — não escreve, não sobrescreve e não recalcula nada dentro do repositório do IDP. Toda reclassificação (período, quartil, destino) é feita em memória, aqui, e documentada nesta seção e no código-fonte deste script."
+}

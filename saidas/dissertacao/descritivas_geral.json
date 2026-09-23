@@ -1,0 +1,90 @@
+{
+ "pre": {
+  "empregados_na_origem": {
+   "peso": 517016114.3587266,
+   "n": 1167014
+  },
+  "pareados": {
+   "peso": 405890777.8906983,
+   "n": 917015,
+   "pct_do_total": 78.51
+  },
+  "permaneceram_na_mesma_ocupacao": {
+   "peso": 285177680.622138,
+   "n": 634767,
+   "pct_dos_pareados": 70.26
+  },
+  "mudaram_de_ocupacao": {
+   "peso": 83956321.59507275,
+   "n": 186537,
+   "pct_dos_pareados": 20.68
+  },
+  "sairam_do_emprego": {
+   "peso": 36756775.673487484,
+   "n": 95711,
+   "pct_dos_pareados": 9.06
+  },
+  "ficaram_desempregados": {
+   "peso": 13589639.56367713,
+   "n": 29259,
+   "pct_dos_pareados": 3.35
+  },
+  "sairam_da_forca_de_trabalho": {
+   "peso": 23167136.10981036,
+   "n": 66452,
+   "pct_dos_pareados": 5.71
+  },
+  "migraram_para_informalidade": {
+   "peso": 18740177.77934801,
+   "n": 42315,
+   "base": "formalmente empregados na origem, com destino observado",
+   "pct_da_base": 7.91
+  }
+ },
+ "pos": {
+  "empregados_na_origem": {
+   "peso": 857545035.9862688,
+   "n": 1748063
+  },
+  "pareados": {
+   "peso": 699277995.7736632,
+   "n": 1436618,
+   "pct_do_total": 81.54
+  },
+  "permaneceram_na_mesma_ocupacao": {
+   "peso": 493348167.16314137,
+   "n": 1007635,
+   "pct_dos_pareados": 70.55
+  },
+  "mudaram_de_ocupacao": {
+   "peso": 149749284.38298616,
+   "n": 295578,
+   "pct_dos_pareados": 21.41
+  },
+  "sairam_do_emprego": {
+   "peso": 56180544.227535665,
+   "n": 133405,
+   "pct_dos_pareados": 8.03
+  },
+  "ficaram_desempregados": {
+   "peso": 15560306.21854694,
+   "n": 30619,
+   "pct_dos_pareados": 2.23
+  },
+  "sairam_da_forca_de_trabalho": {
+   "peso": 40620238.00898872,
+   "n": 102786,
+   "pct_dos_pareados": 5.81
+  },
+  "migraram_para_informalidade": {
+   "peso": 36814076.95741589,
+   "n": 74149,
+   "base": "formalmente empregados na origem, com destino observado",
+   "pct_da_base": 8.81
+  }
+ },
+ "entradas_na_forca_de_trabalho": {
+  "disponivel": false,
+  "motivo": "O painel de transições do IDP só existe a partir de quem estava OCUPADO na entrevista de origem (README do IDP, 'Regras de dados'). Uma pessoa desocupada ou fora da força que consegue um emprego não gera uma célula de origem neste arquivo, então entradas na força de trabalho não são observáveis com os dados atuais — só as saídas (para desemprego ou inatividade) o são. Registrado aqui para não ser confundido com um resultado nulo."
+ }
+}
