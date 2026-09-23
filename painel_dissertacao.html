@@ -47,10 +47,13 @@
   header.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.08;margin:0 0 14px;max-width:20ch;text-wrap:balance}
   header.hero .dek{font-size:1.02rem;color:#d7ecdf;max-width:66ch;margin:0 0 8px}
   header.hero .src{font-size:.78rem;color:#a9d3bb;margin:0}
+  .hero-stats{display:flex;gap:28px;flex-wrap:wrap;margin:22px 0 10px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2)}
+  .hero-stat .v{font-family:var(--serif);font-size:2.1rem;color:#fff;line-height:1}
+  .hero-stat .v.pos{color:#a9e8bd} .hero-stat .v.neg{color:#f3c9b8}
+  .hero-stat .l{font-size:.76rem;color:var(--brand-300);margin-top:4px;max-width:20ch}
 
   .kpi-band{background:var(--brand-900)}
-  .kpi-row{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(255,255,255,.14);border-top:1px solid rgba(255,255,255,.14)}
-  @media (max-width:980px){.kpi-row{grid-template-columns:repeat(3,1fr)}}
+  .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.14);border-top:1px solid rgba(255,255,255,.14)}
   @media (max-width:560px){.kpi-row{grid-template-columns:repeat(2,1fr)}}
   .kpi{background:var(--brand-900);padding:16px 18px}
   .kpi .v{font-family:var(--serif);font-size:1.5rem;color:#fff;line-height:1.05}
@@ -21385,10 +21388,11 @@
 
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow">PNAD Contínua · dissertação · pré-DiD</p>
-    <h1>O mercado de trabalho antes de medir o efeito da IA</h1>
-    <p class="dek">Revisão da base, estatísticas descritivas e fluxos ocupacionais — a etapa que vem
-      antes da estimação causal, não no lugar dela.</p>
+    <p class="eyebrow">PNAD Contínua · exposição ocupacional à IA</p>
+    <h1 id="hero-h1">O emprego muda de forma diferente conforme a exposição à IA</h1>
+    <p class="dek" id="hero-dek">Desde o lançamento do ChatGPT, o nível de emprego segue trajetórias
+      distintas entre ocupações mais e menos expostas — o retrato abaixo é descritivo, não causal.</p>
+    <div class="hero-stats" id="hero-stats"></div>
     <p class="src" id="hero-src"></p>
   </div>
 </header>
@@ -21396,12 +21400,11 @@
 
 <nav class="acts">
   <div class="wrap">
-    <a href="#s1"><small>1</small><span>Antes/depois do ChatGPT</span></a>
+    <a href="#s1"><small>1</small><span>O sinal mais forte</span></a>
     <a href="#s2"><small>2</small><span>Quem está mais exposto</span></a>
-    <a href="#s3"><small>3</small><span>O emprego mudou?</span></a>
+    <a href="#s3"><small>3</small><span>O que aconteceu com eles</span></a>
     <a href="#s4"><small>4</small><span>Para onde foram</span></a>
-    <a href="#s5"><small>5</small><span>O que os dados sugerem</span></a>
-    <a href="#s6"><small>6</small><span>Próximo passo: DiD</span></a>
+    <a href="#s5"><small>5</small><span>O que isso sugere</span></a>
   </div>
 </nav>
 
@@ -21410,25 +21413,13 @@
 <section class="act" id="s1">
   <div class="wrap">
     <div class="act-num">1</div>
-    <h2 id="s1-title">O mercado de trabalho antes e depois do ChatGPT</h2>
-    <p class="lede">O painel cobre <span id="s1-lede-a" class="tabular"></span> — todo trimestre em que
-      a PNAD Contínua liga a mesma pessoa de uma entrevista para a seguinte, sempre a partir de quem
-      estava ocupado na origem.</p>
+    <h2 id="s1-title">O sinal mais forte nos dados</h2>
+    <p class="lede" id="s1-lede">Peso amostral médio por trimestre de origem (um proxy do nível de
+      emprego), por quartil de exposição à IA — sempre a partir de quem estava ocupado na origem.</p>
 
     <div class="card">
-      <p class="fig-tag">Como o painel foi construído</p>
-      <p class="chart-title">Célula agregada, não linha por pessoa — a estimação em células reproduz a individual, mas a contagem de pessoas vem do peso amostral</p>
-      <div class="grid-5" id="quadro-resumo-stats" style="margin-top:14px"></div>
-      <details class="table-toggle">
-        <summary>Ver o quadro-resumo completo (fontes, filtros, ausentes)</summary>
-        <div id="quadro-resumo-full" style="margin-top:12px"></div>
-      </details>
-    </div>
-
-    <div class="card" style="margin-top:16px">
       <p class="fig-tag">Evolução do emprego</p>
       <p class="chart-title" id="s1-chart-title"></p>
-      <p class="fig-sub">Peso amostral médio por trimestre de origem (nível de emprego), por quartil de exposição à IA.</p>
       <div id="emprego-series"></div>
       <div class="legend" id="emprego-legend"></div>
     </div>
@@ -21468,7 +21459,7 @@
 <section class="act" id="s3">
   <div class="wrap">
     <div class="act-num">3</div>
-    <h2>O emprego mudou nessas ocupações?</h2>
+    <h2>O que aconteceu com quem estava nessas ocupações?</h2>
     <p class="lede" id="s3-lede"></p>
 
     <div class="card">
@@ -21519,41 +21510,35 @@
 <section class="act" id="s5">
   <div class="wrap">
     <div class="act-num">5</div>
-    <h2>O que os dados descritivos sugerem</h2>
+    <h2>O que isso sugere</h2>
     <div class="grid-3" id="findings"></div>
     <div class="callout">
       <p><b>Isto ainda não é um efeito.</b> Os padrões acima são correlacionais: comparam quem já
         estava em ocupações mais e menos expostas, antes e depois de uma data-calendário única. Eles
         não isolam a IA de qualquer outro fator que tenha se movido junto com a exposição ocupacional
-        no mesmo período — retomada pós-pandemia, ciclo setorial, composição educacional. A seção 6
-        documenta o que falta para tratar isso como causal.</p>
+        no mesmo período — retomada pós-pandemia, ciclo setorial, composição educacional.</p>
     </div>
-  </div>
-</section>
 
-<section class="act" id="s6">
-  <div class="wrap">
-    <div class="act-num">6</div>
-    <h2>Próximo passo: identificação causal</h2>
-    <p class="lede">A especificação abaixo já está fixada em <code>METODOLOGIA.md</code> — esta seção
-      só nomeia as variáveis antes de rodar, para que a reunião discuta a estimação, não o desenho.</p>
-    <div class="card">
-      <table class="didtab" id="did-table"></table>
-    </div>
-    <div class="callout">
-      <p><b>Por que não é o TWFE clássico.</b> O viés de adoção escalonada não se aplica: todo mundo é
-        "tratado" na mesma data-calendário (o lançamento do ChatGPT). O risco aqui é outro — o
-        tratamento é <b>contínuo</b> (a intensidade do AIOE), o que exige uma versão mais forte de
-        tendências paralelas, discutida por Callaway, Goodman-Bacon &amp; Sant'Anna (2024) e por
-        Rambachan &amp; Roth (2023) para violações limitadas de tendência prévia.</p>
-    </div>
-    <div class="prose" style="margin-top:18px">
-      <p><strong>Antes da estimação:</strong> um estudo de evento em torno de 2022T4 (a série da seção
-        1 já é o primeiro teste visual disso, por quartil); teste formal de tendências prévias nos
-        quatro quartis, não só em Q1 vs Q4; robustez sem a janela de coleta telefônica; e a
-        especificação com tratamento contínuo dos textos de referência, em vez de só o corte por
-        quartil usado aqui para visualização.</p>
-    </div>
+    <details class="pack" style="margin-top:18px">
+      <summary>Como isto vira uma estimativa causal (variáveis do Diff-in-Diff)</summary>
+      <div class="inner">
+        <table class="didtab" id="did-table" style="margin-top:6px"></table>
+        <p style="margin-top:14px"><b>Por que não é o TWFE clássico:</b> o viés de adoção escalonada
+          não se aplica — todo mundo é "tratado" na mesma data-calendário. O risco aqui é o
+          tratamento <b>contínuo</b> (a intensidade do AIOE), que exige uma versão mais forte de
+          tendências paralelas (Callaway, Goodman-Bacon &amp; Sant'Anna, 2024; Rambachan &amp; Roth,
+          2023). Antes de estimar: estudo de evento em 2022T4, teste de tendências prévias nos quatro
+          quartis, robustez sem a coleta telefônica.</p>
+      </div>
+    </details>
+
+    <details class="pack" style="margin-top:10px">
+      <summary>Como o painel foi construído (fontes, filtros, ausentes)</summary>
+      <div class="inner">
+        <div class="grid-5" id="quadro-resumo-stats" style="margin:6px 0 14px"></div>
+        <div id="quadro-resumo-full"></div>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -21563,7 +21548,7 @@
   <div class="wrap prose">
     <p>Fonte: PNAD Contínua trimestral (IBGE), painel de transições do IDP
       (<code id="foot-src"></code>). Exposição: AIOE (Felten, Raj e Seamans). Nenhum arquivo do IDP
-      foi alterado para gerar este dashboard — ver o quadro-resumo na Seção 1 para as decisões
+      foi alterado para gerar este dashboard — ver "Como o painel foi construído" na Seção 5 para as decisões
       aplicadas em memória. Gerado em <span id="foot-gen"></span>.</p>
   </div>
 </footer>
@@ -21596,45 +21581,50 @@ const isDark = () => {
   return window.matchMedia('(prefers-color-scheme: dark)').matches;
 };
 
+// Crescimento do emprego por quartil, 2022 -> 2025 (média trimestral dentro do ano, para não
+// distorcer com 2025 tendo só 3 trimestres). Calculado uma vez, usado no hero e na Seção 1.
+const GROWTH = (function(){
+  const serie = D.serie_emprego_quartil, byYearQ = {};
+  serie.forEach(r=>{ const y_ = r.trimestre_origem.slice(0,4), k = r.quartil+'|'+y_;
+    (byYearQ[k] = byYearQ[k]||[]).push(r.peso_ocupados_origem); });
+  const avgYQ = (q,y_) => { const a = byYearQ[q+'|'+y_]||[]; return a.reduce((s,v)=>s+v,0)/a.length; };
+  const grow = q => 100*(avgYQ(q,'2025')/avgYQ(q,'2022') - 1);
+  const g = {Q1: grow('Q1'), Q2: grow('Q2'), Q3: grow('Q3'), Q4: grow('Q4')};
+  return { g1: g.Q1, g4: g.Q4, monotone: g.Q1 < g.Q2 && g.Q2 < g.Q3 && g.Q3 <= g.Q4 + 0.5 };
+})();
+
 /* ================= header + KPIs ================= */
 (function header(){
   document.getElementById('hero-src').textContent = 'Fonte: ' + D.meta.fonte + ' · gerado em ' + new Date(D.meta.gerado_em).toLocaleString('pt-BR',{dateStyle:'medium',timeStyle:'short'});
   document.getElementById('foot-src').textContent = D.meta.fonte;
   document.getElementById('foot-gen').textContent = new Date(D.meta.gerado_em).toLocaleString('pt-BR',{dateStyle:'medium',timeStyle:'short'});
-  const esc_ = D.quadro_resumo.escala, per = D.quadro_resumo.periodo;
   const pre = D.descritivas.pre, pos = D.descritivas.pos;
+
+  if(GROWTH.monotone){
+    document.getElementById('hero-h1').textContent = `Desde 2022, o emprego cresce ${fmtpp(GROWTH.g4)} no quartil mais exposto à IA — e ${GROWTH.g1<0?'encolhe':'quase não cresce'} no menos exposto`;
+    document.getElementById('hero-dek').textContent = 'Peso amostral médio de ocupados na origem, por quartil de exposição ao AIOE — não é causal, mas é o padrão mais nítido do painel.';
+    document.getElementById('hero-stats').innerHTML = `
+      <div class="hero-stat"><div class="v pos tabular">${fmtpp(GROWTH.g4)}</div><div class="l">emprego no quartil mais exposto (Q4), 2022→2025</div></div>
+      <div class="hero-stat"><div class="v ${GROWTH.g1<0?'neg':''} tabular">${fmtpp(GROWTH.g1)}</div><div class="l">emprego no quartil menos exposto (Q1), 2022→2025</div></div>`;
+  } else {
+    document.getElementById('hero-h1').textContent = 'O emprego muda de forma parecida entre quartis de exposição à IA';
+    document.getElementById('hero-dek').textContent = 'Peso amostral médio de ocupados na origem, por quartil de exposição ao AIOE.';
+    document.getElementById('hero-stats').innerHTML = `
+      <div class="hero-stat"><div class="v tabular">${fmtpp(GROWTH.g4)}</div><div class="l">emprego no quartil mais exposto (Q4), 2022→2025</div></div>
+      <div class="hero-stat"><div class="v tabular">${fmtpp(GROWTH.g1)}</div><div class="l">emprego no quartil menos exposto (Q1), 2022→2025</div></div>`;
+  }
+
   const kpis = [
-    [fmtM(esc_.peso_amostral_total_ocupados_origem), 'pessoas-trimestre ocupadas na origem (peso amostral)'],
-    [per.primeiro_trimestre + '–' + per.ultimo_trimestre, 'período coberto, ' + per.n_trimestres_de_origem + ' trimestres de origem'],
-    [esc_.cod_origem_distintos, 'ocupações distintas (COD, 4 dígitos)'],
-    [fmt1(pos.pareados.pct_do_total) + '%', 'taxa de pareamento no pós-choque'],
-    [fmt1(pos.mudaram_de_ocupacao.pct_dos_pareados) + '%', 'mudaram de grande grupo ocupacional, pós-choque'],
-    [fmt1(pos.migraram_para_informalidade.pct_da_base) + '%', 'dos formais migraram para informalidade, pós-choque'],
+    [fmt1(pos.mudaram_de_ocupacao.pct_dos_pareados) + '%', 'mudaram de ocupação, pós-choque'],
+    [fmt1(pos.permaneceram_na_mesma_ocupacao.pct_dos_pareados) + '%', 'permaneceram na mesma ocupação'],
+    [fmt1(pos.migraram_para_informalidade.pct_da_base) + '%', 'dos formais migraram p/ informalidade'],
+    [fmt1(pos.sairam_do_emprego.pct_dos_pareados) + '%', 'saíram do emprego, pós-choque'],
   ];
   document.getElementById('kpi-row').innerHTML = kpis.map(([v,l])=>`<div class="kpi"><div class="v tabular">${v}</div><div class="l">${l}</div></div>`).join('');
 })();
 
 /* ================= Seção 1 ================= */
 (function s1(){
-  const r = D.quadro_resumo;
-  document.getElementById('s1-lede-a').textContent = r.periodo.primeiro_trimestre + ' a ' + r.periodo.ultimo_trimestre;
-  const stats = [
-    [fmtInt(r.escala.celulas), 'células no painel'],
-    [fmtInt(r.escala.n_pares_amostrais), 'pares amostrais (n)'],
-    [fmt1(r.ausentes_e_inconsistencias.cod_sem_aioe.pct_do_peso_ocupados)+'%', 'do peso sem AIOE'],
-    [r.ausentes_e_inconsistencias.chave_duplicada_no_trimestre, 'chaves duplicadas no trimestre'],
-    [r.escala.cod_origem_distintos, 'CODs de origem distintos'],
-  ];
-  document.getElementById('quadro-resumo-stats').innerHTML = stats.map(([v,l])=>`<div class="stat"><div class="v tabular">${v}</div><div class="l">${l}</div></div>`).join('');
-
-  const full = document.getElementById('quadro-resumo-full');
-  full.innerHTML = `
-    <p class="prose" style="font-size:.85rem"><b>Unidade de observação.</b> ${esc(r.unidade_de_observacao.descricao)}</p>
-    <p class="prose" style="font-size:.85rem">${esc(r.unidade_de_observacao.por_que_celula_e_nao_pessoa)}</p>
-    <p class="prose" style="font-size:.85rem"><b>Filtros aplicados:</b></p>
-    <ul class="prose" style="font-size:.85rem">${r.filtros_aplicados.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>
-    <p class="prose" style="font-size:.85rem"><b>Alterações na base original:</b> ${esc(r.alteracoes_na_base_original)}</p>`;
-
   const serie = D.serie_emprego_quartil;
   const byQ = {}; serie.forEach(row => (byQ[row.quartil] = byQ[row.quartil]||[]).push(row));
   const trims = [...new Set(serie.map(r=>r.trimestre_origem))].sort();
@@ -21674,16 +21664,8 @@ const isDark = () => {
   document.getElementById('emprego-legend').innerHTML = ['Q1','Q2','Q3','Q4'].map(q=>`<span class="sw"><i class="line" style="background:${QCOL[q]}"></i>${q}${q==='Q1'?' (menos exposto)':q==='Q4'?' (mais exposto)':''}</span>`).join('') +
     `<span class="sw"><i style="background:var(--line)"></i>coleta telefônica</span><span class="sw"><i style="background:var(--c-informal);opacity:.4"></i>2022T4 excluído</span>`;
 
-  // headline: employment growth 2022->2025 by quartile (quarterly average, avoids partial-year 2025 bias)
-  const byYearQ = {};
-  serie.forEach(r=>{ const y_ = r.trimestre_origem.slice(0,4); const k = r.quartil+'|'+y_; byYearQ[k] = byYearQ[k]||[]; byYearQ[k].push(r.peso_ocupados_origem); });
-  const avgYQ = (q,y_) => { const a = byYearQ[q+'|'+y_]||[]; return a.reduce((s,v)=>s+v,0)/a.length; };
-  const grow = q => 100*(avgYQ(q,'2025')/avgYQ(q,'2022') - 1);
-  const g1 = grow('Q1'), g4 = grow('Q4');
-  const monotone = grow('Q1') < grow('Q2') && grow('Q2') < grow('Q3') && grow('Q3') <= grow('Q4') + 0.5;
-  document.getElementById('s1-title').textContent = 'O mercado de trabalho antes e depois do ChatGPT';
-  document.getElementById('s1-chart-title').textContent = monotone
-    ? `Desde 2022, o emprego cresce mais nos quartis mais expostos à IA (Q4: ${fmtpp(g4)}) do que no menos exposto (Q1: ${fmtpp(g1)})`
+  document.getElementById('s1-chart-title').textContent = GROWTH.monotone
+    ? `O crescimento do emprego é monótono na exposição: quanto mais exposto o quartil, mais ele cresce desde 2022 (Q1: ${fmtpp(GROWTH.g1)} → Q4: ${fmtpp(GROWTH.g4)})`
     : `O emprego evolui de forma parecida nos quatro quartis de exposição entre 2022 e 2025`;
 })();
 
@@ -21903,6 +21885,22 @@ const isDark = () => {
       p: `Entre os formais, a migração para informalidade sobe de ${fmt1(oa['Q1'].pre.informalidade_entre_quem_estava_formal)}% para ${fmt1(oa['Q1'].pos.informalidade_entre_quem_estava_formal)}% em Q1 e de ${fmt1(oa['Q4'].pre.informalidade_entre_quem_estava_formal)}% para ${fmt1(oa['Q4'].pos.informalidade_entre_quem_estava_formal)}% em Q4 — sem diferencial claro por exposição.` },
   ];
   document.getElementById('findings').innerHTML = findings.map(f=>`<div class="card"><p class="chart-title" style="font-size:.95rem">${esc(f.k)}</p><p class="prose" style="font-size:.85rem;margin:0">${esc(f.p)}</p></div>`).join('');
+
+  const r = D.quadro_resumo;
+  const stats = [
+    [fmtInt(r.escala.celulas), 'células no painel'],
+    [fmtInt(r.escala.n_pares_amostrais), 'pares amostrais (n)'],
+    [r.periodo.primeiro_trimestre + '–' + r.periodo.ultimo_trimestre, 'período coberto'],
+    [fmt1(r.ausentes_e_inconsistencias.cod_sem_aioe.pct_do_peso_ocupados)+'%', 'do peso sem AIOE'],
+    [r.escala.cod_origem_distintos, 'CODs de origem distintos'],
+  ];
+  document.getElementById('quadro-resumo-stats').innerHTML = stats.map(([v,l])=>`<div class="stat"><div class="v tabular">${v}</div><div class="l">${l}</div></div>`).join('');
+  document.getElementById('quadro-resumo-full').innerHTML = `
+    <p class="prose" style="font-size:.85rem"><b>Unidade de observação.</b> ${esc(r.unidade_de_observacao.descricao)}</p>
+    <p class="prose" style="font-size:.85rem">${esc(r.unidade_de_observacao.por_que_celula_e_nao_pessoa)}</p>
+    <p class="prose" style="font-size:.85rem"><b>Filtros aplicados:</b></p>
+    <ul class="prose" style="font-size:.85rem">${r.filtros_aplicados.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>
+    <p class="prose" style="font-size:.85rem"><b>Alterações na base original:</b> ${esc(r.alteracoes_na_base_original)}</p>`;
 })();
 
 /* ================= Seção 6: DiD ================= */
